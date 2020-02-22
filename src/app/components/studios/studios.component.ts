@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Studio } from '../../models/studios';
+import { Studio } from '../../models/Studio';
 
 @Component({
   selector: 'app-studios',

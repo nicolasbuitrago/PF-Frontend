@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { StudiosComponent } from './components/studios/studios.component';
+import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StudiosComponent } from './components/studios/studios.component';
     CarouselComponent,
     HomeComponent,
     GaleriaComponent,
-    StudiosComponent
+    StudiosComponent,
+    TestimoniosComponent
   ],
   imports: [
     BrowserModule,
