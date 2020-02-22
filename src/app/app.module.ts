@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from './components/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { StudiosComponent } from './components/studios/studios.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavBarComponent,
     FooterComponent,
     CarouselComponent,
-    HomeComponent
+    HomeComponent,
+    GaleriaComponent,
+    StudiosComponent
   ],
   imports: [
     BrowserModule,
