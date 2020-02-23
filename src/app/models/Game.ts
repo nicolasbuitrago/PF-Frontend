@@ -1,7 +1,7 @@
-export interface Studio {
+export interface Game {
   id: number;
   name: string;
   type: string;
   description: string;
-  ubication: string;
+  studio: number;
 }

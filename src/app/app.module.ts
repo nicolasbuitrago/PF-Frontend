@@ -8,9 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from './components/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { GaleriaComponent } from './components/galeria/galeria.component';
 import { StudiosComponent } from './components/studios/studios.component';
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
+import { GamesComponent } from './components/games/games.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,9 @@ import { TestimoniosComponent } from './components/testimonios/testimonios.compo
     FooterComponent,
     CarouselComponent,
     HomeComponent,
-    GaleriaComponent,
     StudiosComponent,
-    TestimoniosComponent
+    TestimoniosComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
