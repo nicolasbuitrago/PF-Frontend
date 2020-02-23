@@ -4,10 +4,12 @@
   </div>
   <div id="myTestimonials" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#myTestimonials" attr.data-slide-to="{{ testimonio.id }}" [class.active]='testimonio.id == 0' *ngFor="let testimonio of testimonios"></li>
+      <li data-target="#myTestimonials" attr.data-slide-to="{{ i }}"
+          [class.active]='f'
+          *ngFor="let testimonio of testimonios; let i = index; let f = first"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item" [class.active]='testimonio.id == 0' *ngFor="let testimonio of testimonios">
+      <div class="carousel-item" [class.active]='f' *ngFor="let testimonio of testimonios; let f = first">
         <div class="container">
           <div class="carousel-caption">
             <h2>{{ testimonio.mesg }}</h2>

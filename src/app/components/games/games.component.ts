@@ -9,6 +9,9 @@ import { Game } from '../../models/Game';
 })
 export class GamesComponent implements OnInit {
 
+  pags = 3;
+  selectedPage = 2;
+
   games: Game[] = [
     {
       id: 0,
@@ -43,6 +46,10 @@ export class GamesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  array(n: number): number[] {
+    return [...Array(n).keys()];
   }
 
 }
