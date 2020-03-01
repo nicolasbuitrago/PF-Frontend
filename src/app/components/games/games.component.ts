@@ -10,7 +10,7 @@ import { Game } from '../../models/Game';
 export class GamesComponent implements OnInit {
 
   selectedPage = 0;
-  pageSize = 6;
+  pageSize = 3;
 
   games: Game[] = [
     {
@@ -57,7 +57,7 @@ export class GamesComponent implements OnInit {
     },
     {
       id: 2,
-      name: 'Mario car',
+      name: 'Mario Karts',
       description: 'Super game with mario and cars',
       studio: 0,
       type: 'Race'

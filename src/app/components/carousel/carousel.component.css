@@ -14,6 +14,10 @@
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: center center;
 }
 .carousel-item > img {
   position: absolute;
