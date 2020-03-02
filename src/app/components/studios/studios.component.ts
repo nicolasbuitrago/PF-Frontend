@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Studio } from '../../models/Studio';
+import { StudioService } from '../../services/studio.service';
+import { Studio } from '../../models/studio.model';
 
 @Component({
   selector: 'app-studios',
@@ -9,40 +10,17 @@ import { Studio } from '../../models/Studio';
 })
 export class StudiosComponent implements OnInit {
 
-  studios: Studio[] = [
-    {
-      id: 0,
-      name: 'Studio 1',
-      type: 'Video games',
-      description: 'Somos el estudio 1',
-      ubication: 'Barranquilla'
-    },
-    {
-      id: 1,
-      name: 'Studio 2',
-      type: 'Art design',
-      description: 'Somos el estudio 2',
-      ubication: 'Cartagena'
-    },
-    {
-      id: 2,
-      name: 'Studio 3',
-      type: 'Visual recognition',
-      description: 'Somos el estudio 3',
-      ubication: 'Barranquilla'
-    },
-    {
-      id: 3,
-      name: 'Studio 4',
-      type: 'Video games',
-      description: 'Somos el estudio 4',
-      ubication: 'Santa Marta'
-    }
-  ];
+  studios: Studio[];
 
-  constructor() { }
+  constructor(private studioService: StudioService) { }
 
   ngOnInit(): void {
+    this.getStudios();
+  }
+
+  getStudios(): void {
+    this.studioService.getStudios()
+    .subscribe(studios => this.studios = studios);
   }
 
 }

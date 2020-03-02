@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Testimonio } from '../../models/Testimonio';
+import { Testimonio } from '../../models/testimonio.model';
 
 @Component({
   selector: 'app-testimonios',
@@ -9,26 +9,7 @@ import { Testimonio } from '../../models/Testimonio';
 })
 export class TestimoniosComponent implements OnInit {
 
-  testimonios: Testimonio[] = [
-    {
-      mesg: 'Es asombroso',
-      img: '//placeimg.com/200/200/people',
-      author: 'Carlos Perez',
-      authorInfo: 'Director of Tuna Games'
-    },
-    {
-      mesg: 'Fantastico',
-      img: '//placeimg.com/200/200/people',
-      author: 'Lucas Ramirez',
-      authorInfo: 'Art Designer of Caribbean Games'
-    },
-    {
-      mesg: 'Una maravilla',
-      img: '//placeimg.com/200/200/people',
-      author: 'Mario Diaz',
-      authorInfo: 'Sub-Director of Caption Games'
-    }
-  ];
+  @Input() testimonios: Testimonio[];
 
   constructor() { }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Game } from '../../models/Game';
+import { GameService } from '../../services/game.service';
+import { Game } from '../../models/game.model';
+import { isDefined } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-games',
@@ -12,77 +14,23 @@ export class GamesComponent implements OnInit {
   selectedPage = 0;
   pageSize = 3;
 
-  games: Game[] = [
-    {
-      id: 0,
-      name: 'Mario bros',
-      description: 'Super game with mario',
-      studio: 0,
-      type: 'Arcade'
-    },
-    {
-      id: 1,
-      name: 'PES 2020',
-      description: 'Soccer game',
-      studio: 2,
-      type: 'Sports'
-    },
-    {
-      id: 2,
-      name: 'Mario car',
-      description: 'Super game with mario and cars',
-      studio: 0,
-      type: 'Race'
-    },
-    {
-      id: 3,
-      name: 'COD',
-      description: 'Militar FPS',
-      studio: 3,
-      type: 'FPS'
-    },
-    {
-      id: 0,
-      name: 'Mario bros',
-      description: 'Super game with mario',
-      studio: 0,
-      type: 'Arcade'
-    },
-    {
-      id: 1,
-      name: 'PES 2020',
-      description: 'Soccer game',
-      studio: 2,
-      type: 'Sports'
-    },
-    {
-      id: 2,
-      name: 'Mario Karts',
-      description: 'Super game with mario and cars',
-      studio: 0,
-      type: 'Race'
-    },
-    {
-      id: 3,
-      name: 'COD',
-      description: 'Militar FPS',
-      studio: 3,
-      type: 'FPS'
-    },
-    {
-      id: 5,
-      name: 'WAR',
-      description: 'Militar WAR',
-      studio: 3,
-      type: 'WAR'
-    }
-  ];
+  games: Game[] = [];
 
   pags = Math.ceil(this.games.length / this.pageSize);
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
+    this.getGames();
+  }
+
+  getGames(): void {
+    this.gameService.getGames()
+    .subscribe(games => this.games = games);
+  }
+
+  isReady(): boolean {
+    return true;
   }
 
   array(n: number): number[] {
