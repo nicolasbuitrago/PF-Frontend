@@ -16,7 +16,7 @@ export class GamesComponent implements OnInit {
 
   games: Game[] = [];
 
-  pags = Math.ceil(this.games.length / this.pageSize);
+  pags = 0;
 
   constructor(private gameService: GameService) { }
 
@@ -27,6 +27,7 @@ export class GamesComponent implements OnInit {
   getGames(): void {
     this.gameService.getGames()
     .subscribe(games => this.games = games);
+    this.pags = Math.ceil(this.games.length / this.pageSize);
   }
 
   isReady(): boolean {
