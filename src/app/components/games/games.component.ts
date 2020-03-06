@@ -7,7 +7,7 @@ import { isDefined } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+  styleUrls: ['./games.component.scss']
 })
 export class GamesComponent implements OnInit {
 

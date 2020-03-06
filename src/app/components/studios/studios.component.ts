@@ -6,7 +6,7 @@ import { Studio } from '../../models/studio.model';
 @Component({
   selector: 'app-studios',
   templateUrl: './studios.component.html',
-  styleUrls: ['./studios.component.css']
+  styleUrls: ['./studios.component.scss']
 })
 export class StudiosComponent implements OnInit {
 
