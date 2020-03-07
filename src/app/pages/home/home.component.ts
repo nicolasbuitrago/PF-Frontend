@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.getTestimonios();
   }
 
-  getItems(): void{
+  getItems(): void {
     this.homeService.getItems()
     .subscribe(items => this.items = items);
   }

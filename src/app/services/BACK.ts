@@ -118,6 +118,13 @@ export const STUDIOS: Studio[] = [
     type: 'Video games',
     description: 'Somos el estudio 4',
     ubication: 'Santa Marta'
+  },
+  {
+    id: 3,
+    name: 'Studio 5',
+    type: 'Video games',
+    description: 'Somos el estudio 5',
+    ubication: 'Barranquilla'
   }
 ];
 
