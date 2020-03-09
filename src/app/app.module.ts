@@ -15,6 +15,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 import { GamesComponent } from './components/games/games.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { SectionComponent } from './components/section/section.component';
+import { ItemDirective } from './directives/item.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ErrorComponent } from './pages/error/error.component';
     GamesComponent,
     ContactComponent,
     EventsComponent,
-    ErrorComponent
+    ErrorComponent,
+    SectionComponent,
+    ItemDirective
   ],
   imports: [
     BrowserModule,

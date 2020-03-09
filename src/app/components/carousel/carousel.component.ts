@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { CarouselItem } from '../../models/carousel-item.model';
+import { ItemComponent } from '../../models/item.component.model';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, ItemComponent {
 
-  @Input() items: CarouselItem[];
+  @Input() data: CarouselItem[];
 
   constructor() { }
 

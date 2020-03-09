@@ -6,10 +6,10 @@
     <ol class="carousel-indicators">
       <li data-target="#myTestimonials" attr.data-slide-to="{{ i }}"
           [class.active]='f'
-          *ngFor="let testimonio of testimonios; let i = index; let f = first"></li>
+          *ngFor="let testimonio of data; let i = index; let f = first"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item" [class.active]='f' *ngFor="let testimonio of testimonios; let f = first">
+      <div class="carousel-item" [class.active]='f' *ngFor="let testimonio of data; let f = first">
         <div class="container">
           <div class="carousel-caption">
             <!-- <blockquote class="blockquote text-center">

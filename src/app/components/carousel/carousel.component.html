@@ -1,7 +1,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel"
-        *ngFor="let item of items; let i = index; let f = first"
+        *ngFor="let item of data; let i = index; let f = first"
         [class.active]='f'
         attr.data-slide-to='{{ i }}'>
     </li>
@@ -11,7 +11,7 @@
         [class.active]='f'
         [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(' + item.img + ')'}"
         data-interval="15000"
-        *ngFor="let item of items; let i = index; let f = first">
+        *ngFor="let item of data; let i = index; let f = first">
       <!-- <img src="{{ item.img }}" alt="{{ item.title }}" width="100%" height="100%"> -->
       <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg> -->
       <div class="container">

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { GameService } from '../../services/game.service';
 import { Game } from '../../models/game.model';
-import { isDefined } from '@angular/compiler/src/util';
+import { ItemComponent } from '../../models/item.component.model';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.scss']
 })
-export class GamesComponent implements OnInit {
+export class GamesComponent implements OnInit{
 
   selectedPage = 0;
   pageSize = 3;

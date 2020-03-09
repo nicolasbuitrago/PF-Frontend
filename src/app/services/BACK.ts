@@ -2,6 +2,11 @@ import { CarouselItem } from '../models/carousel-item.model';
 import { Game } from '../models/game.model';
 import { Studio } from '../models/studio.model';
 import { Testimonio } from '../models/testimonio.model';
+import { ComponentItem } from '../models/component-item.model';
+
+import { CarouselComponent } from '../components/carousel/carousel.component';
+import { TestimoniosComponent } from '../components/testimonios/testimonios.component';
+import { SectionComponent } from '../components/section/section.component';
 
 export const ITEMS: CarouselItem[] = [
   {
@@ -21,6 +26,27 @@ export const ITEMS: CarouselItem[] = [
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur',
     img: 'https://source.unsplash.com/1550x611/?videogame',
     link: '#'
+  }
+];
+
+export const TESTIMONIOS: Testimonio[] = [
+  {
+    mesg: 'Es asombroso',
+    img: '//placeimg.com/200/200/people',
+    author: 'Carlos Perez',
+    authorInfo: 'Director of Tuna Games'
+  },
+  {
+    mesg: 'Fantastico',
+    img: '//placeimg.com/200/200/people',
+    author: 'Lucas Ramirez',
+    authorInfo: 'Art Designer of Caribbean Games'
+  },
+  {
+    mesg: 'Una maravilla',
+    img: '//placeimg.com/200/200/people',
+    author: 'Mario Diaz',
+    authorInfo: 'Sub-Director of Caption Games'
   }
 ];
 
@@ -90,6 +116,24 @@ export const GAMES: Game[] = [
   }
 ];
 
+export const HOME: ComponentItem[] = [
+  {
+    component: CarouselComponent,
+    data: ITEMS
+  },
+  {
+    component: SectionComponent,
+    data: {
+      title: 'Lorem ipsum!!!',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit'
+    }
+  },
+  {
+    component: TestimoniosComponent,
+    data: TESTIMONIOS
+  }
+];
+
 export const STUDIOS: Studio[] = [
   {
     id: 0,
@@ -125,26 +169,5 @@ export const STUDIOS: Studio[] = [
     type: 'Video games',
     description: 'Somos el estudio 5',
     ubication: 'Barranquilla'
-  }
-];
-
-export const TESTIMONIOS: Testimonio[] = [
-  {
-    mesg: 'Es asombroso',
-    img: '//placeimg.com/200/200/people',
-    author: 'Carlos Perez',
-    authorInfo: 'Director of Tuna Games'
-  },
-  {
-    mesg: 'Fantastico',
-    img: '//placeimg.com/200/200/people',
-    author: 'Lucas Ramirez',
-    authorInfo: 'Art Designer of Caribbean Games'
-  },
-  {
-    mesg: 'Una maravilla',
-    img: '//placeimg.com/200/200/people',
-    author: 'Mario Diaz',
-    authorInfo: 'Sub-Director of Caption Games'
   }
 ];
