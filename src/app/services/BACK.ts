@@ -4,11 +4,7 @@ import { Studio } from '../models/studio.model';
 import { Testimonio } from '../models/testimonio.model';
 import { ComponentItem } from '../models/component-item.model';
 
-import { CarouselComponent } from '../components/carousel/carousel.component';
-import { TestimoniosComponent } from '../components/testimonios/testimonios.component';
-import { SectionComponent } from '../components/section/section.component';
-
-export const ITEMS: CarouselItem[] = [
+const ITEMS: CarouselItem[] = [
   {
     title: 'Carousel item 1',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur?',
@@ -29,7 +25,7 @@ export const ITEMS: CarouselItem[] = [
   }
 ];
 
-export const TESTIMONIOS: Testimonio[] = [
+const TESTIMONIOS: Testimonio[] = [
   {
     mesg: 'Es asombroso',
     img: '//placeimg.com/200/200/people',
@@ -116,21 +112,25 @@ export const GAMES: Game[] = [
   }
 ];
 
-export const HOME: ComponentItem[] = [
+export const HOME: any[] = [
   {
-    component: CarouselComponent,
+    component: 'CarouselComponent',
     data: ITEMS
   },
   {
-    component: SectionComponent,
+    component: 'SectionComponent',
     data: {
       title: 'Lorem ipsum!!!',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit'
     }
   },
   {
-    component: TestimoniosComponent,
+    component: 'TestimoniosComponent',
     data: TESTIMONIOS
+  },
+  {
+    component: 'GamesComponent',
+    data: ''
   }
 ];
 

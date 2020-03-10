@@ -16,8 +16,6 @@ import { ItemComponent } from 'src/app/models/item.component.model';
 export class HomeComponent implements OnInit {
 
   home: ComponentItem[];
-  items: CarouselItem[];
-  testimonios: Testimonio[];
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -25,8 +23,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHome();
-    this.getItems();
-    this.getTestimonios();
   }
 
   getHome(): void {
@@ -44,16 +40,6 @@ export class HomeComponent implements OnInit {
       const componentRef = viewContainerRef.createComponent(componentFactory);
       (componentRef.instance as ItemComponent).data = item.data;
     }
-  }
-
-  getItems(): void {
-    this.homeService.getItems()
-    .subscribe(items => this.items = items);
-  }
-
-  getTestimonios(): void {
-    this.homeService.getTestimonios()
-    .subscribe(testimonios => this.testimonios = testimonios);
   }
 
 }

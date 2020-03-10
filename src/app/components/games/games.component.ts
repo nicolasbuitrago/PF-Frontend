@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { GameService } from '../../services/game.service';
 import { Game } from '../../models/game.model';
@@ -9,8 +9,9 @@ import { ItemComponent } from '../../models/item.component.model';
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.scss']
 })
-export class GamesComponent implements OnInit{
+export class GamesComponent implements OnInit, ItemComponent {
 
+  @Input() data: any;
   selectedPage = 0;
   pageSize = 3;
 
