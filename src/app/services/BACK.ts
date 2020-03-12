@@ -125,6 +125,14 @@ export const HOME: any[] = [
     }
   },
   {
+    component: 'SectionImgBgComponent',
+    data: {
+      title: 'Call us now!!',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio autem nostrum officia sequi facere obcaecati error odio rerum quos inventore tenetur odit adipisci fuga, doloribus alias? Debitis, doloribus eos!.',
+      img: 'https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09'
+    }
+  },
+  {
     component: 'TestimoniosComponent',
     data: TESTIMONIOS
   },

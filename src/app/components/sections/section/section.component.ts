@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ItemComponent } from '../../models/item.component.model';
+import { ItemComponent } from '../../../models/item.component.model';
 
 @Component({
   selector: 'app-section',
@@ -9,7 +9,7 @@ import { ItemComponent } from '../../models/item.component.model';
 })
 export class SectionComponent implements OnInit, ItemComponent {
 
-  @Input() data: any;
+  @Input() data: {title: string, text: string};
 
   constructor() { }
 

@@ -4,7 +4,8 @@ import { Observable, of } from 'rxjs';
 
 import { CarouselComponent } from '../components/carousel/carousel.component';
 import { TestimoniosComponent } from '../components/testimonios/testimonios.component';
-import { SectionComponent } from '../components/section/section.component';
+import { SectionComponent } from '../components/sections/section/section.component';
+import { SectionImgBgComponent } from '../components/sections/section-img-bg/section-img-bg.component';
 import { GamesComponent } from '../components/games/games.component';
 import { CarouselItem } from '../models/carousel-item.model';
 import { Testimonio } from '../models/testimonio.model';
@@ -19,7 +20,7 @@ export class HomeService {
   constructor() { }
 
   getHome(): Observable<ComponentItem[]> {
-    let items: ComponentItem[] = [];
+    const items: ComponentItem[] = [];
     for (const item of HOME) {
       switch (item.component) {
         case 'CarouselComponent': {
@@ -46,6 +47,13 @@ export class HomeService {
         case 'GamesComponent': {
           items.push({
             component: GamesComponent,
+            data: item.data
+          });
+          break;
+        }
+        case 'SectionImgBgComponent': {
+          items.push({
+            component: SectionImgBgComponent,
             data: item.data
           });
           break;

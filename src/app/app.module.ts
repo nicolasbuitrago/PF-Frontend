@@ -15,8 +15,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 import { GamesComponent } from './components/games/games.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { SectionComponent } from './components/section/section.component';
+import { SectionComponent } from './components/sections/section/section.component';
 import { ItemDirective } from './directives/item.directive';
+import { SectionImgBgComponent } from './components/sections/section-img-bg/section-img-bg.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ItemDirective } from './directives/item.directive';
     EventsComponent,
     ErrorComponent,
     SectionComponent,
-    ItemDirective
+    ItemDirective,
+    SectionImgBgComponent
   ],
   imports: [
     BrowserModule,
