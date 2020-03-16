@@ -1,1 +1,32 @@
-<p>events works!</p>
+<div class="container my-4">
+  <h2>Events</h2>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-auto">
+        <bs-datepicker-inline
+          [bsValue]="today"
+          [minDate]="minDate"
+          [maxDate]="maxDate">
+        </bs-datepicker-inline>
+      </div>
+      <div class="col-md">
+        <div class="card-body">
+          <h4 class="card-title">Events</h4>
+          <div class="list-group overflow-auto">
+            <a *ngFor="let event of events"
+              href="#" class="list-group-item list-group-item-action">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ event.title }}</h5>
+                <small>{{ event.date | date }}</small>
+              </div>
+              <p class="mb-1">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              <small>{{ event.place }}</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>MeetUps</h3>
+</div>
+

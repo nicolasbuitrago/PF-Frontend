@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StudiosComponent } from './pages/studios/studios.component';
@@ -40,7 +42,9 @@ import { SectionImgBgComponent } from './components/sections/section-img-bg/sect
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

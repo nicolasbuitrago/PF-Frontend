@@ -1,0 +1,20 @@
+::ng-deep.theme-green {
+  box-shadow: none;
+  // height: 80vh;
+
+  .bs-datepicker-head, .bs-datepicker-body table td span.selected{
+    background-color: #143d6b;
+  }
+
+  .bs-datepicker-body table td.week span{
+    color: #268bff;
+  }
+
+ }
+
+ .list-group {
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+ }

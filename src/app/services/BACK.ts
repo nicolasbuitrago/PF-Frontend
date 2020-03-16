@@ -3,6 +3,7 @@ import { Game } from '../models/game.model';
 import { Studio } from '../models/studio.model';
 import { Testimonio } from '../models/testimonio.model';
 import { ComponentItem } from '../models/component-item.model';
+import { Event } from '../models/event.model';
 
 const ITEMS: CarouselItem[] = [
   {
@@ -177,5 +178,38 @@ export const STUDIOS: Studio[] = [
     type: 'Video games',
     description: 'Somos el estudio 5',
     ubication: 'Barranquilla'
+  }
+];
+
+export const EVENTS: Event[] = [
+  {
+    title: 'Event 1',
+    description: 'Estupendo evento 1',
+    date: new Date('2020-03-01'),
+    place: 'Uninorte, Barranquilla'
+  },
+  {
+    title: 'Event 2',
+    description: 'Estupendo evento 2',
+    date: new Date('2020-03-05'),
+    place: 'Puerta de oro, Barranquilla'
+  },
+  {
+    title: 'Event 3',
+    description: 'Estupendo evento 3',
+    date: new Date('2020-03-10'),
+    place: 'Combarranquilla, Barranquilla'
+  },
+  {
+    title: 'Event 4',
+    description: 'Estupendo evento 4',
+    date: new Date('2020-03-20'),
+    place: 'Puerta de Oro, Barranquilla'
+  },
+  {
+    title: 'Event 5',
+    description: 'Estupendo evento 5',
+    date: new Date('2020-03-30'),
+    place: 'Combarranquilla, Barranquilla'
   }
 ];
