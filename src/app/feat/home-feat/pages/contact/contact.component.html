@@ -1,7 +1,65 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
 <app-page-title [title]="title"></app-page-title>
-<div class="container my-4">
-  <h3>No dudes en contactarnos</h3>
-  <h4>Tel: 355-555</h4>
-</div>
-<!-- <app-footer></app-footer> -->
+<section class="contact-section py-sm-3 py-2 mb-5" id="contact">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+          <h5 class="cont-form">Formulario de contacto</h5>
+          <div class="contact-form">
+            <form action="#" method="post" class="register">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" placeholder="Nombre" name="email" required="">
+              </div>
+              <div class="form-group">
+                <label>Celular</label>
+                <input class="form-control" type="text" placeholder="Celular" name="phone" required="">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" placeholder="ejemplo@email.com" name="email" required="">
+              </div>
+              <div class="form-group">
+                <label>Mensaje</label>
+                <textarea placeholder="Mensaje" class="form-control"></textarea>
+              </div>
+              <div class="form-group mb-0">
+                <button type="submit" class="btn btn-primary btn-block bg-theme text-white w-100 font-weight-bold text-uppercase">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <h5 class="cont-form">Información de contacto</h5>
+          <div class="row flex-column">
+            <div class="contact">
+              <span><i class="fas fa-building"></i></span>
+              <address>Kra 54 # 68 - 169<br>Barranquilla, Atlantico<br> Colombia.</address>
+            </div>
+            <div class="contact my-4">
+              <span><i class="fas fa-phone"></i></span>
+              <div class="d-flex flex-column">
+                <p>355-555-555</p>
+                <p>355-555-555</p>
+                <p>355-555-555</p>
+              </div>
+            </div>
+            <div class="contact">
+              <span><i class="far fa-envelope"></i></span>
+              <div class="d-flex flex-column">
+                <a href="mailto:example@email.com" class="d-block">info@example1.com</a>
+                <a href="mailto:example@email.com" class="my-2 d-block">info@example2.com</a>
+                <a href="mailto:example@email.com">info@example3.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="mx-auto text-center mt-lg-0 mt-4">
+      <iframe class="mt-lg-4 contact-form"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.549625813364!2d-74.80119848577134!3d10.997327492171836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d75c8893ef5%3A0x12a761c8d4a0fc34!2sCra.%2054%20%2368-169%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1584553999709!5m2!1ses!2sco"
+          allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

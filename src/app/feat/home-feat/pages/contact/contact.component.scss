@@ -1,0 +1,70 @@
+@import '~styles/abstracts/_variables.scss';
+
+h5.cont-form {
+  margin: 1em 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.7em;
+  color: $primary;
+  font-weight: 600;
+}
+
+form.register .form-control {
+  padding: 15px 20px;
+  border: 1px solid #dbdde2;
+  border-radius: 0;
+  -webkit-box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  -moz-box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  letter-spacing: 1px;
+}
+
+.contact-form {
+  padding: 2em;
+  border: 20px solid #eee;
+  border-radius: 20px;
+}
+
+#contact iframe {
+  width: 100%;
+  border: 3px solid #000;
+  padding: 1vw;
+  // background: #eee;
+  // border-radius: 20px;
+  min-height: 500px;
+}
+
+.contact span {
+  color: $primary;
+  font-size: 1.6em;
+  // display: inline-block;
+  // vertical-align: middle;
+  // background: #fff;
+  // width: 50px;
+  // height: 50px;
+  // line-height: 50px;
+  // -webkit-box-shadow: 5px 10px 10px 0px rgba(216, 216, 216, 0.78);
+  // -moz-box-shadow: 5px 10px 10px 0px rgba(216, 216, 216, 0.78);
+  // box-shadow: 5px 10px 10px 0px rgba(216, 216, 216, 0.78);
+  /* border-radius: 8% 37% 5% 26%; */
+  /* border: 1px solid #fff; */
+  // text-align: center;
+}
+
+.contact {
+  background: #eee;
+  padding: 2em 1em;
+  border-radius: 20px;
+}
+
+.contact a,
+.contact address p {
+  color: #000;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+
+textarea {
+  height: 200px;
+  resize: none;
+}
