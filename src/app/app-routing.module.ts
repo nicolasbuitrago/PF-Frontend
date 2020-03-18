@@ -14,10 +14,6 @@ const routes: Routes = [
   {
     path: 'studios',
     loadChildren: () => import('./feat/studios-feat/studios-feat.module').then(m => m.StudiosFeatModule),
-  },
-  {
-    path: 'dummy-feat-module',
-    loadChildren: () => import('./feat/dummy-feat/dummy-feat.module').then(m => m.DummyFeatModule),
   }
 ];
 

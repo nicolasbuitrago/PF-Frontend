@@ -2,46 +2,38 @@
   class="navbar navbar-expand-lg navbar-light navbar-fixed-top"
   [ngClass]="{'top-nav-collapse': !fixed, 'fixed-top': fixed}">
   <h1>
-      <a class="navbar-brand" routerLink="/home" data-blast="color">
-        <i class="fas fa-gamepad"></i>
-        VideoGames
-      </a>
+    <a class="navbar-brand" routerLink="/home" data-blast="color">
+      <i class="fas fa-gamepad"></i>
+      VideoGames
+    </a>
   </h1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-          <!-- <li class="nav-item active">
-              <a class="nav-link" routerLink="/home" data-blast="color">Home
-                  <span class="sr-only">(current)</span>
-              </a>
-          </li> -->
-          <li class="nav-item  mt-lg-0 mt-3">
-            <a class="nav-link scroll" routerLink="/studios">Studios</a>
-          </li>
-          <li class="nav-item  mt-lg-0 mt-3">
-              <a class="nav-link scroll" routerLink="/home/events" routerLinkActive="active">Events</a>
-          </li>
-          <li class="nav-item mt-lg-0 mt-3">
-              <a class="nav-link scroll" routerLink="/dummy-feat-module" routerLinkActive="active">Dummy</a>
-          </li>
-          <li class="nav-item dropdown mt-lg-0 mt-3">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item scroll nav-link" routerLink="/home/landing">home</a>
-                  <a class="dropdown-item scroll nav-link" href="#team">team</a>
-                  <a class="dropdown-item scroll nav-link" href="#portfolio">portfolio</a>
-                  <a class="dropdown-item scroll nav-link" href="#posts">latest posts</a>
-              </div>
-          </li>
-          <li class="nav-item  mt-lg-0 mt-3">
-              <a class="nav-link scroll" routerLink="/home/contact">Contact</a>
-          </li>
-      </ul>
+    <ul class="navbar-nav ml-auto text-center">
+      <li class="nav-item  mt-lg-0 mt-3">
+        <a class="nav-link scroll" routerLink="/studios" routerLinkActive="active">Studios</a>
+      </li>
+      <li class="nav-item  mt-lg-0 mt-3">
+        <a class="nav-link scroll" routerLink="/home/events" routerLinkActive="active">Events</a>
+      </li>
+      <li class="nav-item mt-lg-0 mt-3">
+        <a class="nav-link scroll" routerLink="/home/contact" routerLinkActive="active">Contact</a>
+      </li>
+      <li class="nav-item dropdown mt-lg-0 mt-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item scroll nav-link" routerLink="/home/landing">home</a>
+          <a class="dropdown-item scroll nav-link" href="#team">team</a>
+          <a class="dropdown-item scroll nav-link" href="#portfolio">portfolio</a>
+          <a class="dropdown-item scroll nav-link" href="#posts">latest posts</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>
