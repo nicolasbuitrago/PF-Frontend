@@ -39,31 +39,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.navbar-fixed-top.top-nav-collapse {
   }
 }
 
-// .fixed-top {
-//   z-index: 11;
-// }
-
-h1.wthree-logo {
-  line-height: 1;
-
-  a {
-    text-transform: capitalize;
-    font-size: 0.7em;
-    color: #fff;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-  }
-}
-
 nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.navbar-fixed-top.top-nav-collapse {
   background: #000;
   padding: 0.5em 6em;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 5px 8px 0 rgba(0, 0, 0, .14), 0 1px 14px 0 rgba(0, 0, 0, .12);
-
-  h1.wthree-logo a {
-    color: #000;
-    font-size: 0.7em;
-  }
 }
 
 li.nav-item {
@@ -94,7 +73,7 @@ ul.navbar-nav.ml-lg-auto.text-center {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus,
-.navbar-dark .navbar-nav .show>.nav-link,
+// .navbar-dark .navbar-nav .show>.nav-link,
 .navbar-dark .navbar-nav .active>.nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {

@@ -4,6 +4,7 @@ import { HomeSubModule } from './modules/home-sub.module';
 import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,16 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+    children: [
+      { // no lazy loading module
+        path: 'submodule',
+        component: HomeSubModule
+      }
+    ]
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
     children: [
       { // no lazy loading module
         path: 'submodule',
