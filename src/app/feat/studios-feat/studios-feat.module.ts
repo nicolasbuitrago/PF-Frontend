@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { StudiosFeatRoutingModule } from './studios-feat-routing.module';
 import { StudiosComponent } from './pages/studios/studios.component';
 import { StudioComponent } from './pages/studio/studio.component';
+import { VideogamesComponent } from './components/videogames/videogames.component';
 
 
 @NgModule({
-  declarations: [StudiosComponent, StudioComponent],
+  declarations: [StudiosComponent, StudioComponent, VideogamesComponent],
   imports: [
     CommonModule,
     SharedModule,
