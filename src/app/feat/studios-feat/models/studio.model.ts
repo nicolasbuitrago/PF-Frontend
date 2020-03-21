@@ -1,3 +1,5 @@
+import { Game } from '@shared/interfaces/game.model';
+
 export interface Studio {
   id: number;
   name: string;
@@ -8,4 +10,5 @@ export interface Studio {
     lat: string,
     lon: string
   };
+  games: Game[];
 }

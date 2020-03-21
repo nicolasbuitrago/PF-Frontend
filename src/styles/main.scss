@@ -1,8 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @charset 'utf-8';
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
-
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
@@ -11,6 +9,8 @@
 @import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 /* You can add global styles to this file, and also import other style files */
 body {
