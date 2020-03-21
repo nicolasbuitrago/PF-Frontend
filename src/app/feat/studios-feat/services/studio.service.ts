@@ -15,4 +15,8 @@ export class StudioService {
   getStudios(): Observable<Studio[]> {
     return of(STUDIOS);
   }
+
+  getStudio(id: number): Observable<Studio> {
+    return of(STUDIOS.find(studio => studio.id === id));
+  }
 }
