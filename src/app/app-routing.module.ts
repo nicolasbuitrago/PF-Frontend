@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
   {
     path: 'studios',
     loadChildren: () => import('./feat/studios-feat/studios-feat.module').then(m => m.StudiosFeatModule),
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 
 import { ItemDirective } from './directives/item.directive';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ItemDirective } from './directives/item.directive';
     NavBarComponent,
     PageTitleComponent,
     FooterComponent,
-    ItemDirective
+    ItemDirective,
+    PageNotFoundComponent
   ],
   exports: [
     CommonModule,
