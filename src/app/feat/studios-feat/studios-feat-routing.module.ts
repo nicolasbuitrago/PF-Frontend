@@ -13,22 +13,12 @@ const routes: Routes = [
   {
     path: 'list',
     component: StudiosComponent,
-    children: [
-      { // no lazy loading module
-        path: 'submodule',
-        component: StudiosSubModule
-      }
-    ]
+    data: { animation: 'studios'}
   },
   {
     path: 'info/:id',
     component: StudioComponent,
-    children: [
-      { // no lazy loading module
-        path: 'submodule',
-        component: StudiosSubModule
-      }
-    ]
+    data: { animation: 'studio'}
   }
 ];
 
