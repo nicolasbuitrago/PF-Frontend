@@ -9,6 +9,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 
 import { ItemDirective } from './directives/item.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   imports: [
@@ -20,8 +21,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NavBarComponent,
     PageTitleComponent,
     FooterComponent,
+    PageNotFoundComponent,
     ItemDirective,
-    PageNotFoundComponent
+    SafePipe
   ],
   exports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NavBarComponent,
     FooterComponent,
     PageTitleComponent,
-    ItemDirective
+    ItemDirective,
+    SafePipe
   ]
 })
 export class SharedModule { }

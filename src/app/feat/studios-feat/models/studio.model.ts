@@ -3,5 +3,9 @@ export interface Studio {
   name: string;
   type: string;
   description: string;
-  ubication: string;
+  city: string;
+  ubication: {
+    lat: string,
+    lon: string
+  };
 }
