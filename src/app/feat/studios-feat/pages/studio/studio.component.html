@@ -24,7 +24,12 @@
         <div class="card-body">
           <h2 class="card-title">{{ studio.name }}</h2>
           <h4 class="card-subtitle text-muted">{{ studio.type }}</h4>
-          <p class="card-text">{{ studio.city }}</p>
+          <span *ngFor="let tag of studio.tags; let i = index"
+            class="badge badge-pill badge-info"
+            [class.ml-1]="i !== 0">
+            {{ tag }}
+          </span>
+          <p class="card-text mt-2">{{ studio.city }}</p>
           <p class="card-text">{{ studio.description }}</p>
         </div>
       </div>
