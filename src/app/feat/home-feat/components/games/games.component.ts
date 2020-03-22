@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { GameService } from '../../services/game.service';
-import { Game } from '../../models/game.model';
+import { Game } from '@shared/interfaces/game.model';
 import { ItemComponent } from '../../models/item.component.model';
 
 @Component({

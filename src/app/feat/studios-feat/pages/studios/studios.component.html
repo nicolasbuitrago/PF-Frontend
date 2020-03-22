@@ -1,18 +1,18 @@
 <app-nav-bar></app-nav-bar>
 <div class="album py-5 bg-light">
   <div class="container pb-4">
-    <h2>Video game studios</h2>
+    <h2>Estudios de videojuegos</h2>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6" *ngFor="let studio of studios" >
         <div class="card mb-4 shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#55595c"/>
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{studio.name}}</text>
-          </svg>
-          <!-- <img class="bd-placeholder-img card-img-top" src="//placeimg.com/400/225/tech" alt="Studio" width="100%" height="225"> -->
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ studio.name }}</text>
+          </svg> -->
+          <img class="bd-placeholder-img card-img-top" src="{{ studio.img }}" alt="Studio" width="100%" height="250">
           <div class="card-body">
             <h5 class="card-title">{{ studio.name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ studio.type }}</h6>

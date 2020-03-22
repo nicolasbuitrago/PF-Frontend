@@ -1,5 +1,5 @@
 import { CarouselItem } from '../models/carousel-item.model';
-import { Game } from '../models/game.model';
+import { Game } from '@shared/interfaces/game.model';
 import { Testimonio } from '../models/testimonio.model';
 // import { ComponentItem } from '../models/component-item.model';
 import { Event } from '../models/event.model';
@@ -45,7 +45,6 @@ const TESTIMONIOS: Testimonio[] = [
     authorInfo: 'Sub-Director of Caption Games'
   }
 ];
-
 
 export const HOME: any[] = [
   {
@@ -113,66 +112,93 @@ export const EVENTS: Event[] = [
 export const GAMES: Game[] = [
   {
     id: 0,
+    img: 'https://source.unsplash.com/350x350/?mario,bros',
     name: 'Mario bros',
     description: 'Super game with mario',
     studio: 0,
-    type: 'Arcade'
+    type: 'Arcade',
+    link: '#',
+    video: '#',
   },
   {
     id: 1,
+    img: 'https://source.unsplash.com/350x350/?soccer',
     name: 'PES 2020',
     description: 'Soccer game',
     studio: 2,
-    type: 'Sports'
+    type: 'Sports',
+    link: '#',
+    video: '#',
   },
   {
     id: 2,
+    img: 'https://source.unsplash.com/350x350/?race',
     name: 'Mario Kars',
     description: 'Super game with mario and cars',
     studio: 0,
-    type: 'Race'
+    type: 'Race',
+    link: '#',
+    video: '#',
   },
   {
     id: 3,
+    img: 'https://source.unsplash.com/350x350/?militar',
     name: 'COD',
     description: 'Militar FPS',
     studio: 3,
-    type: 'FPS'
+    type: 'FPS',
+    link: '#',
+    video: '#',
   },
   {
     id: 0,
+    img: 'https://source.unsplash.com/350x350/?mario,bros',
     name: 'Mario bros',
     description: 'Super game with mario',
     studio: 0,
-    type: 'Arcade'
+    type: 'Arcade',
+    link: '#',
+    video: '#',
   },
   {
     id: 1,
+    img: 'https://source.unsplash.com/350x350/?soccer',
     name: 'PES 2020',
     description: 'Soccer game',
     studio: 2,
-    type: 'Sports'
+    type: 'Sports',
+    link: '#',
+    video: '#',
   },
   {
     id: 2,
+    img: 'https://source.unsplash.com/350x350/?race',
     name: 'Mario Karts',
     description: 'Super game with mario and cars',
     studio: 0,
-    type: 'Race'
+    type: 'Race',
+    link: '#',
+    video: '#',
   },
   {
     id: 3,
+    img: 'https://source.unsplash.com/350x350/?militar',
     name: 'COD',
     description: 'Militar FPS',
     studio: 3,
-    type: 'FPS'
+    type: 'FPS',
+    link: '#',
+    video: '#',
   },
   {
     id: 5,
+    img: 'https://source.unsplash.com/350x350/?war',
     name: 'WAR',
     description: 'Militar WAR',
     studio: 3,
-    type: 'WAR'
+    type: 'WAR',
+    link: '#',
+    video: '#',
   }
 ];
 

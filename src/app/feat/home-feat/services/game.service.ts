@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { Game } from '../models/game.model';
+import { Game } from '@shared/interfaces/game.model';
 import { GAMES } from './BACK';
 
 @Injectable({
