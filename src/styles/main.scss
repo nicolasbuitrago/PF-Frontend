@@ -21,6 +21,10 @@ body {
   flex: 1 0 auto;
 }
 
-.bg-dark {
-  background-color: #000000 !important;
+.full-page {
+  min-height: calc(100vh - 480px);
 }
+
+// .bg-dark {
+//   background-color: #000000 !important;
+// }

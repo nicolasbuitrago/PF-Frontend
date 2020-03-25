@@ -1,7 +1,6 @@
-.full-page {
-  min-height: calc(100vh - 480px);
-}
+@import '~styles/abstracts/_variables.scss';
 
 span.sad {
   font-size: 10rem;
+  // color: $primary;
 }
