@@ -9,7 +9,7 @@ import { ItemComponent } from '../../../models/item.component.model';
 })
 export class SectionComponent implements OnInit, ItemComponent {
 
-  @Input() data: {title: string, text: string};
+  @Input() data: {title: string, text: string, link: string, img: string, left: boolean};
 
   constructor() { }
 

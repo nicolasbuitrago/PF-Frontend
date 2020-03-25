@@ -7,7 +7,7 @@ import { ItemComponent } from '../../../models/item.component.model';
 })
 export class SectionImgBgComponent implements OnInit, ItemComponent {
 
-  @Input() data: {title: string, text: string, img: string};
+  @Input() data: {title: string, text: string, img: string, link: string};
 
   constructor() { }
 

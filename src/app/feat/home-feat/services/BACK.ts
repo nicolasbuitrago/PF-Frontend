@@ -55,7 +55,9 @@ export const HOME: any[] = [
     component: 'SectionComponent',
     data: {
       title: 'Lorem ipsum!!!',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit'
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit',
+      link: '#',
+      img: 'https://source.unsplash.com/600x600/?work,office'
     }
   },
   {
@@ -63,7 +65,8 @@ export const HOME: any[] = [
     data: {
       title: 'Call us now!!',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio autem nostrum officia sequi facere obcaecati error odio rerum quos inventore tenetur odit adipisci fuga, doloribus alias? Debitis, doloribus eos!.',
-      img: 'https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09'
+      img: 'https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09',
+      link: '#'
     }
   },
   {
@@ -73,6 +76,16 @@ export const HOME: any[] = [
   {
     component: 'GamesComponent',
     data: ''
+  },
+  {
+    component: 'SectionComponent',
+    data: {
+      title: 'Lorem ipsum!!!',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit',
+      link: '#',
+      img: 'https://source.unsplash.com/600x600/?friend,fun',
+      left: true
+    }
   }
 ];
 

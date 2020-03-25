@@ -1,7 +1,15 @@
-<div class="container my-5 by-5">
+<div class="container-fluid"
+  [ngClass]="{'py-5':!data.img, 'my-5':!data.img}">
   <div class="row justify-content-center text-center">
-    <h2>{{ data.title }}</h2>
-    <h4>{{ data.text }}</h4>
-    <a href="#" class="btn btn-primary">GO</a>
+    <div class="col-lg align-self-center py-5 py-lg-0 my-5 my-lg-0"
+      [class.order-2]="data.left">
+      <h2 class="font-weight-bold">{{ data.title }}</h2>
+      <h4>{{ data.text }}</h4>
+      <a href="#" class="btn btn-primary btn-lg mt-2" *ngIf="data.link">GO</a>
+    </div>
+    <div class="col-lg-5 px-0 d-none d-lg-block" *ngIf="data.img"
+      [class.order-1]="data.left">
+      <img src="{{ data.img }}" height="auto" width="100%">
+    </div>
   </div>
 </div>
