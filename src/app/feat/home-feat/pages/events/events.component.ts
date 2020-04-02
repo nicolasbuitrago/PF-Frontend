@@ -3,6 +3,7 @@ import { DatepickerDateCustomClasses } from 'ngx-bootstrap/datepicker';
 
 import { EventService } from '../../services/event.service';
 import { Event } from '../../models/event.model';
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-events',
@@ -19,7 +20,7 @@ export class EventsComponent implements OnInit {
   selectedEvents: Event[];
   dateCustomClasses: DatepickerDateCustomClasses[];
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private contentService: ContentService) {
     this.selectedDate = new Date();
     this.today = new Date();
     this.minDate = new Date();
@@ -47,14 +48,21 @@ export class EventsComponent implements OnInit {
     });
   }
 
+  result: string = 'R = ';
+  getEventsShare(): void {
+    this.contentService.getEvents().subscribe(events => {
+      this.result += events.length + ' ';
+    });
+  }
+
   onDateChange(value: Date): void {
     this.selectedDate = value;
     this.selectedEvents = [];
-    console.log('Date changed ' + value.getDay());
+    // console.log('Date changed ' + value.getDay());
     for (const event of this.events) {
-      console.log(event.date.getTime() + ' === ' + this.selectedDate.getTime());
+      // console.log(event.date.getTime() + ' === ' + this.selectedDate.getTime());
       if (this.equalDate(event.date, value)) {
-        console.log('Event added ' + event.title);
+        // console.log('Event added ' + event.title);
         this.selectedEvents.push(event);
       }
     }
@@ -65,7 +73,7 @@ export class EventsComponent implements OnInit {
     const b = new Date(DateB);
     const msDateA = Date.UTC(a.getFullYear(), a.getMonth() + 1, a.getDate());
     const msDateB = Date.UTC(b.getFullYear(), b.getMonth() + 1, b.getDate());
-    console.log(msDateA + ' === ' + msDateB);
+    // console.log(msDateA + ' === ' + msDateB);
     return msDateA === msDateB;
 }
 }

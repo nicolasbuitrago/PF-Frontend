@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 // import { NgxPageScrollModule } from 'ngx-page-scroll';
@@ -16,6 +17,7 @@ import { CoreModule } from './core';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
 
     // core & shared
     CoreModule,
