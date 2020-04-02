@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { StudiosSubModule } from './modules/studios-sub.module';
 import { StudiosComponent } from './pages/studios/studios.component';
 import { StudioComponent } from './pages/studio/studio.component';
+import { GameComponent } from './pages/game/game.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,13 @@ const routes: Routes = [
   {
     path: 'info/:id',
     component: StudioComponent,
-    data: { animation: 'studio'}
+    data: { animation: 'studio'}// ,
+    // children: [
+    //   {
+    //     path: ':idGame',
+    //     component: GameComponent
+    //   }
+    // ]
   }
 ];
 

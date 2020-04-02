@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared';
 import { CoreModule } from './core';
 
-
 @NgModule({
   declarations: [
     AppComponent

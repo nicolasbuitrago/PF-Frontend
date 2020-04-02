@@ -47,6 +47,9 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.navbar-fixed-top.top-nav-colla
 
 li.nav-item {
   margin-right: 2em;
+  @media screen and (max-width: 992px) {
+    margin-right: 0;
+  }
 }
 
 li.nav-item:last-child {
