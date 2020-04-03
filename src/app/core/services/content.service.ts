@@ -3,18 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, ReplaySubject, Subject, merge } from 'rxjs';
 import { delay, share, tap, shareReplay, refCount } from 'rxjs/operators';
 
-import { CarouselComponent } from '../components/carousel/carousel.component';
-import { TestimoniosComponent } from '../components/testimonios/testimonios.component';
-import { SectionComponent } from '../components/sections/section/section.component';
-import { SectionImgBgComponent } from '../components/sections/section-img-bg/section-img-bg.component';
-import { GamesComponent } from '../components/games/games.component';
+import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.component';
+import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
+import { SectionComponent } from '@feat/home-feat/components/sections/section/section.component';
+import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
+import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 
-import { ComponentItem } from '../models/component-item.model';
-import { Event } from '../models/event.model';
+import { ComponentItem } from '@shared/interfaces/component-item.model';
+import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
-import { HOME, EVENTS, GAMES, ABOUT, CONTACT } from './BACK';
-import { Contact } from '../models/contact.model';
-import { About } from '../models/about.model';
+import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
+import { Contact } from '@shared/interfaces/contact.model';
+import { About } from '@shared/interfaces/about.model';
+import { Footer } from '@app/shared/interfaces/footer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -113,5 +114,9 @@ export class ContentService {
 
   getAbout(): Observable<About> {
     return of(ABOUT);
+  }
+
+  getFooter(): Observable<Footer> {
+    return of(FOOTER);
   }
 }

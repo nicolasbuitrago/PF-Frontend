@@ -3,7 +3,7 @@ import { DatepickerDateCustomClasses } from 'ngx-bootstrap/datepicker';
 
 import { EventService } from '../../services/event.service';
 import { Event } from '../../models/event.model';
-import { ContentService } from '../../services/content.service';
+import { ContentService } from '@core/services/content.service';
 
 @Component({
   selector: 'app-events',

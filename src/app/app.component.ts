@@ -9,6 +9,7 @@ import { slideInAnimation } from '@shared/animations';
   animations: [ slideInAnimation ]
 })
 export class AppComponent {
+
   title = 'videogames';
 
   getAnimationData(outlet: RouterOutlet) {

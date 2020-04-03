@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer } from '@app/shared/interfaces/footer.model';
+import { ContentService } from '@app/core/services/content.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  content: Footer;
+
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentService.getFooter().subscribe((cont: Footer) => {
+      this.content = cont;
+    });
   }
 
 }
