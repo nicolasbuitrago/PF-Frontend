@@ -270,6 +270,12 @@ export const ABOUT: About = {
 
 export const FOOTER: Footer = {
   text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+  links: {
+    facebook: '#facebbok',
+    twitter: '#twitter',
+    linkedin: '#linkedin',
+    instagram: '#instagram'
+  },
   address: 'Kra 54 # 68 - 169',
   phone: 'info@example.com',
   email: '355-555-555',

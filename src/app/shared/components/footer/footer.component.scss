@@ -24,4 +24,9 @@
 
 a.icon {
   font-size: 1.6rem;
+  color: $normal;
+}
+
+a.icon:hover {
+  color: $primary;
 }
