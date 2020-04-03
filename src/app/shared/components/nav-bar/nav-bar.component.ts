@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AppComponent } from '@app/app.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,11 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  title: string;
   @Input() fixed = false;
 
-  constructor() { }
+  constructor(private appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    this.title = this.appComponent.title;
   }
 
 }
