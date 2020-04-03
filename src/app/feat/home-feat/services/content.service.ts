@@ -12,7 +12,9 @@ import { GamesComponent } from '../components/games/games.component';
 import { ComponentItem } from '../models/component-item.model';
 import { Event } from '../models/event.model';
 import { Game } from '@shared/interfaces/game.model';
-import { HOME, EVENTS, GAMES } from './BACK';
+import { HOME, EVENTS, GAMES, ABOUT, CONTACT } from './BACK';
+import { Contact } from '../models/contact.model';
+import { About } from '../models/about.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,8 @@ export class ContentService {
 
   constructor(private http: HttpClient) {
     this.infiniteGames$ = new Subject<void>().asObservable();
-    this.games$ = merge(of(GAMES).pipe(tap(() => console.log('***SIDE EFFECT***')))
+    this.games$ = merge(
+      of(GAMES).pipe(tap(() => console.log('***SIDE EFFECT***')))
       // this
       //   .http
       //   .get<Game[]>('some-url')
@@ -102,5 +105,13 @@ export class ContentService {
 
   games(): Observable<Game[]> {
     return this.games$;
+  }
+
+  getContact(): Observable<Contact> {
+    return of(CONTACT);
+  }
+
+  getAbout(): Observable<About> {
+    return of(ABOUT);
   }
 }

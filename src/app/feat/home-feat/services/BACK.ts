@@ -3,6 +3,8 @@ import { Game } from '@shared/interfaces/game.model';
 import { Testimonio } from '../models/testimonio.model';
 // import { ComponentItem } from '../models/component-item.model';
 import { Event } from '../models/event.model';
+import { About } from '../models/about.model';
+import { Contact } from '../models/contact.model';
 
 const ITEMS: CarouselItem[] = [
   {
@@ -223,4 +225,45 @@ export const GAMES: Game[] = [
     video: '#',
   }
 ];
+
+export const CONTACT: Contact = {
+  address: 'Kra 54 # 68 - 169',
+  city: 'Barranquilla, Atlantico',
+  phone1: '355-555-555',
+  phone2: '355-555-555',
+  email1: 'info@example1.com',
+  email2: 'info@example2.com',
+  embedMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.549625813364!2d-74.80119848577134!3d10.997327492171836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d75c8893ef5%3A0x12a761c8d4a0fc34!2sCra.%2054%20%2368-169%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1584553999709!5m2!1ses!2sco'
+};
+
+export const ABOUT: About = {
+  mision: {
+    img: 'https://source.unsplash.com/1550x611/?videogame,company',
+    first: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
+    calendar: {
+      title: 'Lorem ipsum',
+      text: 'Lorem ipolor sit amet, no sea takimata sanctus est Loremsum dolor sit amet, adipisicing elit.'
+    },
+    plot: {
+      title: 'Lorem ipolor sit amet',
+      text: 'Lorem ipsum dolorsita.Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore\
+        magna aliquyam erat, At vero eos et accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet,\
+        no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren.'
+    }
+  },
+  vision: {
+    img: 'https://source.unsplash.com/1550x611/?videogame,work',
+    first: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
+    calendar: {
+      title: 'Lorem ipsum',
+      text: 'Lorem ipolor sit amet, no sea takimata sanctus est Loremsum dolor sit amet, adipisicing elit.'
+    },
+    plot: {
+      title: 'Lorem ipolor sit amet',
+      text: 'Lorem ipsum dolorsita.Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore\
+        magna aliquyam erat, At vero eos et accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet,\
+        no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren.'
+    }
+  }
+};
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from '../../services/content.service';
+import { Contact } from '../../models/contact.model';
 
 @Component({
   templateUrl: './contact.component.html',
@@ -7,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   title = 'Contactanos';
+  contact: Contact;
 
-  constructor() { }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentService.getContact().subscribe(
+      (contact: Contact) => {
+        this.contact = contact;
+      }
+    );
   }
 
 }

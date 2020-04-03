@@ -34,20 +34,20 @@
           <div class="row flex-column">
             <div class="contact">
               <div class="icon mb-3"><i class="fas fa-building"></i> Dirección</div>
-              <address>Kra 54 # 68 - 169<br>Barranquilla, Atlantico<br> Colombia.</address>
+              <address>{{ contact.address }}<br>{{ contact.city }}<br> Colombia.</address>
             </div>
             <div class="contact my-4">
               <div class="icon mb-3"><i class="fas fa-phone"></i> Teléfono</div>
               <div class="d-flex flex-column">
-                <p>355-555-555</p>
-                <p>355-555-555</p>
+                <p>{{ contact.phone1 }}</p>
+                <p>{{ contact.phone2 }}</p>
               </div>
             </div>
             <div class="contact">
               <div class="icon mb-3"><i class="far fa-envelope"></i> Email</div>
               <div class="d-flex flex-column">
-                <a href="mailto:example@email.com" class="d-block">info@example1.com</a>
-                <a href="mailto:example@email.com" class="my-2 d-block">info@example2.com</a>
+                <a href="mailto:{{contact.email1}}" class="d-block">{{contact.email1}}</a>
+                <a href="mailto:{{contact.email2}}" class="my-2 d-block">{{contact.email2}}</a>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
     </div>
     <div class="mx-auto text-center mt-lg-0 mt-4">
       <iframe class="mt-lg-4 contact-form"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.549625813364!2d-74.80119848577134!3d10.997327492171836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d75c8893ef5%3A0x12a761c8d4a0fc34!2sCra.%2054%20%2368-169%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1584553999709!5m2!1ses!2sco"
+          [src]="contact.embedMap | safe"
           allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
   </div>

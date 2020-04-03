@@ -5,14 +5,15 @@
       <h2 class="mb-md-4 text-center">Acerca de nosotros</h2>
       <div class="row no-gutters">
         <div class="col-lg-5">
-            <div class="slide-banner d-none d-lg-block"></div>
+            <div [ngStyle]="{ 'background': 'url(' + about.mision.img + ') no-repeat center' }"
+              class="slide-banner d-none d-lg-block"></div>
         </div>
         <div class="col-lg-7">
           <div class="bg-abt light-bg">
             <div class="container">
               <div class="title-desc  pb-sm-3">
                   <h3 class="main-title">Misión</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                  <p>{{ about.mision.first }}</p>
               </div>
               <div class="row flex-column mt-3">
                 <div class="abt-grid">
@@ -24,8 +25,8 @@
                     </div>
                     <div class="col-sm-9 pl-sm-0">
                       <div class="abt-txt ml-sm-0">
-                        <h4>Lorem ipsum</h4>
-                        <p>Lorem ipolor sit amet, no sea takimata sanctus est Loremsum dolor sit amet, adipisicing elit.</p>
+                        <h4>{{ about.mision.calendar.title }}</h4>
+                        <p>{{ about.mision.calendar.text }}</p>
                       </div>
                     </div>
                   </div>
@@ -39,12 +40,8 @@
                     </div>
                     <div class="col-sm-9 pl-sm-0">
                       <div class="abt-txt ml-sm-0">
-                        <h4>Lorem ipolor sit amet</h4>
-                        <p>
-                          Lorem ipsum dolorsita.Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                          magna aliquyam erat, At vero eos et accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet,
-                          no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren.
-                        </p>
+                        <h4>{{ about.mision.plot.title }}</h4>
+                        <p>{{ about.mision.plot.text }}</p>
                       </div>
                     </div>
                   </div>
@@ -61,7 +58,8 @@
     <div class="container pb-md-5 pb-4">
       <div class="row flex-row-reverse no-gutters">
         <div class="col-lg-5">
-          <div class="slide-banner d-none d-lg-block">
+          <div [ngStyle]="{ 'background': 'url(' + about.vision.img + ') no-repeat center' }"
+            class="slide-banner d-none d-lg-block">
           </div>
         </div>
         <div class="col-lg-7">
@@ -69,7 +67,7 @@
             <div class="container">
               <div class="title-desc  pb-sm-3">
                 <h3 class="main-title">Visión</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>{{ about.vision.first }}</p>
               </div>
               <div class="row flex-column mt-3">
                 <div class="abt-grid">
@@ -81,9 +79,8 @@
                     </div>
                     <div class="col-sm-9 pl-sm-0">
                         <div class="abt-txt ml-sm-0">
-                            <h4>Lorem ipsum sanctus</h4>
-                            <p>Lo sea takimata sanctus est Lorem ipolor sit amet, no sea takimata
-                                sanctus est Loremsum dolor sit amet.</p>
+                            <h4>{{ about.vision.calendar.title }}</h4>
+                            <p>{{ about.vision.calendar.text }}</p>
                         </div>
                     </div>
                   </div>
@@ -97,12 +94,8 @@
                     </div>
                     <div class="col-sm-9 pl-sm-0">
                       <div class="abt-txt ml-sm-0">
-                        <h4> Lorem ipolor sit amet</h4>
-                        <p>
-                          Lorem ipsum dolorsita.Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                          magna aliquyam erat, At vero eos et accusam et justo duo dolores et earebum. Lorem ipsum dolor sit amet,
-                          no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren.
-                        </p>
+                        <h4>{{ about.vision.plot.title }}</h4>
+                        <p>{{ about.vision.plot.text }}</p>
                       </div>
                     </div>
                   </div>
