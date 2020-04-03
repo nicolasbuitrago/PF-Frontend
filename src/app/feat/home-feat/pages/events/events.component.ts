@@ -50,7 +50,7 @@ export class EventsComponent implements OnInit {
 
   result: string = 'R = ';
   getEventsShare(): void {
-    this.contentService.getEvents().subscribe(events => {
+    this.contentService.games().subscribe(events => {
       this.result += events.length + ' ';
     });
   }
