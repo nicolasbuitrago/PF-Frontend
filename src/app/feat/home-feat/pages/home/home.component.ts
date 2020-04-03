@@ -2,10 +2,10 @@ import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular
 
 import { ItemDirective } from '@shared/directives/item.directive';
 
-import { HomeService } from '../../services/home.service';
+import { ContentService } from '@core/services/content.service';
 // import { CarouselItem } from '../../models/carousel-item.model';
 // import { Testimonio } from '../../models/testimonio.model';
-import { ComponentItem } from '../../models/component-item.model';
+import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { ItemComponent } from '../../models/item.component.model';
 
 @Component({
@@ -19,14 +19,14 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private homeService: HomeService) { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private contentService: ContentService) { }
 
   ngOnInit(): void {
     this.getHome();
   }
 
   getHome(): void {
-    this.homeService.getHome()
+    this.contentService.getHome()
     .subscribe((home: ComponentItem[]) => {
       this.home = home;
       this.loadComponents();

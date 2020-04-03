@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { CarouselItem } from '../../models/carousel-item.model';
+import { CarouselItem } from '@shared/interfaces/carousel-item.model';
 import { ItemComponent } from '../../models/item.component.model';
 
 @Component({

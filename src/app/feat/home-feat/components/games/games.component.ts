@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { GameService } from '../../services/game.service';
+// import { ContentService } from '@core/services/content.service';
 import { Game } from '@shared/interfaces/game.model';
 import { ItemComponent } from '../../models/item.component.model';
 
@@ -15,21 +15,22 @@ export class GamesComponent implements OnInit, ItemComponent {
   selectedPage = 0;
   pageSize = 3;
 
-  games: Game[] = [];
+  games: Game[];
 
   pags = 0;
 
-  constructor(private gameService: GameService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getGames();
+    // this.getGames();
+    this.games = this.data.games;
   }
 
-  getGames(): void {
-    this.gameService.getGames()
-    .subscribe(games => this.games = games);
-    this.pags = Math.ceil(this.games.length / this.pageSize);
-  }
+  // getGames(): void {
+  //   this.contentService.getGames()
+  //   .subscribe(games => this.games = games);
+  //   this.pags = Math.ceil(this.games.length / this.pageSize);
+  // }
 
   isReady(): boolean {
     return true;

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Testimonio } from '../../models/testimonio.model';
+import { Testimonio } from '@shared/interfaces/testimonio.model';
 import { ItemComponent } from '../../models/item.component.model';
 
 @Component({

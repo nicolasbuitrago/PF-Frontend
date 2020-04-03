@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatepickerDateCustomClasses } from 'ngx-bootstrap/datepicker';
 
-import { EventService } from '../../services/event.service';
-import { Event } from '../../models/event.model';
 import { ContentService } from '@core/services/content.service';
+import { Event } from '@shared/interfaces/event.model';
 
 @Component({
   selector: 'app-events',
@@ -20,7 +19,7 @@ export class EventsComponent implements OnInit {
   selectedEvents: Event[];
   dateCustomClasses: DatepickerDateCustomClasses[];
 
-  constructor(private eventService: EventService, private contentService: ContentService) {
+  constructor(private contentService: ContentService) {
     this.selectedDate = new Date();
     this.today = new Date();
     this.minDate = new Date();
@@ -37,7 +36,7 @@ export class EventsComponent implements OnInit {
   }
 
   getEvents(): void {
-    this.eventService.getServices()
+    this.contentService.getEvents()
     .subscribe((events) => {
       this.events = events;
       this.selectedEvents = [];
