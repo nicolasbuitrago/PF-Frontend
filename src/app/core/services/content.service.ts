@@ -86,18 +86,18 @@ export class ContentService {
   }
 
   getEvents(): Observable<Event[]> {
-    if (!this.events$) {
-      // this.events$ = this.http.get<Event[]>('url')
-      // .pipe(shareReplay(1))
-      // .pipe(refCount());
-      this.events$ =  of(EVENTS).pipe(
-        tap(() => console.log('***SIDE EFFECT***')),
-        delay(5000)
-      ).pipe(shareReplay(1))
-      .pipe(refCount());
-    }
+    // if (!this.events$) {
+    //   // this.events$ = this.http.get<Event[]>('url')
+    //   // .pipe(shareReplay(1))
+    //   // .pipe(refCount());
+    //   this.events$ =  of(EVENTS).pipe(
+    //     tap(() => console.log('***SIDE EFFECT***')),
+    //     delay(5000)
+    //   ).pipe(shareReplay(1))
+    //   .pipe(refCount());
+    // }
 
-    return this.events$;
+    return of(EVENTS);
   }
 
   getGames(): Observable<Game[]> {

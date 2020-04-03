@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '@core/services/content.service';
-import { Contact } from '../../models/contact.model';
+import { Contact } from '@shared/interfaces/contact.model';
 
 @Component({
   templateUrl: './contact.component.html',
