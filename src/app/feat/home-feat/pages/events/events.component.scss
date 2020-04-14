@@ -6,6 +6,11 @@
   box-shadow: none;
   // height: 80vh;
 
+  .bs-datepicker-body table td span.date-event {
+    background-color: rgb(200, 200, 200);
+    // color: #fff;
+  }
+
   .bs-datepicker-head, .bs-datepicker-body table td span.selected {
     // background-color: #143d6b;
     background-color: #777;
@@ -13,8 +18,8 @@
 
   .bs-datepicker-body table td span.selected {
     border-style: solid;
-    border-width: medium;
-    border-color: blue;
+    border-width: thin;
+    border-color: #000;
   }
 
   .bs-datepicker-body table td {
@@ -29,7 +34,7 @@
 }
 
 .list-group {
-  max-height: 250px;
+  max-height: 300px;
   margin-bottom: 10px;
   -webkit-overflow-scrolling: touch;
   .list-group-item-action {
@@ -63,5 +68,5 @@
 }
 
 #meetup {
-  max-height: 400px;
+  max-height: 500px;
 }

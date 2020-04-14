@@ -16,7 +16,8 @@ export class EventsComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   events: Event[];
-  meetUp: any[];
+  meetUp: any;
+  meets: any[];
   selectedEvents: Event[];
   dateCustomClasses: DatepickerDateCustomClasses[];
 
@@ -34,6 +35,7 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEvents();
+    this.getMeetUps();
     this.getEventsMeetUps();
   }
 
@@ -43,27 +45,31 @@ export class EventsComponent implements OnInit {
       this.events = events;
       this.selectedEvents = [];
       for (const event of events) {
-        this.dateCustomClasses.push({ date: event.date, classes: ['bg-secondary', 'text-white']});
+        this.dateCustomClasses.push({ date: event.date, classes: ['date-event']});
         this.selectedEvents.push(event);
       }
     });
   }
 
-  getEventsMeetUps() {
-    this.contentService.getEventsMeetUp()
+  getMeetUps() {
+    this.contentService.getMeetUp()
       .subscribe(
-        (events) => {
-          this.meetUp = events;
+        (meetUp) => {
+          this.meetUp = meetUp;
           // meet.descrition = meet.description.replace(/<p>|<\/p>/, '');
         }
       );
   }
 
-  result: string = 'R = ';
-  getEventsShare(): void {
-    this.contentService.games().subscribe(events => {
-      this.result += events.length + ' ';
-    });
+
+  getEventsMeetUps() {
+    this.contentService.getEventsMeetUp()
+      .subscribe(
+        (events) => {
+          this.meets = events;
+          // meet.descrition = meet.description.replace(/<p>|<\/p>/, '');
+        }
+      );
   }
 
   onDateChange(value: Date): void {

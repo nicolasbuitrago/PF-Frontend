@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <main class="container my-4 full-page">
-  <h2>Events</h2>
+  <h2>Eventos</h2>
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-auto">
@@ -14,12 +14,12 @@
       </div>
       <div class="col-md">
         <div class="card-body">
-          <h4 class="card-title">Events</h4>
+          <!-- <h4 class="card-title">Events</h4> -->
           <div *ngIf="selectedEvents.length !== 0 else ngevents">
             <h5>{{ selectedDate | date }}</h5>
             <div class="list-group overflow-auto">
               <a *ngFor="let event of selectedEvents"
-                href="#" class="list-group-item list-group-item-action">
+                 class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ event.title }}</h5>
                   <small>{{ event.date | date }}</small>
@@ -32,7 +32,7 @@
           <ng-template #ngevents>
             <div class="list-group overflow-auto">
               <a *ngFor="let event of events"
-                href="#" class="list-group-item list-group-item-action">
+                 class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ event.title }}</h5>
                   <small>{{ event.date | date }}</small>
@@ -46,9 +46,17 @@
       </div>
     </div>
   </div>
-  <h3>MeetUps</h3>
-  <div id="meetup" class="list-group overflow-auto" *ngIf="meetUp">
-    <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meetUp" target="_blank">
+  <div class="row pt-3" *ngIf="meetUp">
+    <div class="col">
+      <h3>MeetUps</h3>
+      <h4>{{ meetUp.name }}</h4>
+      <div [innerHTML]="meetUp.description"></div>
+    </div>
+    <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="100%" class="img-fluid"></div>
+  </div>
+  <h4>Eventos en MeetUps</h4>
+  <div id="meetup" class="list-group overflow-auto" *ngIf="meets">
+    <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meets" target="_blank">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{ meet.name }}</h5>
         <small>{{ meet.local_date }}</small>
@@ -58,6 +66,6 @@
       <small>{{ meet.visibility }}</small>
     </a>
   </div>
-  <!-- <p>{{ meetUp | json }}</p> -->
+  <!-- <p>{{ meets | json }}</p> -->
 </main>
 <app-footer></app-footer>

@@ -112,6 +112,18 @@ export class ContentService {
   }
 
   /** GET meets. Will 404 if id not found */
+  getMeetUp() {
+    // this.httpOptions.params.append('email', email);
+    return this.http.get<any>(
+      `https://cors-anywhere.herokuapp.com/https://api.meetup.com/${this.meetUpGroup}?&sign=true&photo-host=public`
+      ).pipe(
+      tap(_ => this.log('fetched meetUp group')),
+      // map((data: any[]) => data.map(item => ))
+      // catchError(this.handleError<any[]>('getEvents', []))
+    );
+  }
+
+  /** GET meets. Will 404 if id not found */
   getEventsMeetUp() {
     // this.httpOptions.params.append('email', email);
     return this.http.get<any[]>(
