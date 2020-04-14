@@ -15,29 +15,38 @@
       <div class="col-md">
         <div class="card-body">
           <!-- <h4 class="card-title">Events</h4> -->
-          <div *ngIf="selectedEvents.length !== 0 else ngevents">
+          <div *ngIf="selectedEvent">
+            <div class="d-flex w-100 justify-content-between pb-3">
+              <button class="btn btn-outline-primary" (click)="selectEvent()">Volver</button>
+              <small>{{ selectedEvent.date | date }}</small>
+            </div>
+            <h5 class="mb-1">{{ selectedEvent.title }}</h5>
+            <small>{{ selectedEvent.place }}</small>
+            <p class="mb-1 event overflow-auto">{{ selectedEvent.description }} at eget metus.</p>
+          </div>
+          <div *ngIf="selectedEvents.length !== 0 && !selectedEvent else ngevents">
             <h5>{{ selectedDate | date }}</h5>
             <div class="list-group overflow-auto">
-              <a *ngFor="let event of selectedEvents"
-                 class="list-group-item list-group-item-action">
+              <a *ngFor="let event of selectedEvents" class="list-group-item list-group-item-action"
+                (click)="selectEvent(event)">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ event.title }}</h5>
                   <small>{{ event.date | date }}</small>
                 </div>
-                <p class="mb-1">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.  at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small>{{ event.place }}</small>
               </a>
             </div>
           </div>
           <ng-template #ngevents>
-            <div class="list-group overflow-auto">
-              <a *ngFor="let event of events"
-                 class="list-group-item list-group-item-action">
+            <div class="list-group overflow-auto" *ngIf="!selectedEvent">
+              <a *ngFor="let event of events" class="list-group-item list-group-item-action"
+                (click)="selectEvent(event)">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ event.title }}</h5>
                   <small>{{ event.date | date }}</small>
                 </div>
-                <p class="mb-1">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small>{{ event.place }}</small>
               </a>
             </div>

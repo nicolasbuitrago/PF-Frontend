@@ -18,6 +18,7 @@ export class EventsComponent implements OnInit {
   events: Event[];
   meetUp: any;
   meets: any[];
+  selectedEvent: Event;
   selectedEvents: Event[];
   dateCustomClasses: DatepickerDateCustomClasses[];
 
@@ -72,6 +73,10 @@ export class EventsComponent implements OnInit {
       );
   }
 
+  selectEvent(event?: Event) {
+    this.selectedEvent = event;
+  }
+
   onDateChange(value: Date): void {
     this.selectedDate = value;
     this.selectedEvents = [];
@@ -92,5 +97,5 @@ export class EventsComponent implements OnInit {
     const msDateB = Date.UTC(b.getFullYear(), b.getMonth() + 1, b.getDate());
     // console.log(msDateA + ' === ' + msDateB);
     return msDateA === msDateB;
-}
+  }
 }

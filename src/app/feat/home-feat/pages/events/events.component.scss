@@ -2,6 +2,13 @@
   min-height: 340px;
 }
 
+@media (min-width: 700px) {
+  /* Bump up size of carousel content */
+  .col-md {
+    max-width: calc(100% - 308px);
+  }
+}
+
 ::ng-deep.theme-green {
   box-shadow: none;
   // height: 80vh;
@@ -39,7 +46,12 @@
   -webkit-overflow-scrolling: touch;
   .list-group-item-action {
     color: #212529;
+    cursor: pointer;
   }
+}
+
+.event {
+  max-height: 210px;
 }
 
 .list-group::-webkit-scrollbar {
