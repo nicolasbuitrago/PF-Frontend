@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, ReplaySubject, Subject, merge } from 'rxjs';
-import { delay, share, tap, shareReplay, refCount } from 'rxjs/operators';
+import { delay, share, tap, shareReplay, refCount, catchError, map } from 'rxjs/operators';
 
 import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.component';
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
 import { SectionComponent } from '@feat/home-feat/components/sections/section/section.component';
 import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 import { GamesComponent } from '@feat/home-feat/components/games/games.component';
-
+import { environment } from '@env/environment';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
@@ -22,6 +22,17 @@ import { Footer } from '@app/shared/interfaces/footer.model';
 })
 export class ContentService {
 
+  private apiUrl = `${environment.apiUrl}/content`;
+  private httpOptions = {
+    headers: new HttpHeaders({
+      accept: '*/*',
+      // 'Accept-Encoding': 'gzip, deflate, br',
+      connection: 'keep-alive'
+      // 'Access-Control-Allow-Origin': '*',
+      // 'Content-Type': 'application/json'
+    })
+  };
+  private meetUpGroup = 'Swifticious';
   events$: Observable<Event[]>;
 
   private infiniteGames$: Observable<any>;
@@ -100,6 +111,18 @@ export class ContentService {
     return of(EVENTS);
   }
 
+  /** GET meets. Will 404 if id not found */
+  getEventsMeetUp() {
+    // this.httpOptions.params.append('email', email);
+    return this.http.get<any[]>(
+      `https://cors-anywhere.herokuapp.com/https://api.meetup.com/${this.meetUpGroup}/events?&sign=true&photo-host=public&page=20`
+      ).pipe(
+      tap(_ => this.log('fetched events of meetUp')),
+      // map((data: any[]) => data.map(item => ))
+      // catchError(this.handleError<any[]>('getEvents', []))
+    );
+  }
+
   getGames(): Observable<Game[]> {
     return of(GAMES);
   }
@@ -118,5 +141,29 @@ export class ContentService {
 
   getFooter(): Observable<Footer> {
     return of(FOOTER);
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  log(msg: string) {
+    console.log(msg);
   }
 }

@@ -16,6 +16,7 @@ export class EventsComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   events: Event[];
+  meetUp: any[];
   selectedEvents: Event[];
   dateCustomClasses: DatepickerDateCustomClasses[];
 
@@ -29,10 +30,11 @@ export class EventsComponent implements OnInit {
     this.dateCustomClasses = [
       { date: this.today, classes: ['bg-primary', 'text-white'] }
     ];
-    this.getEvents();
-   }
+  }
 
   ngOnInit(): void {
+    this.getEvents();
+    this.getEventsMeetUps();
   }
 
   getEvents(): void {
@@ -45,6 +47,16 @@ export class EventsComponent implements OnInit {
         this.selectedEvents.push(event);
       }
     });
+  }
+
+  getEventsMeetUps() {
+    this.contentService.getEventsMeetUp()
+      .subscribe(
+        (events) => {
+          this.meetUp = events;
+          // meet.descrition = meet.description.replace(/<p>|<\/p>/, '');
+        }
+      );
   }
 
   result: string = 'R = ';

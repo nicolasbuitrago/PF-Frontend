@@ -32,6 +32,9 @@
   max-height: 250px;
   margin-bottom: 10px;
   -webkit-overflow-scrolling: touch;
+  .list-group-item-action {
+    color: #212529;
+  }
 }
 
 .list-group::-webkit-scrollbar {
@@ -57,4 +60,8 @@
 
 .list-group::-webkit-scrollbar-thumb:active {
   background: linear-gradient(to left, #22ADD4, #1E98BA);
+}
+
+#meetup {
+  max-height: 400px;
 }

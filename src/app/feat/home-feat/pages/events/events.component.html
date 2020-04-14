@@ -47,9 +47,17 @@
     </div>
   </div>
   <h3>MeetUps</h3>
-  <p>{{ result }}</p>
-  <button (click)="getEventsShare()">
-    get events
-  </button>
+  <div id="meetup" class="list-group overflow-auto" *ngIf="meetUp">
+    <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meetUp" target="_blank">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ meet.name }}</h5>
+        <small>{{ meet.local_date }}</small>
+      </div>
+      <div [innerHTML]="meet.description"></div>
+      <!-- <p class="mb-1">{{ meet.description }}</p> -->
+      <small>{{ meet.visibility }}</small>
+    </a>
+  </div>
+  <!-- <p>{{ meetUp | json }}</p> -->
 </main>
 <app-footer></app-footer>
