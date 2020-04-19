@@ -8,7 +8,7 @@ import { Contact } from '@shared/interfaces/contact.model';
 })
 export class ContactComponent implements OnInit {
 
-  title = 'Contactanos';
+  title = 'Contact us';
   contact: Contact;
 
   constructor(private contentService: ContentService) { }

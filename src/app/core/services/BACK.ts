@@ -30,19 +30,19 @@ const ITEMS: CarouselItem[] = [
 
 const TESTIMONIOS: Testimonio[] = [
   {
-    mesg: 'Es asombroso',
+    mesg: 'Amazing',
     img: '//placeimg.com/200/200/people',
     author: 'Carlos Perez',
     authorInfo: 'Director of Tuna Games'
   },
   {
-    mesg: 'Fantastico',
+    mesg: 'The best experience',
     img: '//placeimg.com/200/200/people',
     author: 'Lucas Ramirez',
     authorInfo: 'Art Designer of Caribbean Games'
   },
   {
-    mesg: 'Una maravilla',
+    mesg: 'Wonderfull',
     img: '//placeimg.com/200/200/people',
     author: 'Mario Diaz',
     authorInfo: 'Sub-Director of Caption Games'
@@ -52,31 +52,31 @@ const TESTIMONIOS: Testimonio[] = [
 export const EVENTS: Event[] = [
   {
     title: 'Event 1',
-    description: 'Estupendo evento 1',
+    description: 'Workshop',
     date: new Date('2020-03-01'),
     place: 'Uninorte, Barranquilla'
   },
   {
     title: 'Event 2',
-    description: 'Estupendo evento 2',
+    description: 'Hackathon',
     date: new Date('2020-03-05'),
     place: 'Puerta de oro, Barranquilla'
   },
   {
     title: 'Event 3',
-    description: 'Estupendo evento 3',
+    description: 'Bootcamp',
     date: new Date('2020-03-10'),
     place: 'Combarranquilla, Barranquilla'
   },
   {
     title: 'Event 4',
-    description: 'Estupendo evento 4',
+    description: 'Hackathon Uninorte',
     date: new Date('2020-03-20'),
     place: 'Puerta de Oro, Barranquilla'
   },
   {
     title: 'Event 5',
-    description: 'Estupendo evento 5',
+    description: 'Workshop on innovation',
     date: new Date('2020-03-30'),
     place: 'Combarranquilla, Barranquilla'
   }
@@ -192,7 +192,7 @@ export const HOME: any[] = [
   {
     component: 'SectionComponent',
     data: {
-      title: 'Lorem ipsum!!!',
+      title: 'Who We Are',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit',
       link: '#',
       img: 'https://source.unsplash.com/600x600/?work,office'
@@ -201,7 +201,7 @@ export const HOME: any[] = [
   {
     component: 'SectionImgBgComponent',
     data: {
-      title: 'Comunícate con nosotros!!',
+      title: 'Invest in Our Industry',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio autem nostrum officia sequi facere obcaecati error odio rerum quos inventore tenetur odit adipisci fuga, doloribus alias? Debitis, doloribus eos!.',
       img: 'https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09',
       link: '#'
@@ -220,7 +220,7 @@ export const HOME: any[] = [
   {
     component: 'SectionComponent',
     data: {
-      title: 'Lorem ipsum!!!',
+      title: 'Join the IT revolution',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique natus totam suscipit, ratione assumenda sequi velit',
       link: '#',
       img: 'https://source.unsplash.com/600x600/?friend,fun',

@@ -14,8 +14,21 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-  font-family: 'Oxanium';
+  .h1, h2{
+    font-family: 'Exo 2', serif;
+    font-weight: bold;
+    //font-style: normal;
+    //font-size: 2.5rem;
+  } 
+  .p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+  .h3, h4,h5{
+    font-weight: normal;
+  }
 }
+  
 
 #content-main {
   flex: 1 0 auto;
