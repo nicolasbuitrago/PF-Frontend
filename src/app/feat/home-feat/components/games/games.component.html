@@ -1,6 +1,6 @@
 <div id="myVideogames" class="album py-5 bg-light">
   <div class="container pb-3">
-    <h2>Video games</h2>
+    <h2>Featured Games</h2>
   </div>
   <div class="container">
     <div class="row">
@@ -39,7 +39,7 @@
       <li class="page-item"
           [class.disabled]="selectedPage == 0">
         <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="previous()" tabindex="-1"
-          [attr.aria-disabled]="selectedPage == 0 ? 'true' : null">Previous</a>
+          [attr.aria-disabled]="selectedPage == 0 ? 'true' : null">1</a>
       </li>
       <li class="page-item" *ngFor='let p of array(pags)'
           [class.active]='p == selectedPage'
@@ -54,7 +54,7 @@
           [class.disabled]="selectedPage == pags-1">
         <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="next()"
             [attr.aria-disabled]="selectedPage == pags-1 ? 'true' : null">
-          Next
+          2
         </a>
       </li>
     </ul>
