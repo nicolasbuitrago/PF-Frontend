@@ -1,7 +1,7 @@
 <!-- <app-nav-bar></app-nav-bar>
  -->
 <app-nav-bar [fixed]="true"></app-nav-bar>
-<app-page-title title="Events"></app-page-title>
+<app-page-title title="Events & News"></app-page-title>
 
  <main class="container my-4 full-page">
   <div class="card mb-3">
@@ -58,14 +58,14 @@
       </div>
     </div>
   </div>
-  <div class="row pt-3" *ngIf="meetUp">
+  <!-- <div class="row pt-3" *ngIf="meetUp">
     <div class="col">
       <h3>MeetUps</h3>
       <h4>{{ meetUp.name }}</h4>
       <div [innerHTML]="meetUp.description"></div>
     </div>
     <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="70%" class="img-fluid"></div>
-  </div>
+  </div> -->
   <h4>Eventos en MeetUps</h4>
   <div id="meetup" class="list-group overflow-auto" *ngIf="meets">
     <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meets" target="_blank">
@@ -79,5 +79,53 @@
     </a>
   </div>
   <!-- <p>{{ meets | json }}</p> -->
+
+  <!-- News -->
+  <div class="container-fluid py-lg-5">
+    <h3 class="heading text-uppercase">News</h3>
+    <br>
+    <div class="row about_grids">
+      <div class="col-lg-8 news-posts">
+        <div class="row">
+          <div class="col-md-4 mb-md-0 mb-5">
+              <p class="date mb-2"> 19 April 2018 </p>
+              <img src="https://source.unsplash.com/200x150/?video,game" alt="" class="img-fluid">
+              <h4 class="mt-4">venenatis leo eget ex. </h4>
+              <p class="my-2"> Vestibulum venenatis leo eget ex aliquam, velinit tincidunt justo facilisis.</p>
+              <a href="#">Read More <span class="fa fa-angle-right"></span></a>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-5">
+              <p class="date mb-2"> 24 March 2019 </p>
+              <img src="https://source.unsplash.com/200x150/?girls" alt="" class="img-fluid">
+              <h4 class="mt-4">tincidunt justo facil. </h4>
+              <p class="my-2"> Vestibulum venenatis leo eget ex aliquam, velinit tincidunt justo facilisis.</p>
+              <a href="#">Read More <span class="fa fa-angle-right"></span></a>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-5">
+              <p class="date mb-2"> 30 December 2019 </p>
+              <img src="https://source.unsplash.com/200x150/?kids" alt="" class="img-fluid">
+              <h4 class="mt-4">venenatis leo eget ex. </h4>
+              <p class="my-2"> Vestibulum venenatis leo eget ex aliquam, velinit tincidunt justo facilisis.</p>
+              <a href="#">Read More <span class="fa fa-angle-right"></span></a>
+          </div>
+          <!-- <div class="col-md-4 mb-md-0 mb-5">
+              <p class="date mb-2"> 19 April 2020 </p>
+              <img src="https://source.unsplash.com/200x150/?movie" alt="" class="img-fluid">
+              <h4 class="mt-4">venenatis leo eget ex. </h4>
+              <p class="my-2"> Vestibulum venenatis leo eget ex aliquam, velinit tincidunt justo facilisis.</p>
+              <a href="#">Read More <span class="fa fa-angle-right"></span></a>
+          </div>
+          <div class="col-md-4 mb-md-0 mb-5">
+              <p class="date mb-2"> 30 April 2020 </p>
+              <img src="https://source.unsplash.com/200x150/?girls" alt="" class="img-fluid">
+              <h4 class="mt-4">venenatis leo eget ex. </h4>
+              <p class="my-2"> Vestibulum venenatis leo eget ex aliquam, velinit tincidunt justo facilisis.</p>
+              <a href="#">Read More <span class="fa fa-angle-right"></span></a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- //News -->
 </main>
 <app-footer></app-footer>
