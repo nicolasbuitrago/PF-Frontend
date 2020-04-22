@@ -201,15 +201,11 @@ export const HOME: any[] = [
   {
     component: 'SectionImgBgComponent',
     data: {
-      title: 'Invest in Our Industry',
+      title: 'Our services',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores distinctio autem nostrum officia sequi facere obcaecati error odio rerum quos inventore tenetur odit adipisci fuga, doloribus alias? Debitis, doloribus eos!.',
       img: 'https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09',
       link: '#'
     }
-  },
-  {
-    component: 'TestimoniosComponent',
-    data: TESTIMONIOS
   },
   {
     component: 'GamesComponent',
@@ -217,6 +213,10 @@ export const HOME: any[] = [
       games: GAMES
     }
   },
+  {
+    component: 'TestimoniosComponent',
+    data: TESTIMONIOS
+  }/* ,
   {
     component: 'SectionComponent',
     data: {
@@ -226,7 +226,7 @@ export const HOME: any[] = [
       img: 'https://source.unsplash.com/600x600/?friend,fun',
       left: true
     }
-  }
+  } */
 ];
 
 

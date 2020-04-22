@@ -1,6 +1,9 @@
-<app-nav-bar></app-nav-bar>
-<main class="container my-4 full-page">
-  <h2>Eventos</h2>
+<!-- <app-nav-bar></app-nav-bar>
+ -->
+<app-nav-bar [fixed]="true"></app-nav-bar>
+<app-page-title title="Events"></app-page-title>
+
+ <main class="container my-4 full-page">
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-auto">
@@ -61,7 +64,7 @@
       <h4>{{ meetUp.name }}</h4>
       <div [innerHTML]="meetUp.description"></div>
     </div>
-    <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="100%" class="img-fluid"></div>
+    <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="70%" class="img-fluid"></div>
   </div>
   <h4>Eventos en MeetUps</h4>
   <div id="meetup" class="list-group overflow-auto" *ngIf="meets">
