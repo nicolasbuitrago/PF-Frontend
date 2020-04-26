@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 const routes: Routes = [
   {
@@ -20,33 +21,19 @@ const routes: Routes = [
   },
   {
     path: 'events',
-    component: EventsComponent,
-    children: [
-      { // no lazy loading module
-        path: 'submodule',
-        component: HomeSubModule
-      }
-    ]
+    component: EventsComponent
   },
   {
     path: 'contact',
-    component: ContactComponent,
-    children: [
-      { // no lazy loading module
-        path: 'submodule',
-        component: HomeSubModule
-      }
-    ]
+    component: ContactComponent
+  },
+  {
+    path: 'faq',
+    component: FaqComponent
   },
   {
     path: 'about',
-    component: AboutComponent,
-    children: [
-      { // no lazy loading module
-        path: 'submodule',
-        component: HomeSubModule
-      }
-    ]
+    component: AboutComponent
   }
 ];
 

@@ -2,7 +2,7 @@ import { Game } from '@shared/interfaces/game.model';
 
 export interface Studio {
   id: number;
-  img: string;
+  image_url: string;
   name: string;
   type: string;
   description: string;

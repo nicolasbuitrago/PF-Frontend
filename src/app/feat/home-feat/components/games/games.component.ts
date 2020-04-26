@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 
 // import { ContentService } from '@core/services/content.service';
 import { Game } from '@shared/interfaces/game.model';
-import { DataComponent } from '../../models/data-component.model';
+import { DataItem } from '../../models/data-item.model';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.scss']
 })
-export class GamesComponent implements OnInit, DataComponent {
+export class GamesComponent implements OnInit, DataItem {
 
   @Input() data: any;
   selectedPage = 0;

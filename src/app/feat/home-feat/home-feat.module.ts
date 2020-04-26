@@ -15,6 +15,9 @@ import { SectionComponent } from './components/sections/section/section.componen
 import { SectionImgBgComponent } from './components/sections/section-img-bg/section-img-bg.component';
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 import { AboutComponent } from './pages/about/about.component';
+import { GameComponent } from './components/game/game.component';
+import { StudioComponent } from './components/studio/studio.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { AboutComponent } from './pages/about/about.component';
     SectionComponent,
     SectionImgBgComponent,
     TestimoniosComponent,
-    AboutComponent
+    AboutComponent,
+    GameComponent,
+    StudioComponent,
+    FaqComponent
   ],
   imports: [
     CommonModule,

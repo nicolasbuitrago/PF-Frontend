@@ -1,11 +1,10 @@
 import { Studio } from '../models/studio.model';
 
-export const STUDIOS: Studio[] = [
+export const STUDIOS: Studio[] = [ ]; /*
   {
     id: 0,
-    img: 'https://source.unsplash.com/500x500/?tech',
+    image_url: 'https://source.unsplash.com/500x500/?tech',
     name: 'Studio 1',
-    type: 'Video games',
     description: 'We are study 1',
     tags: ['video', 'game'],
     link: '#',
@@ -18,55 +17,58 @@ export const STUDIOS: Studio[] = [
     games: [
       {
         id: 0,
-        img: 'https://source.unsplash.com/350x350/?mario,bros',
+        studio_id: 0,
         name: 'Mario bros',
         description: 'Super game with mario',
         tags: ['video', 'game'],
-        studio: 0,
-        type: 'Arcade',
+        image_url: 'https://source.unsplash.com/350x350/?mario,bros',
         link: '#marioLink',
-        video: '#marioVideo'
+        video: '#marioVideo',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 1,
-        img: 'https://source.unsplash.com/350x350/?soccer',
+        image_url: 'https://source.unsplash.com/350x350/?soccer',
         name: 'PES 2020',
         description: 'Soccer game',
         tags: ['video', 'game'],
-        studio: 0,
-        type: 'Sports',
+        studio_id: 0,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 3,
-        img: 'https://source.unsplash.com/350x350/?militar',
+        image_url: 'https://source.unsplash.com/350x350/?militar',
         name: 'COD',
         description: 'Militar FPS',
         tags: ['video', 'game'],
-        studio: 0,
-        type: 'FPS',
+        studio_id: 0,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 2,
-        img: 'https://source.unsplash.com/350x350/?race',
+        image_url: 'https://source.unsplash.com/350x350/?race',
         name: 'Mario Kars',
         description: 'Super game with mario and cars',
         tags: ['video', 'game'],
-        studio: 0,
-        type: 'Race',
+        studio_id: 0,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       }
     ]
   },
   {
     id: 1,
-    img: 'https://source.unsplash.com/500x500/?computer',
+    image_url: 'https://source.unsplash.com/500x500/?computer',
     name: 'Studio 2',
-    type: 'Art design',
     description: 'We are study  2',
     tags: ['video', 'game'],
     link: '#',
@@ -79,33 +81,34 @@ export const STUDIOS: Studio[] = [
     games: [
       {
         id: 0,
-        img: 'https://source.unsplash.com/350x350/?mario,bros',
+        image_url: 'https://source.unsplash.com/350x350/?mario,bros',
         name: 'Mario bros',
         description: 'Super game with mario',
         tags: ['video', 'game'],
-        studio: 1,
-        type: 'Arcade',
+        studio_id: 1,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 2,
-        img: 'https://source.unsplash.com/350x350/?race',
+        image_url: 'https://source.unsplash.com/350x350/?race',
         name: 'Mario Kars',
         description: 'Super game with mario and cars',
         tags: ['video', 'game'],
-        studio: 1,
-        type: 'Race',
+        studio_id: 1,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       }
     ]
   },
   {
     id: 2,
-    img: 'https://source.unsplash.com/500x500/?videogame',
+    image_url: 'https://source.unsplash.com/500x500/?videogame',
     name: 'Studio 3',
-    type: 'Visual recognition',
     description: 'We are study 3',
     tags: ['video', 'game'],
     link: '#',
@@ -118,33 +121,34 @@ export const STUDIOS: Studio[] = [
     games: [
       {
         id: 0,
-        img: 'https://source.unsplash.com/350x350/?mario,bros',
+        image_url: 'https://source.unsplash.com/350x350/?mario,bros',
         name: 'Mario bros',
         description: 'Super game with mario',
         tags: ['video', 'game'],
-        studio: 2,
-        type: 'Arcade',
+        studio_id: 2,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 3,
-        img: 'https://source.unsplash.com/350x350/?militar',
+        image_url: 'https://source.unsplash.com/350x350/?militar',
         name: 'COD',
         description: 'Militar FPS',
         tags: ['video', 'game'],
-        studio: 2,
-        type: 'FPS',
+        studio_id: 2,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       }
     ]
   },
   {
     id: 3,
-    img: 'https://source.unsplash.com/500x500/?studio',
+    image_url: 'https://source.unsplash.com/500x500/?studio',
     name: 'Studio 4',
-    type: 'Video games',
     description: 'We are study 4',
     tags: ['video', 'game'],
     link: '#',
@@ -157,33 +161,34 @@ export const STUDIOS: Studio[] = [
     games: [
       {
         id: 3,
-        img: 'https://source.unsplash.com/350x350/?militar',
+        image_url: 'https://source.unsplash.com/350x350/?militar',
         name: 'COD',
         description: 'Militar FPS',
         tags: ['video', 'game'],
-        studio: 3,
-        type: 'FPS',
+        studio_id: 3,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 2,
-        img: 'https://source.unsplash.com/350x350/?race',
+        image_url: 'https://source.unsplash.com/350x350/?race',
         name: 'Mario Kars',
         description: 'Super game with mario and cars',
         tags: ['video', 'game'],
-        studio: 3,
-        type: 'Race',
+        studio_id: 3,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       }
     ]
   },
   {
     id: 4,
-    img: 'https://source.unsplash.com/500x500/?dog',
+    image_url: 'https://source.unsplash.com/500x500/?dog',
     name: 'Studio 5',
-    type: 'Video games',
     description: 'We are study 5',
     tags: ['video', 'game'],
     link: '#',
@@ -196,26 +201,28 @@ export const STUDIOS: Studio[] = [
     games: [
       {
         id: 1,
-        img: 'https://source.unsplash.com/350x350/?soccer',
+        image_url: 'https://source.unsplash.com/350x350/?soccer',
         name: 'PES 2020',
         description: 'Soccer game',
         tags: ['video', 'game'],
-        studio: 4,
-        type: 'Sports',
+        studio_id: 4,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       },
       {
         id: 5,
-        img: 'https://source.unsplash.com/350x350/?war',
+        image_url: 'https://source.unsplash.com/350x350/?war',
         name: 'WAR',
         description: 'Militar WAR',
         tags: ['video', 'game'],
-        studio: 4,
-        type: 'WAR',
+        studio_id: 4,
         link: '#',
-        video: '#'
+        video: '#',
+        created_at: new Date('2020-04-23'),
+        updated_at: new Date('2020-04-23')
       }
     ]
   }
-];
+];*/

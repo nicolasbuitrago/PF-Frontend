@@ -6,8 +6,9 @@ import { ContentService } from '@core/services/content.service';
 // import { CarouselItem } from '../../models/carousel-item.model';
 // import { Testimonio } from '../../models/testimonio.model';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
-import { DataComponent } from '../../models/data-component.model';
+import { DataItem } from '../../models/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
+import { DataComponent } from '@app/shared/interfaces/data-component.model';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ import { Page } from '@shared/interfaces/page.model';
 })
 export class HomeComponent implements OnInit {
 
-  home: ComponentItem[];
+  components: ComponentItem[];
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -29,17 +30,17 @@ export class HomeComponent implements OnInit {
   getHome(): void {
     this.contentService.getMainPage()
     .subscribe((home: Page) => {
-      this.home = home.components;
+      this.components = home.components;
       this.loadComponents();
     });
   }
 
   loadComponents(): void {
     const viewContainerRef = this.itemHost.viewContainerRef;
-    for (const item of this.home) {
+    for (const item of this.components) {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(item.component);
       const componentRef = viewContainerRef.createComponent(componentFactory);
-      (componentRef.instance as DataComponent).data = item.data;
+      (componentRef.instance as DataItem).data = item.data;
     }
   }
 

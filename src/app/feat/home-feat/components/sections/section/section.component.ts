@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { DataComponent } from '../../../models/data-component.model';
+import { DataItem } from '../../../models/data-item.model';
+import { Section } from '@shared/interfaces/section.model';
 
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
-export class SectionComponent implements OnInit, DataComponent {
+export class SectionComponent implements OnInit, DataItem {
 
-  @Input() data: {title: string, text: string, link: string, img: string, left: boolean};
+  @Input() data: Section;
 
   constructor() { }
 

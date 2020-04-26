@@ -82,10 +82,10 @@ export const EVENTS: Event[] = [
   }
 ];
 
-export const GAMES: Game[] = [
+export const GAMES: any[] = [
   {
     id: 0,
-    img: 'https://source.unsplash.com/350x350/?mario,bros',
+    image_url: 'https://source.unsplash.com/350x350/?mario,bros',
     name: 'Mario bros',
     description: 'Super game with mario',
     tags: ['video', 'game'],
@@ -96,7 +96,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 1,
-    img: 'https://source.unsplash.com/350x350/?soccer',
+    image_url: 'https://source.unsplash.com/350x350/?soccer',
     name: 'PES 2020',
     description: 'Soccer game',
     tags: ['video', 'game'],
@@ -107,7 +107,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 2,
-    img: 'https://source.unsplash.com/350x350/?race',
+    image_url: 'https://source.unsplash.com/350x350/?race',
     name: 'Mario Kars',
     description: 'Super game with mario and cars',
     tags: ['video', 'game'],
@@ -118,7 +118,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 3,
-    img: 'https://source.unsplash.com/350x350/?militar',
+    image_url: 'https://source.unsplash.com/350x350/?militar',
     name: 'COD',
     description: 'Militar FPS',
     tags: ['video', 'game'],
@@ -129,7 +129,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 0,
-    img: 'https://source.unsplash.com/350x350/?mario,bros',
+    image_url: 'https://source.unsplash.com/350x350/?mario,bros',
     name: 'Mario bros',
     description: 'Super game with mario',
     tags: ['video', 'game'],
@@ -140,7 +140,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 1,
-    img: 'https://source.unsplash.com/350x350/?soccer',
+    image_url: 'https://source.unsplash.com/350x350/?soccer',
     name: 'PES 2020',
     description: 'Soccer game',
     tags: ['video', 'game'],
@@ -151,7 +151,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 2,
-    img: 'https://source.unsplash.com/350x350/?race',
+    image_url: 'https://source.unsplash.com/350x350/?race',
     name: 'Mario Karts',
     description: 'Super game with mario and cars',
     tags: ['video', 'game'],
@@ -162,7 +162,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 3,
-    img: 'https://source.unsplash.com/350x350/?militar',
+    image_url: 'https://source.unsplash.com/350x350/?militar',
     name: 'COD',
     description: 'Militar FPS',
     tags: ['video', 'game'],
@@ -173,7 +173,7 @@ export const GAMES: Game[] = [
   },
   {
     id: 5,
-    img: 'https://source.unsplash.com/350x350/?war',
+    image_url: 'https://source.unsplash.com/350x350/?war',
     name: 'WAR',
     description: 'Militar WAR',
     tags: ['video', 'game'],

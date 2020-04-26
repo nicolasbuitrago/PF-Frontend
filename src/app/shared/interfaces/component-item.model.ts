@@ -1,4 +1,5 @@
 import { Type } from '@angular/core';
+import { DataComponent } from './data-component.model';
 
 // export class ComponentItem {
 //   constructor(public component: Type<any>, public data: any) {}
@@ -11,8 +12,8 @@ export interface ComponentItem {
   component?: Type<any>;
   page_id: number;
   component_id: number;
-  data?: any; // DataComponent
-  resources?: any[]; // DataComponent[]
+  data?: DataComponent; // DataComponent
+  resources?: DataComponent[]; // DataComponent[]
   position: number;
   css: string;
   created_at: Date;

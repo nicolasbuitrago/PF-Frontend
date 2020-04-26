@@ -19,7 +19,7 @@ body {
     font-weight: bold;
     //font-style: normal;
     //font-size: 2.5rem;
-  } 
+  }
   .p{
     //font-family: 'Open Sans', sans-serif;
     font-weight: normal;
@@ -28,14 +28,14 @@ body {
     font-weight: normal;
   }
 }
-  
+
 
 #content-main {
   flex: 1 0 auto;
 }
 
 .full-page {
-  min-height: calc(100vh - 480px);
+  min-height: calc(100vh - 200px);
 }
 
 // .bg-dark {

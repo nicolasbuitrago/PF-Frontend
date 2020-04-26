@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <img src="{{ studio.img }}" class="card-img" alt="{{ studio.name }}" width="100%" height="auto">
+        <img [src]="studio.image_url" class="card-img" [alt]="studio.name" width="100%" height="auto">
       </div>
     </div>
     <app-videogames [games]="studio.games"></app-videogames>
