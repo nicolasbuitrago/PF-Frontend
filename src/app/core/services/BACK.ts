@@ -53,31 +53,31 @@ export const EVENTS: Event[] = [
   {
     title: 'Event 1',
     description: 'Workshop',
-    date: new Date('2020-03-01'),
+    date: new Date('2020-05-01'),
     place: 'Uninorte, Barranquilla'
   },
   {
     title: 'Event 2',
     description: 'Hackathon',
-    date: new Date('2020-03-05'),
+    date: new Date('2020-05-05'),
     place: 'Puerta de oro, Barranquilla'
   },
   {
     title: 'Event 3',
     description: 'Bootcamp',
-    date: new Date('2020-03-10'),
+    date: new Date('2020-05-10'),
     place: 'Combarranquilla, Barranquilla'
   },
   {
     title: 'Event 4',
     description: 'Hackathon Uninorte',
-    date: new Date('2020-03-20'),
+    date: new Date('2020-04-20'),
     place: 'Puerta de Oro, Barranquilla'
   },
   {
     title: 'Event 5',
     description: 'Workshop on innovation',
-    date: new Date('2020-03-30'),
+    date: new Date('2020-04-30'),
     place: 'Combarranquilla, Barranquilla'
   }
 ];

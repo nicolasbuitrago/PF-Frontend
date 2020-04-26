@@ -9,7 +9,7 @@ import { SectionComponent } from '@feat/home-feat/components/sections/section/se
 import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
-import { ComponentItem } from '@shared/interfaces/component-item.model';
+import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
@@ -56,14 +56,14 @@ export class ContentService {
     const items: ComponentItem[] = [];
     for (const item of HOME) {
       switch (item.component) {
-        case 'CarouselComponent': {
+        case ComponentType.CAROUSEL: {
           items.push({
             component: CarouselComponent,
             data: item.data
           });
           break;
         }
-        case 'TestimoniosComponent': {
+        case ComponentType.TESTIMONIOS: {
           items.push({
             component: TestimoniosComponent,
             data: item.data

@@ -36,7 +36,7 @@
                   <h5 class="mb-1">{{ event.title }}</h5>
                   <small>{{ event.date | date }}</small>
                 </div>
-                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.  at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small>{{ event.place }}</small>
               </a>
             </div>
@@ -67,7 +67,7 @@
     <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="70%" class="img-fluid"></div>
   </div> -->
   <h4>Eventos en MeetUps</h4>
-  <div id="meetup" class="list-group overflow-auto" *ngIf="meets">
+  <div id="meetup" class="list-group overflow-auto" *ngIf="meets && meets.length else noMeets">
     <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meets" target="_blank">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{ meet.name }}</h5>
@@ -78,6 +78,9 @@
       <small>{{ meet.visibility }}</small>
     </a>
   </div>
+  <ng-template #noMeets>
+    <p>No hay eventos programados en MeetUps por el momento</p>
+  </ng-template>
   <!-- <p>{{ meets | json }}</p> -->
 
   <!-- News -->
