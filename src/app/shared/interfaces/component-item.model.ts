@@ -26,5 +26,5 @@ export enum ComponentType {
   GAME = 'GameComponent',
   STUDIO = 'StudioComponent',
   CAROUSEL = 'CarouselComponent',
-  TESTIMONIOS = 'TestimoniosComponent'
+  TESTIMONIOS = 'TestimonyComponent'
 }

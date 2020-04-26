@@ -1,10 +1,10 @@
 <app-nav-bar></app-nav-bar>
 <main class="album py-5 bg-light full-page">
   <div class="container pb-3">
-    <h2>Video Game Studios</h2>
+    <h2>Studios</h2>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="studios && studios.length else empty">
       <div class="col-lg-4 col-md-6" *ngFor="let studio of studios" >
         <div class="card mb-4 shadow-sm">
           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
@@ -33,6 +33,9 @@
         </div>
       </div>
     </div>
+    <ng-template #empty>
+      <p>No hay estudios disponibles para mostrar.</p>
+    </ng-template>
   </div>
 </main>
 <app-footer></app-footer>

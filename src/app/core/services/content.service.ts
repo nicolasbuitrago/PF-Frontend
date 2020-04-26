@@ -58,6 +58,7 @@ export class ContentService {
 
   getMainPage() {
     return this.http.get<Page>(`${this.urlPages}/main`).pipe(
+      // delay(90000),
       map(page => {
         for (const component of page.components) {
           switch (component.type) {

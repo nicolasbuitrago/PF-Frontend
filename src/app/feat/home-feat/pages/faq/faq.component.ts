@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  faqs: any[] = [
+  faqs: {category: string, question: string, answer: string }[] = [
     {
       category: 'Sentido de la vida',
       question: 'Porqué estamos aqui?',
@@ -81,10 +81,19 @@ export class FaqComponent implements OnInit {
         aesthetic synth nesciunt you probably havent heard of them accusamus labore sustainable VHS.'
     }
   ];
+  categories: {cat: string, faqs: any[]}[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    for (const preg of this.faqs) {
+      const aux = this.categories.find(c => c.cat === preg.category);
+      if (aux) {
+        aux.faqs.push(preg);
+      } else {
+        this.categories.push({cat: preg.category, faqs: [preg]});
+      }
+    }
   }
 
 }
