@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Testimonio } from '@shared/interfaces/testimonio.model';
 import { DataItem } from '../../models/data-item.model';
+import { Testimonios } from '@shared/interfaces/testimonios.model';
 
 @Component({
   selector: 'app-testimonios',
   templateUrl: './testimonios.component.html',
   styleUrls: ['./testimonios.component.scss']
 })
-export class TestimoniosComponent implements OnInit {
+export class TestimoniosComponent implements OnInit, DataItem {
 
-  @Input() data: Testimonio[];
+  @Input() data: Testimonios;
 
   constructor() { }
 

@@ -6,21 +6,21 @@
     <ol class="carousel-indicators">
       <li data-target="#myTestimonials" attr.data-slide-to="{{ i }}"
           [class.active]='f'
-          *ngFor="let testimonio of data; let i = index; let f = first"></li>
+          *ngFor="let testimonio of this.data.items; let i = index; let f = first"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item" [class.active]='f' *ngFor="let testimonio of data; let f = first">
+      <div class="carousel-item" [class.active]='f' *ngFor="let testimonio of this.data.items; let f = first">
         <div class="container">
           <div class="carousel-caption">
             <!-- <blockquote class="blockquote text-center">
               <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
               <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
             </blockquote> -->
-           
-            <p>{{ testimonio.mesg }} -- lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur</p>
-            <img class="rounded" src="{{ testimonio.img }}" alt="author" height='100' width='100'>
-            <p class="pt-2 mb-0">{{ testimonio.author }}</p>
-            <small>{{ testimonio.authorInfo }}</small>
+
+            <p>{{ testimonio.text }} -- lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur</p>
+            <img class="rounded" [src]="testimonio.image_url" alt="author" height='100' width='100'>
+            <p class="pt-2 mb-0">{{ testimonio.author_name }}</p>
+            <small>{{ testimonio.author_info }}</small>
           </div>
         </div>
       </div>
