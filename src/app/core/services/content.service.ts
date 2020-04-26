@@ -15,23 +15,19 @@ import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
 import { Contact } from '@shared/interfaces/contact.model';
 import { About } from '@shared/interfaces/about.model';
-import { Footer } from '@app/shared/interfaces/footer.model';
+import { Footer } from '@shared/interfaces/footer.model';
+import { Page } from '@shared/interfaces/page.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  private apiUrl = `${environment.apiUrl}/content`;
-  private httpOptions = {
-    headers: new HttpHeaders({
-      accept: '*/*',
-      // 'Accept-Encoding': 'gzip, deflate, br',
-      connection: 'keep-alive'
-      // 'Access-Control-Allow-Origin': '*',
-      // 'Content-Type': 'application/json'
-    })
-  };
+  private urlPages = `${environment.apiUrl}/pages`;
+  private urlSections = `${environment.apiUrl}/texts`;
+  private urlCarousel = `${environment.apiUrl}/carousels`;
+  private urlTestimonios = `${environment.apiUrl}/testimonies`;
+
   private meetUpGroup = 'Swifticious';
   events$: Observable<Event[]>;
 
@@ -52,49 +48,89 @@ export class ContentService {
     ).pipe(shareReplay(1));
   }
 
-  getHome(): Observable<ComponentItem[]> {
-    const items: ComponentItem[] = [];
-    for (const item of HOME) {
-      switch (item.component) {
-        case ComponentType.CAROUSEL: {
-          items.push({
-            component: CarouselComponent,
-            data: item.data
-          });
-          break;
-        }
-        case ComponentType.TESTIMONIOS: {
-          items.push({
-            component: TestimoniosComponent,
-            data: item.data
-          });
-          break;
-        }
-        case 'SectionComponent': {
-          items.push({
-            component: SectionComponent,
-            data: item.data
-          });
-          break;
-        }
-        case 'GamesComponent': {
-          items.push({
-            component: GamesComponent,
-            data: item.data
-          });
-          break;
-        }
-        case 'SectionImgBgComponent': {
-          items.push({
-            component: SectionImgBgComponent,
-            data: item.data
-          });
-          break;
-        }
-      }
-    }
-    return of(items);
+  getPages() {
+    return this.http.get<Page[]>(this.urlPages);
   }
+
+  getPage(id: string) {
+    return this.http.get<Page>(`${this.urlPages}/${id}`);
+  }
+
+  getMainPage() {
+    return this.http.get<Page>(`${this.urlPages}/main`).pipe(
+      map(page => {
+        for (const component of page.components) {
+          switch (component.type) {
+            case ComponentType.CAROUSEL: {
+              component.component = CarouselComponent;
+              break;
+            }
+            case ComponentType.TESTIMONIOS: {
+              component.component = TestimoniosComponent;
+              break;
+            }
+            case ComponentType.SECTION: {
+              component.component = SectionComponent;
+              break;
+            }
+            case 'GamesComponent': {
+              component.component = GamesComponent;
+              break;
+            }
+            case 'SectionImgBgComponent': {
+              component.component = CarouselComponent;
+              break;
+            }
+          }
+        }
+        return page;
+      })
+    );
+  }
+
+  // getHome(): Observable<ComponentItem[]> {
+  //   const items: ComponentItem[] = [];
+  //   for (const item of HOME) {
+  //     switch (item.component) {
+  //       case ComponentType.CAROUSEL: {
+  //         items.push({
+  //           component: CarouselComponent,
+  //           data: item.data
+  //         });
+  //         break;
+  //       }
+  //       case ComponentType.TESTIMONIOS: {
+  //         items.push({
+  //           component: TestimoniosComponent,
+  //           data: item.data
+  //         });
+  //         break;
+  //       }
+  //       case 'SectionComponent': {
+  //         items.push({
+  //           component: SectionComponent,
+  //           data: item.data
+  //         });
+  //         break;
+  //       }
+  //       case 'GamesComponent': {
+  //         items.push({
+  //           component: GamesComponent,
+  //           data: item.data
+  //         });
+  //         break;
+  //       }
+  //       case 'SectionImgBgComponent': {
+  //         items.push({
+  //           component: SectionImgBgComponent,
+  //           data: item.data
+  //         });
+  //         break;
+  //       }
+  //     }
+  //   }
+  //   return of(items);
+  // }
 
   getEvents(): Observable<Event[]> {
     // if (!this.events$) {

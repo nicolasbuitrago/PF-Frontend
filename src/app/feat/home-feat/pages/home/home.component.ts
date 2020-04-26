@@ -6,7 +6,8 @@ import { ContentService } from '@core/services/content.service';
 // import { CarouselItem } from '../../models/carousel-item.model';
 // import { Testimonio } from '../../models/testimonio.model';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
-import { ItemComponent } from '../../models/item.component.model';
+import { DataComponent } from '../../models/data-component.model';
+import { Page } from '@shared/interfaces/page.model';
 
 @Component({
   selector: 'app-home',
@@ -26,9 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   getHome(): void {
-    this.contentService.getHome()
-    .subscribe((home: ComponentItem[]) => {
-      this.home = home;
+    this.contentService.getMainPage()
+    .subscribe((home: Page) => {
+      this.home = home.components;
       this.loadComponents();
     });
   }
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
     for (const item of this.home) {
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(item.component);
       const componentRef = viewContainerRef.createComponent(componentFactory);
-      (componentRef.instance as ItemComponent).data = item.data;
+      (componentRef.instance as DataComponent).data = item.data;
     }
   }
 

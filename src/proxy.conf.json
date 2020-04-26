@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://pf-backend-games.herokuapp.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
