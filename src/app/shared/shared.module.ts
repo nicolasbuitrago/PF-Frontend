@@ -10,6 +10,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { ItemDirective } from './directives/item.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { SafePipe } from './pipes/safe.pipe';
     PageTitleComponent,
     FooterComponent,
     PageNotFoundComponent,
+    SpinnerComponent,
     ItemDirective,
     SafePipe
   ],
@@ -31,6 +33,7 @@ import { SafePipe } from './pipes/safe.pipe';
     NavBarComponent,
     FooterComponent,
     PageTitleComponent,
+    SpinnerComponent,
     ItemDirective,
     SafePipe
   ]
