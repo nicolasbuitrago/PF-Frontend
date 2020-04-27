@@ -1,6 +1,9 @@
 @import '~styles/abstracts/_variables.scss';
 
 .videogame {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
   position: relative;
   transition: all .2s ease-out 0s;
   text-align: center;
