@@ -18,6 +18,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { GameComponent } from './components/game/game.component';
 import { StudioComponent } from './components/studio/studio.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { SponsorsComponent } from './components/sponsors/sponsors.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FaqComponent } from './pages/faq/faq.component';
     AboutComponent,
     GameComponent,
     StudioComponent,
-    FaqComponent
+    FaqComponent,
+    SponsorsComponent
   ],
   imports: [
     CommonModule,

@@ -14,6 +14,7 @@ export interface ComponentItem {
   component_id: number;
   data?: DataComponent; // DataComponent
   resources?: DataComponent[]; // DataComponent[]
+  resource_type?: string;
   position: number;
   css: string;
   created_at: Date;
@@ -26,5 +27,14 @@ export enum ComponentType {
   GAME = 'GameComponent',
   STUDIO = 'StudioComponent',
   CAROUSEL = 'CarouselComponent',
-  TESTIMONIOS = 'TestimonyComponent'
+  TESTIMONIOS = 'TestimonyComponent',
+  SPONSORS = 'SponsorsComponent'
+}
+
+export enum ResourceType {
+  EVENT = 'Event',
+  SECTION = 'Text',
+  GAME = 'Game',
+  STUDIO = 'Studio',
+  SPONSOR = 'Sponsor'
 }

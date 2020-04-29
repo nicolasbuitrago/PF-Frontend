@@ -1,5 +1,6 @@
 import { DataComponent } from '@shared/interfaces/data-component.model';
 
 export interface DataItem {
-  data: DataComponent;
+  data?: DataComponent;
+  resources?: DataComponent[];
 }

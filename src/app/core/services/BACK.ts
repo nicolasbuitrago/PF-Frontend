@@ -1,13 +1,13 @@
-import { CarouselItem } from '@shared/interfaces/carousel-item.model';
+// import { CarouselItem } from '@shared/interfaces/carousel-item.model';
 import { Game } from '@shared/interfaces/game.model';
-import { Testimonio } from '@shared/interfaces/testimonio.model';
+// import { Testimonio } from '@shared/interfaces/testimonio.model';
 // import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { About } from '@shared/interfaces/about.model';
 import { Contact } from '@shared/interfaces/contact.model';
 import { Footer } from '@app/shared/interfaces/footer.model';
 
-const ITEMS: CarouselItem[] = [
+const ITEMS: any[] = [
   {
     title: 'Carousel item 1',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur?',
@@ -28,7 +28,7 @@ const ITEMS: CarouselItem[] = [
   }
 ];
 
-const TESTIMONIOS: Testimonio[] = [
+const TESTIMONIOS: any[] = [
   {
     mesg: 'Amazing',
     img: '//placeimg.com/200/200/people',

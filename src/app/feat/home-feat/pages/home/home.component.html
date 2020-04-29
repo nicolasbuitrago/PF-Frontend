@@ -1,4 +1,4 @@
-<app-nav-bar [fixed]="components"></app-nav-bar>
+<app-nav-bar [fixed]="fixed"></app-nav-bar>
 <main class="full-page">
   <div class="text-center py-5 my-5" *ngIf="!components else comps">
     <div class="spinner-border text-primary" style="width: 6rem; height: 6rem; font-size: 3rem;" role="status">
@@ -11,37 +11,17 @@
   <ng-template appItemHost #comps>
 
   </ng-template>
-  <!-- Inicio Section sponsors -->
-  <br>
-  <h2 class="mb-md-4 text-center">Sponsors</h2>
-  <section class="partners py-7">
-    <div class="container">
-      <div class="row partner-grids text-center">
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-angrycreative fa-5x"></i></a>
-        </div>
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-apper fa-5x"></i></a>
-        </div>
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-apple-pay fa-5x"></i></a>
-        </div>
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-aviato fa-5x"></i></a>
-        </div>
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-aws fa-5x"></i></a>
-        </div>
-        <div class="col-sm-2 col-4">
-          <a href="#"><i class="fab fa-amazon-pay fa-5x"></i></a>
-        </div>
+  <div class="container h-100 pt-5" *ngIf="components && !components.length">
+    <div class="row align-items-center text-center">
+      <div class="col-md-3">
+        <span style="font-size: 10rem;"><i class="far fa-frown"></i></span>
+      </div>
+      <div class="col-md-9 align-self-center">
+        <h2 class="font-weight-bold">Página sin información</h2>
+        <h3>La página a la que intentas acceder no tiene información para mostrar.</h3>
       </div>
     </div>
-  </section>
-  <br>
-  <br>
-  <!-- Fin Section sponsors -->
-
+  </div>
 
 </main>
 <app-footer></app-footer>

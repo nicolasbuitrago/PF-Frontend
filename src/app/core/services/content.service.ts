@@ -9,7 +9,7 @@ import { SectionComponent } from '@feat/home-feat/components/sections/section/se
 import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
-import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.model';
+import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
@@ -17,6 +17,7 @@ import { Contact } from '@shared/interfaces/contact.model';
 import { About } from '@shared/interfaces/about.model';
 import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
+import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
 
 @Injectable({
   providedIn: 'root'
@@ -80,6 +81,14 @@ export class ContentService {
             }
             case 'SectionImgBgComponent': {
               component.component = CarouselComponent;
+              break;
+            }
+            case ComponentType.RESOURCE_LIST: {
+              switch (component.resource_type) {
+                case ResourceType.SPONSOR:
+                  component.component = SponsorsComponent;
+                  break;
+              }
               break;
             }
           }
