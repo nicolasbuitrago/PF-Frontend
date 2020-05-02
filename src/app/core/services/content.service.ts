@@ -19,6 +19,7 @@ import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
 import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
+import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 
 
 @Injectable({
@@ -44,9 +45,9 @@ export class ContentService {
       // this
       //   .http
       //   .get<Game[]>('some-url')
-        // first share, in the example it's been written before using the merge and infiniteStream$
-        // .pipe(share())
-        ,
+      // first share, in the example it's been written before using the merge and infiniteStream$
+      // .pipe(share())
+      ,
       this.infiniteGames$
     ).pipe(shareReplay(1));
   }
@@ -93,14 +94,22 @@ export class ContentService {
               }
               break;
             }
-            case ComponentType.RESOURCE_LIST: {
-              switch (component.resource_type) {
-                case ResourceType.NEWITEM:
-                  component.component = NewsComponent;
-                  break;
-              }
-              break;
-            }
+             /* case ComponentType.RESOURCE_LIST: {
+               switch (component.resource_type) {
+                 case ResourceType.NEWITEM:
+                   component.component = NewsComponent;
+                   break;
+               }
+               break;
+             } */
+             /* case ComponentType.RESOURCE_LIST: {
+               switch (component.resource_type) {
+                 case ResourceType.MENTOR:
+                   component.component = MentorsComponent;
+                   break;
+               }
+               break;
+             } */
           }
         }
         return page;
@@ -172,7 +181,7 @@ export class ContentService {
     // this.httpOptions.params.append('email', email);
     return this.http.get<any>(
       `https://cors-anywhere.herokuapp.com/https://api.meetup.com/${this.meetUpGroup}?&sign=true&photo-host=public`
-      ).pipe(
+    ).pipe(
       tap(_ => this.log('fetched meetUp group')),
       // map((data: any[]) => data.map(item => ))
       // catchError(this.handleError<any[]>('getEvents', []))
@@ -184,7 +193,7 @@ export class ContentService {
     // this.httpOptions.params.append('email', email);
     return this.http.get<any[]>(
       `https://cors-anywhere.herokuapp.com/https://api.meetup.com/${this.meetUpGroup}/events?&sign=true&photo-host=public&page=20`
-      ).pipe(
+    ).pipe(
       tap(_ => this.log('fetched events of meetUp')),
       // map((data: any[]) => data.map(item => ))
       // catchError(this.handleError<any[]>('getEvents', []))
