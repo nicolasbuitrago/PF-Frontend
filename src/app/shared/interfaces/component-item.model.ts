@@ -28,7 +28,8 @@ export enum ComponentType {
   STUDIO = 'StudioComponent',
   CAROUSEL = 'CarouselComponent',
   TESTIMONIOS = 'TestimonyComponent',
-  SPONSORS = 'SponsorsComponent'
+  SPONSORS = 'SponsorsComponent',
+  NEWS = 'NewsComponent'
 }
 
 export enum ResourceType {
@@ -36,5 +37,6 @@ export enum ResourceType {
   SECTION = 'Text',
   GAME = 'Game',
   STUDIO = 'Studio',
-  SPONSOR = 'Sponsor'
+  SPONSOR = 'Sponsor',
+  NEWITEM = 'NewItem'
 }

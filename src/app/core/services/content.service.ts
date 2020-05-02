@@ -18,6 +18,8 @@ import { About } from '@shared/interfaces/about.model';
 import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
+import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -87,6 +89,14 @@ export class ContentService {
               switch (component.resource_type) {
                 case ResourceType.SPONSOR:
                   component.component = SponsorsComponent;
+                  break;
+              }
+              break;
+            }
+            case ComponentType.RESOURCE_LIST: {
+              switch (component.resource_type) {
+                case ResourceType.NEWITEM:
+                  component.component = NewsComponent;
                   break;
               }
               break;
