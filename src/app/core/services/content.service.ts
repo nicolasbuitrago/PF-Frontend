@@ -91,25 +91,15 @@ export class ContentService {
                 case ResourceType.SPONSOR:
                   component.component = SponsorsComponent;
                   break;
+                case ResourceType.NEWITEM:
+                  component.component = NewsComponent;
+                  break;
+                case ResourceType.MENTOR:
+                  component.component = MentorsComponent;
+                  break;
               }
               break;
             }
-             /* case ComponentType.RESOURCE_LIST: {
-               switch (component.resource_type) {
-                 case ResourceType.NEWITEM:
-                   component.component = NewsComponent;
-                   break;
-               }
-               break;
-             } */
-             /* case ComponentType.RESOURCE_LIST: {
-               switch (component.resource_type) {
-                 case ResourceType.MENTOR:
-                   component.component = MentorsComponent;
-                   break;
-               }
-               break;
-             } */
           }
         }
         return page;

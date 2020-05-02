@@ -19,6 +19,8 @@ import { GameComponent } from './components/game/game.component';
 import { StudioComponent } from './components/studio/studio.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
+import { MentorsComponent } from './components/mentors/mentors.component';
+import { NewsComponent } from './components/news/news.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SponsorsComponent } from './components/sponsors/sponsors.component';
     GameComponent,
     StudioComponent,
     FaqComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    MentorsComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,

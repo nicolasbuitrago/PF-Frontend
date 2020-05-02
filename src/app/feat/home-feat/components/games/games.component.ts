@@ -11,7 +11,7 @@ import { DataItem } from '../../models/data-item.model';
 })
 export class GamesComponent implements OnInit, DataItem {
 
-  @Input() data: any;
+  @Input() resources: Game[];
   selectedPage = 0;
   pageSize = 3;
 
@@ -23,7 +23,7 @@ export class GamesComponent implements OnInit, DataItem {
 
   ngOnInit(): void {
     // this.getGames();
-    this.games = this.data.games;
+    this.games = null;
   }
 
   // getGames(): void {
