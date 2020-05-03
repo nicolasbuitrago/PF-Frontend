@@ -31,9 +31,9 @@ import { EventsListComponent } from '@app/feat/home-feat/components/events-list/
 export class ContentService {
 
   private urlPages = `${environment.apiUrl}/pages`;
-  private urlSections = `${environment.apiUrl}/texts`;
-  private urlCarousel = `${environment.apiUrl}/carousels`;
-  private urlTestimonios = `${environment.apiUrl}/testimonies`;
+  // private urlSections = `${environment.apiUrl}/texts`;
+  // private urlCarousel = `${environment.apiUrl}/carousels`;
+  // private urlTestimonios = `${environment.apiUrl}/testimonies`;
 
   private meetUpGroup = 'Swifticious';
   events$: Observable<Event[]>;
@@ -61,47 +61,51 @@ export class ContentService {
 
   private setComponents(page: Page) {
     for (const component of page.components) {
-      switch (component.type) {
-        case ComponentType.CAROUSEL: {
-          component.component = CarouselComponent;
-          break;
+      if ((component as any).resource) {
+        component.data = (component as any).resource;
+      }
+      if (component.type === ComponentType.RESOURCE_LIST) {
+        switch (component.resource_type) {
+          case ResourceType.EVENT:
+            component.component = EventsListComponent;
+            break;
+          case ResourceType.SPONSOR:
+            component.component = SponsorsComponent;
+            break;
+          case ResourceType.NEWITEM:
+            component.component = NewsComponent;
+            break;
+          case ResourceType.MENTOR:
+            component.component = MentorsComponent;
+            break;
+          // case ResourceType.FAQITEM:
+          //   component.component = FaqComponent;
+          //   break;
+          case ResourceType.SERVICE:
+            component.component = ServicesComponent;
+            break;
         }
-        case ComponentType.TESTIMONIOS: {
-          component.component = TestimoniosComponent;
-          break;
-        }
-        case ComponentType.SECTION: {
-          component.component = SectionComponent;
-          break;
-        }
-        case 'GamesComponent': {
-          component.component = GamesComponent;
-          break;
-        }
-        case 'SectionImgBgComponent': {
-          component.component = CarouselComponent;
-          break;
-        }
-        case ComponentType.RESOURCE_LIST: {
-          switch (component.resource_type) {
-            case ResourceType.EVENT:
-              component.component = EventsListComponent;
-              break;
-            case ResourceType.SPONSOR:
-              component.component = SponsorsComponent;
-              break;
-            case ResourceType.NEWITEM:
-              component.component = NewsComponent;
-              break;
-            case ResourceType.MENTOR:
-              component.component = MentorsComponent;
-              break;
-            // case ResourceType.FAQITEM:
-            //   component.component = FaqComponent;
-            //   break;
-            case ResourceType.SERVICE:
-              component.component = ServicesComponent;
-              break;
+      } else {
+        switch (component.resource_type) {
+          case ComponentType.CAROUSEL: {
+            component.component = CarouselComponent;
+            break;
+          }
+          case ComponentType.TESTIMONIOS: {
+            component.component = TestimoniosComponent;
+            break;
+          }
+          case ComponentType.SECTION: {
+            component.component = SectionComponent;
+            break;
+          }
+          case 'GamesComponent': {
+            component.component = GamesComponent;
+            break;
+          }
+          case 'SectionImgBgComponent': {
+            component.component = CarouselComponent;
+            break;
           }
         }
       }

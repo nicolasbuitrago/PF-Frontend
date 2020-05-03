@@ -3,12 +3,23 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
 <app-page-title title="Events & News"></app-page-title>
 
- <main class="container my-4 full-page">
+ <main class="full-page">
 
-  <app-events-list></app-events-list>
+  <app-spinner [loading]="!components"></app-spinner>
+  <ng-template appItemHost #comps>
 
-  <!-- News -->
-   <app-news></app-news>
+  </ng-template>
+  <div class="container h-100 pt-5" *ngIf="components && !components.length">
+    <div class="row align-items-center text-center">
+      <div class="col-md-3">
+        <span style="font-size: 10rem;"><i class="far fa-frown"></i></span>
+      </div>
+      <div class="col-md-9 align-self-center">
+        <h2 class="font-weight-bold">Página sin información</h2>
+        <h3>La página a la que intentas acceder no tiene información para mostrar.</h3>
+      </div>
+    </div>
+  </div>
 
 </main>
 <app-footer></app-footer>

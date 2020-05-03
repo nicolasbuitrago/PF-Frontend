@@ -1,14 +1,10 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular/core';
-
 import { ItemDirective } from '@shared/directives/item.directive';
-
 import { ContentService } from '@core/services/content.service';
-// import { CarouselItem } from '../../models/carousel-item.model';
-// import { Testimonio } from '../../models/testimonio.model';
 import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.model';
 import { DataItem } from '../../models/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
-import { DataComponent } from '@app/shared/interfaces/data-component.model';
+import { DataComponent } from '@shared/interfaces/data-component.model';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   get fixed() {
-    return this.components && this.components.length && this.components[0].type === ComponentType.CAROUSEL;
+    return this.components && this.components.length && this.components[0].resource_type === ComponentType.CAROUSEL;
   }
 
   getHome(): void {

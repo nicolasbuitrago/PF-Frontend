@@ -23,16 +23,16 @@ export interface ComponentItem {
 
 export enum ComponentType {
   RESOURCE_LIST = 'ResourceListComponent',
-  SECTION = 'TextComponent',
-  GAME = 'GameComponent',
-  STUDIO = 'StudioComponent',
-  CAROUSEL = 'CarouselComponent',
-  TESTIMONIOS = 'TestimonyComponent',
-  SPONSORS = 'SponsorsComponent',
-  NEWS = 'NewsComponent',
-  MENTORS = 'MentorsComponent',
-  SERVICES = 'ServicesComponent',
-  FAQ = 'FaqComponent'
+  SECTION = 'Text',
+  // GAME = 'GameComponent',
+  // STUDIO = 'StudioComponent',
+  CAROUSEL = 'Carousel',
+  TESTIMONIOS = 'Testimony',
+  // SPONSORS = 'SponsorsComponent',
+  // NEWS = 'NewsComponent',
+  // MENTORS = 'MentorsComponent',
+  // SERVICES = 'ServicesComponent',
+  // FAQ = 'FaqComponent'
 }
 
 export enum ResourceType {
