@@ -39,6 +39,6 @@ export enum ResourceType {
   GAME = 'Game',
   STUDIO = 'Studio',
   SPONSOR = 'Sponsor',
-  NEWITEM = 'NewItem',
+  NEWITEM = 'New',
   MENTOR = 'Mentor'
 }

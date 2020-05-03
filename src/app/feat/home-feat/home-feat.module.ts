@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
+
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { GamesComponent } from './components/games/games.component';
 import { SectionComponent } from './components/sections/section/section.component';
@@ -19,6 +20,8 @@ import { GameComponent } from './components/game/game.component';
 import { StudioComponent } from './components/studio/studio.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
+import { NewsComponent } from './components/news/news.component';
+import { MentorsComponent } from './components/mentors/mentors.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { SponsorsComponent } from './components/sponsors/sponsors.component';
     GameComponent,
     StudioComponent,
     FaqComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    NewsComponent,
+    MentorsComponent
   ],
   imports: [
     CommonModule,

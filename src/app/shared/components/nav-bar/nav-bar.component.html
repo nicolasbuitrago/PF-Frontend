@@ -3,8 +3,9 @@
   [ngClass]="{'top-nav-collapse': !fixed, 'fixed-top': fixed}">
   <h1>
     <a class="navbar-brand" routerLink="/home" data-blast="color">
-      <i class="fas fa-gamepad"></i>
+      <i class="fas fa-gamepad" data-toggle="Home"></i>
       {{ title }}
+      
     </a>
   </h1>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -14,19 +15,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto text-center">
       <li class="nav-item  mt-lg-0 mt-3">
+        <a class="nav-link scroll" routerLink="/home/about" routerLinkActive="active">About us</a>
+      </li>
+      <li class="nav-item  mt-lg-0 mt-3">
         <a class="nav-link scroll" routerLink="/studios" routerLinkActive="active">Projects</a>
       </li>
       <li class="nav-item  mt-lg-0 mt-3">
         <a class="nav-link scroll" routerLink="/home/events" routerLinkActive="active">Events & News</a>
       </li>
-      <li class="nav-item  mt-lg-0 mt-3">
+      <li class="nav-item mt-lg-0 mt-3">
         <a class="nav-link scroll" routerLink="/home/faq" routerLinkActive="active">FAQ</a>
       </li>
       <li class="nav-item mt-lg-0 mt-3">
         <a class="nav-link scroll" routerLink="/home/contact" routerLinkActive="active">Contact</a>
-      </li>
-      <li class="nav-item mt-lg-0 mt-3">
-        <a class="nav-link scroll" routerLink="/home/about" routerLinkActive="active">About us</a>
       </li>
       <!-- <li class="nav-item dropdown mt-lg-0 mt-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
