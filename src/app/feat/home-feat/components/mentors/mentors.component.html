@@ -1,6 +1,6 @@
 <div class="container py-xl-5 py-lg-3">
   <h3 class="title-w3 mb-sm-5 mb-4 text-dark text-center font-weight-bold">Our Team Members</h3>
-  <div class="row mt-3">
+  <div class="row mt-3" *ngIf="resources && resources.length else empty">
     <div class="col-lg-4" *ngFor="let mentor of resources">
       <div class="box16">
         <!-- <img [src]="mentor.image_url" class="img-fluid"> -->
@@ -16,4 +16,7 @@
       </div>
     </div>
   </div>
+  <ng-template #empty>
+    <p>There are no members to show.</p>
+  </ng-template>
 </div>

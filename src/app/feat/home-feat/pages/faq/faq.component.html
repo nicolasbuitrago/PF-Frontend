@@ -1,77 +1,228 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
 <app-page-title title="FAQ"></app-page-title>
-<main class="container py-4 full-page">
-  <div class="row">
-    <div class="col-4">
-      <div class="list-group" id="list-tab" role="tablist">
-        <!-- <a class="list-group-item list-group-item-action" *ngFor="let faq of this.categories; let i = index"
-          id="list-{{i}}" data-toggle="list" href="#list-{{i}}" role="tab">{{faq.cat}}</a> -->
-        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-      </div>
-    </div>
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-          <div class="accordion" id="accordionQuestions">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                  </button>
-                </h2>
-              </div>
 
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionQuestions">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionQuestions">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionQuestions">
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
+<main class="container py-4 full-page">
+  <div class="row" *ngIf="resources && resources.length else empty">
+   
+    <!-- Card categories -->
+    <div class="col-lg-4" *ngFor="let faqitem of resources">
+          <div class="nav nav-pills faq-nav" id="faq-tabs" role="tablist" aria-orientation="vertical">
+              <a [href]="faqitem.id" class="nav-link active" data-toggle="pill" role="tab" aria-controls={{ faqitem.id }} aria-selected="true">
+                  <i class="mdi mdi-help-circle"></i> {{ faqitem.category }}
+              </a>
           </div>
-        </div>
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sed voluptate perferendis vel rerum quod nemo tenetur voluptatibus, doloremque error reprehenderit molestiae ipsam sunt quasi provident dignissimos harum? Iure, labore!</p>
-        </div>
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sed voluptate perferendis vel rerum quod nemo tenetur voluptatibus, doloremque error reprehenderit molestiae ipsam sunt quasi provident dignissimos harum? Iure, labore!</p>
-        </div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sed voluptate perferendis vel rerum quod nemo tenetur voluptatibus, doloremque error reprehenderit molestiae ipsam sunt quasi provident dignissimos harum? Iure, labore!</p>
-        </div>
-      </div>
     </div>
+    <!-- Tabs -->
+      <div class="col-lg-8" *ngFor="let faqitem of resources">
+          <div class="tab-content" id="faq-tab-content">
+              <div class="tab-pane show active" id={{ faqitem.id }} role="tabpanel" aria-labelledby="tab1">
+                  <div class="accordion" id="accordion-tab-i">
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-1-heading-1">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" 
+                                  aria-expanded="false" aria-controls="accordion-tab-1-content-1">
+                                  {{ faqitem.question }}</button>
+                              </h5>
+                          </div>
+                          <div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+                              <div class="card-body">
+                                  <p>{{ faqitem.answer }}</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
+  <ng-template #empty>
+    <p>There is no faq's to show.</p>
+  </ng-template>
 </main>
 <app-footer></app-footer>
+
+
+<!-- Para probar en local -->
+<!-- <main class="container py-4 full-page">
+  <div class="row">
+      <div class="col-lg-4">
+          <div class="nav nav-pills faq-nav" id="faq-tabs" role="tablist" aria-orientation="vertical">
+              <a href="#tab1" class="nav-link active" data-toggle="pill" role="tab" aria-controls="tab1" aria-selected="true">
+                  <i class="mdi mdi-help-circle"></i> General
+              </a>
+              <a href="#tab2" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab2" aria-selected="false">
+                  <i class="mdi mdi-account"></i> Program
+              </a>
+              <a href="#tab3" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab3" aria-selected="false">
+                  <i class="mdi mdi-account-settings"></i> Revenue
+              </a>
+
+          </div>
+      </div>
+      <div class="col-lg-8">
+          <div class="tab-content" id="faq-tab-content">
+              <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+                  <div class="accordion" id="accordion-tab-1">
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-1-heading-1">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" 
+                                  aria-expanded="false" aria-controls="accordion-tab-1-content-1">
+                                    Just once I'd like to eat dinner with a celebrity?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+                              <div class="card-body">
+                                  <p>Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. I was having the most wonderful dream. Except you were there, and you were there, and you were there! No argument here. Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-1-heading-2">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2">Bender, I didn't know you liked cooking?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
+                              <div class="card-body">
+                                  <p>That's so cute. Can we have Bender Burgers again? Is the Space Pope reptilian!? I wish! It's a nickel. Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually!</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-1-heading-3">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3">My fellow Earthicans?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
+                              <div class="card-body">
+                                  <p>As I have explained in my book 'Earth in the Balance', and the much more popular 'Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards. Fry, you can't just sit here in the dark listening to classical music.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-1-heading-4">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-4" aria-expanded="false" aria-controls="accordion-tab-1-content-4">Who am I making this out to?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-1-content-4" aria-labelledby="accordion-tab-1-heading-4" data-parent="#accordion-tab-1">
+                              <div class="card-body">
+                                  <p>Morbo can't understand his teleprompter because he forgot how you say that letter that's shaped like a man wearing a hat. Also Zoidberg. Can we have Bender Burgers again? Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2">
+                  <div class="accordion" id="accordion-tab-2">
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-2-heading-1">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1">Does anybody else feel jealous and aroused and worried?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse show" id="accordion-tab-2-content-1" aria-labelledby="accordion-tab-2-heading-1" data-parent="#accordion-tab-2">
+                              <div class="card-body">
+                                  <p>Kif, I have mated with a woman. Inform the men. This is the worst part. The calm before the battle. Bender, being God isn't easy. If you do too much, people get dependent on you, and if you do nothing, they lose hope. You have to use a light touch. Like a safecracker, or a pickpocket.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-2-heading-2">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2">This opera's as lousy as it is brilliant?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-parent="#accordion-tab-2">
+                              <div class="card-body">
+                                  <p>Your lyrics lack subtlety. You can't just have your characters announce how they feel. That makes me feel angry! It's okay, Bender. I like cooking too. Interesting. No, wait, the other thing: tedious.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-2-heading-3">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3">Who are you, my warranty?!</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-parent="#accordion-tab-2">
+                              <div class="card-body">
+                                  <p>Oh, I think we should just stay friends. I'll tell them you went down prying the wedding ring off his cold, dead finger. Aww, it's true. I've been hiding it for so long. Say it in Russian! Then throw her in the laundry room, which will hereafter be referred to as "the brig".</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-2-heading-4">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4">I haven't felt much of anything since my guinea pig died?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-2-content-4" aria-labelledby="accordion-tab-2-heading-4" data-parent="#accordion-tab-2">
+                              <div class="card-body">
+                                  <p>And I'm his friend Jesus. Oh right. I forgot about the battle. OK, if everyone's finished being stupid. We'll need to have a look inside you with this camera. I'm just glad my fat, ugly mama isn't alive to see this day.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3">
+                  <div class="accordion" id="accordion-tab-3">
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-3-heading-1">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1">Michelle, I don't regret this, but I both rue and lament it?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse show" id="accordion-tab-3-content-1" aria-labelledby="accordion-tab-3-heading-1" data-parent="#accordion-tab-3">
+                              <div class="card-body">
+                                  <p>Look, last night was a mistake. We'll need to have a look inside you with this camera. Good news, everyone! There's a report on TV with some very bad news! You know, I was God once. You lived before you met me?!</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-3-heading-2">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2">Why am I sticky and naked?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-parent="#accordion-tab-3">
+                              <div class="card-body">
+                                  <p>Did I miss something fun? Humans dating robots is sick. You people wonder why I'm still single? It's 'cause all the fine robot sisters are dating humans! Kids don't turn rotten just from watching TV.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-3-heading-3">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3">Is that a cooking show?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-parent="#accordion-tab-3">
+                              <div class="card-body">
+                                  <p>OK, this has gotta stop. I'm going to remind Fry of his humanity the way only a woman can. You seem malnourished. Are you suffering from intestinal parasites? Check it out, y'all. Everyone who was invited is here. I am Singing Wind, Chief of the Martians.</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="accordion-tab-3-heading-4">
+                              <h5>
+                                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4">You are the last hope of the universe?</button>
+                              </h5>
+                          </div>
+                          <div class="collapse" id="accordion-tab-3-content-4" aria-labelledby="accordion-tab-3-heading-4" data-parent="#accordion-tab-3">
+                              <div class="card-body">
+                                  <p>I don't want to be rescued. I videotape every customer that comes in here, so that I may blackmail them later. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head."</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+          </div>
+      </div>
+  </div>
+</main> -->

@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 <main class="album py-5 bg-light full-page">
   <div class="container pb-3">
-    <h2>Studios</h2>
+    <h2>Projects</h2>
   </div>
   <div class="container">
     <div class="row" *ngIf="studios && studios.length else empty">
@@ -34,7 +34,7 @@
       </div>
     </div>
     <ng-template #empty>
-      <p>No hay estudios disponibles para mostrar.</p>
+      <p>There are no projects available for display.</p>
     </ng-template>
   </div>
 </main>

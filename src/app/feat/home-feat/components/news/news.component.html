@@ -2,7 +2,7 @@
   <div class="container py-xl-5 py-lg-3">
     <h2 style="font-weight: bold;">News</h2>
     <br>
-    <div class="row package-grids">
+    <div class="row package-grids" *ngIf="resources && resources.length else empty">
       <div class="col-md-4 new-w3" *ngFor="let newitem of resources">
         <div class="news-top">
           <a [href]="newitem.link">
@@ -18,33 +18,11 @@
         </div>
       </div>
     </div>
+    <ng-template #empty>
+      <p>There is no news to show.</p>
+    </ng-template>
     <div class="text-center">
-      <!-- <nav aria-label="Page navigation games">
-      <ul class="pagination justify-content-center">
-          <li class="page-item"
-              [class.disabled]="selectedPage == 0">
-          <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="previous()" tabindex="-1"
-              [attr.aria-disabled]="selectedPage == 0 ? 'true' : null">1</a>
-          </li>
-          <li class="page-item" *ngFor='let p of array(pags)'
-              [class.active]='p == selectedPage'
-              [attr.aria-current]="p == selectedPage ? 'page' : null">
-          <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="to(p)" *ngIf='p != selectedPage'>{{ p+1 }}</a>
-          <span class="page-link" *ngIf='p == selectedPage'>
-              {{ p+1 }}
-              <span class="sr-only">(current)</span>
-          </span>
-          </li>
-          <li class="page-item"
-              [class.disabled]="selectedPage == pags-1">
-          <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="next()"
-              [attr.aria-disabled]="selectedPage == pags-1 ? 'true' : null">
-              2
-          </a>
-          </li>
-      </ul>
-      </nav> -->
-      <a href="#" class="btn button-style mt-sm-5 mt-4">Read More</a>
+      <!-- <a href="#" class="btn button-style mt-sm-5 mt-4">Read More</a> -->
     </div>
   </div>
 </div>

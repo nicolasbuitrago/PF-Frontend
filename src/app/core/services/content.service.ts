@@ -15,11 +15,13 @@ import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
 import { Contact } from '@shared/interfaces/contact.model';
 import { About } from '@shared/interfaces/about.model';
+import { FaqItem } from '@shared/interfaces/faqitem.model';
 import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
 import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
+import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
 
 
 @Injectable({
@@ -98,7 +100,26 @@ export class ContentService {
                   component.component = MentorsComponent;
                   break;
               }
-              break;
+              switch (component.resource_type) {
+                case ResourceType.MENTOR:
+                  component.component = MentorsComponent;
+                  break;
+              }
+              switch (component.resource_type) {
+                case ResourceType.NEWITEM:
+                  component.component = NewsComponent;
+                  break;
+              }
+              switch (component.resource_type) {
+                case ResourceType.SERVICE:
+                  component.component = ServicesComponent;
+                  break;
+              }
+              /* switch (component.resource_type) {
+                case ResourceType.FAQITEM:
+                  component.component = FaqComponent;
+                  break;
+              } */
             }
           }
         }
@@ -209,6 +230,10 @@ export class ContentService {
   getFooter(): Observable<Footer> {
     return of(FOOTER);
   }
+
+  
+
+  
 
   /**
    * Handle Http operation that failed.
