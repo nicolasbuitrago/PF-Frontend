@@ -13,7 +13,7 @@
           <!-- <h6 class="card-subtitle text-muted">{{ studio.type }}</h6> -->
           <span *ngFor="let tag of studio.tags; let f = first"
             class="badge badge-pill badge-info"
-            [class.ml-1]="f">
+            [class.ml-1]="!f">
             {{ tag }}
           </span>
           <p class="card-text mt-2">{{ studio.description }}</p>
