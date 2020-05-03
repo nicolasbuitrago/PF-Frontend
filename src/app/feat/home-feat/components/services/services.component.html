@@ -1,0 +1,21 @@
+<div class="features4-grids text-left row mt-5">
+    
+    <div class="row" *ngIf="resources && resources.length else empty">
+        <div class="col-lg-4 col-md-6 features4-grid" data-aos="fade-up" *ngFor="let service of resources">
+            <div class="features4-grid-inn" style="text-align: center; align-items: center;">
+              <span class={{ service.icon }} aria-hidden="true"></span>
+              <br>
+              <h5><a [href]="service.link">{{ service.title }}</a></h5>
+              <p>{{ service.description }}</p>
+            </div>
+        </div>
+    </div>
+    <ng-template #empty>
+        <p>There is no services to show.</p>
+    </ng-template>
+
+</div>
+
+<div class="row justify-content-center pt-3">
+    <a class="btn btn-primary btn-lg">Get Started</a>
+</div>

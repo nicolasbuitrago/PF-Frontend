@@ -1,18 +1,25 @@
 <div class="container py-xl-5 py-lg-3">
     <h3 class="title-w3 mb-sm-5 mb-4 text-dark text-center font-weight-bold">Our Team Members</h3>
-    <div class="row mt-30" *ngFor="let mentor of resources">
-      <div class="col-lg-4">
-        <div class="box16">
-            <img src={{ mentor.image_url }} alt="" class="img-fluid">
-          <div class="box-content">
-            <h3 class="title">{{ mentor.name }}</h3>
-            <span class="post">{{ mentor.rol }}</span>
-            <ul class="social">
-              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            </ul>
+    
+    <div class="row" *ngIf="resources && resources.length else empty">
+      <div class="row mt-30" style="padding-top: 15px;" *ngFor="let mentor of resources">
+        <div class="col-lg-4">
+          <div class="box16">
+              <img src={{ mentor.image_url }} alt="" class="img-fluid">
+            <div class="box-content">
+              <h3 class="title">{{ mentor.name }}</h3>
+              <span class="post">{{ mentor.rol }}</span>
+              <ul class="social">
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </div> 
+      </div> 
+    </div>
+    <ng-template #empty>
+      <p>There are no members to show.</p>
+    </ng-template>
+
   </div>	

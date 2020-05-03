@@ -30,7 +30,9 @@ export enum ComponentType {
   TESTIMONIOS = 'TestimonyComponent',
   SPONSORS = 'SponsorsComponent',
   NEWS = 'NewsComponent',
-  MENTORS = 'MentorsComponent'
+  MENTORS = 'MentorsComponent',
+  SERVICES = 'ServicesComponent',
+  FAQ = 'FaqComponent'
 }
 
 export enum ResourceType {
@@ -40,5 +42,7 @@ export enum ResourceType {
   STUDIO = 'Studio',
   SPONSOR = 'Sponsor',
   NEWITEM = 'New',
-  MENTOR = 'Mentor'
+  MENTOR = 'Mentor',
+  SERVICE = 'Service',
+  FAQITEM = 'Faq'
 }

@@ -22,6 +22,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
 import { NewsComponent } from './components/news/news.component';
 import { MentorsComponent } from './components/mentors/mentors.component';
+import { ServicesComponent } from './components/services/services.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MentorsComponent } from './components/mentors/mentors.component';
     FaqComponent,
     SponsorsComponent,
     NewsComponent,
-    MentorsComponent
+    MentorsComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule,

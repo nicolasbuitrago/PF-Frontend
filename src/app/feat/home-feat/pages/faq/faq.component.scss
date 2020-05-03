@@ -1,80 +1,116 @@
-.list-group{
-    color: #8c8c8c;
-}
+// Just for kicks and layout
+body {
+    margin-top: 30px;
+    background-color: #eee;
+  }
+  
+  
+  // FAQ
+  .faq-nav {
+      flex-direction: column;
+      margin: 0 0 32px;
+      border-radius: 2px;    
+      border: 1px solid #ddd;
+      box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+      
+      .nav-link {
+          position: relative;
+          display: block;
+          margin: 0;
+          padding: 13px 16px;
+          background-color: #fff;
+          border: 0;
+          border-bottom: 1px solid #ddd;
+          border-radius: 0;
+          color: #5B87DA;
+          font-weight: bold;
+          transition: background-color .2s ease;
+          
+          &:hover {
+              background-color: #f6f6f6;
+          }
+          
+          &.active {
+              background-color: #f6f6f6;
+              font-weight: 700;
+              color: rgba(0,0,0,.87);        
+          }
+          
+          &:last-of-type {
+              border-bottom-left-radius: 2px;
+              border-bottom-right-radius: 2px;
+              border-bottom: 0;
+          }
+          
+          i.mdi {
+              margin-right: 5px;
+              font-size: 18px;
+              position: relative;
+          }
+      }
+  }
+  
+  // TAB CONTENT
+  .tab-content {
+      box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+      
+      .card {
+          border-radius: 0;
+      }
+      
+      .card-header {
+          padding: 15px 16px;
+          border-radius: 0;
+          background-color: #f6f6f6;
+          
+          h5 {
+              margin: 0;
+              
+              button {
+                  display: block;
+                  width: 100%;
+                  padding: 0;
+                  border: 0;
+                  font-weight: 700;
+                  color: rgba(0,0,0,.87);
+                  text-align: left;
+                  white-space: normal;
+                  
+                  &:hover,
+                  &:focus,
+                  &:active,
+                  &:hover:active {
+                      text-decoration: none;
+                  }
+              }
+          }
+      }
+      
+      .card-body {
+          p {
+              color: #616161;
+              
+              &:last-of-type {
+                  margin: 0;
+              }
+          }
+      }
+  }
+  
+  
+  // BORDER FIX
+  .accordion {
+      > .card {
+          &:not(:first-child) {
+              border-top: 0;
+          }   
+      }
+  }
+  
+  .collapse.show {
+      .card-body {
+          border-bottom: 1px solid rgba(0,0,0,.125);
+      }
+  }
 
-    .list-group a:Hover {
-        color: #5B87DA;
-    }
 
-.template_faq {
-    background: #edf3fe none repeat scroll 0 0;
-}
-.panel-group {
-    background: #fff none repeat scroll 0 0;
-    border-radius: 3px;
-    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.04);
-    margin-bottom: 0;
-    padding: 30px;
-}
-#accordion .panel {
-    border: medium none;
-    border-radius: 0;
-    box-shadow: none;
-    margin: 0 0 15px 10px;
-}
-#accordion .panel-heading {
-    border-radius: 30px;
-    padding: 0;
-}
-#accordion .panel-title a {
-    background: #5B87DA none repeat scroll 0 0;
-    border: 1px solid transparent;
-    border-radius: 30px;
-    color: #fff;
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 12px 20px 12px 50px;
-    position: relative;
-    transition: all 0.3s ease 0s;
-}
-#accordion .panel-title a.collapsed {
-    background: #fff none repeat scroll 0 0;
-    border: 1px solid #ddd;
-    color: #333;
-}
-#accordion .panel-title a::after, #accordion .panel-title a.collapsed::after {
-    background: #5B87DA none repeat scroll 0 0;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
-    color: #fff;
-    content: "";
-    font-family: 'Font Awesome 5 Free';
-    font-size: 25px;
-    height: 55px;
-    left: -20px;
-    line-height: 55px;
-    position: absolute;
-    text-align: center;
-    top: -5px;
-    transition: all 0.3s ease 0s;
-    width: 55px;
-}
-#accordion .panel-title a.collapsed::after {
-    background: #fff none repeat scroll 0 0;
-    border: 1px solid #ddd;
-    box-shadow: none;
-    color: #333;
-    content: "";
-}
-#accordion .panel-body {
-    background: transparent none repeat scroll 0 0;
-    border-top: medium none;
-    padding: 20px 25px 10px 9px;
-    position: relative;
-}
-#accordion .panel-body p {
-    border-left: 1px dashed #8c8c8c;
-    padding-left: 25px;
-}
