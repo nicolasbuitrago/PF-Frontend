@@ -22,6 +22,7 @@ import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/spons
 import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
+import { EventsListComponent } from '@app/feat/home-feat/components/events-list/events-list.component';
 
 
 @Injectable({
@@ -58,59 +59,66 @@ export class ContentService {
     return this.http.get<Page[]>(this.urlPages);
   }
 
+  private setComponents(page: Page) {
+    for (const component of page.components) {
+      switch (component.type) {
+        case ComponentType.CAROUSEL: {
+          component.component = CarouselComponent;
+          break;
+        }
+        case ComponentType.TESTIMONIOS: {
+          component.component = TestimoniosComponent;
+          break;
+        }
+        case ComponentType.SECTION: {
+          component.component = SectionComponent;
+          break;
+        }
+        case 'GamesComponent': {
+          component.component = GamesComponent;
+          break;
+        }
+        case 'SectionImgBgComponent': {
+          component.component = CarouselComponent;
+          break;
+        }
+        case ComponentType.RESOURCE_LIST: {
+          switch (component.resource_type) {
+            case ResourceType.EVENT:
+              component.component = EventsListComponent;
+              break;
+            case ResourceType.SPONSOR:
+              component.component = SponsorsComponent;
+              break;
+            case ResourceType.NEWITEM:
+              component.component = NewsComponent;
+              break;
+            case ResourceType.MENTOR:
+              component.component = MentorsComponent;
+              break;
+            // case ResourceType.FAQITEM:
+            //   component.component = FaqComponent;
+            //   break;
+            case ResourceType.SERVICE:
+              component.component = ServicesComponent;
+              break;
+          }
+        }
+      }
+    }
+    return page;
+  }
+
   getPage(id: string) {
-    return this.http.get<Page>(`${this.urlPages}/${id}`);
+    return this.http.get<Page>(`${this.urlPages}/${id}`).pipe(
+      map(this.setComponents)
+    );
   }
 
   getMainPage() {
     return this.http.get<Page>(`${this.urlPages}/main`).pipe(
       // delay(90000),
-      map(page => {
-        for (const component of page.components) {
-          switch (component.type) {
-            case ComponentType.CAROUSEL: {
-              component.component = CarouselComponent;
-              break;
-            }
-            case ComponentType.TESTIMONIOS: {
-              component.component = TestimoniosComponent;
-              break;
-            }
-            case ComponentType.SECTION: {
-              component.component = SectionComponent;
-              break;
-            }
-            case 'GamesComponent': {
-              component.component = GamesComponent;
-              break;
-            }
-            case 'SectionImgBgComponent': {
-              component.component = CarouselComponent;
-              break;
-            }
-            case ComponentType.RESOURCE_LIST: {
-              switch (component.resource_type) {
-                case ResourceType.SPONSOR:
-                  component.component = SponsorsComponent;
-                  break;
-                case ResourceType.NEWITEM:
-                  component.component = NewsComponent;
-                  break;
-                case ResourceType.MENTOR:
-                  component.component = MentorsComponent;
-                  break;
-                // case ResourceType.FAQITEM:
-                //   component.component = FaqComponent;
-                //   break;
-                case ResourceType.SERVICE:
-                  component.component = ServicesComponent;
-                  break;
-              }
-            }
-          }
-        }
-        return page;
-      })
+      map(this.setComponents)
     );
   }
 

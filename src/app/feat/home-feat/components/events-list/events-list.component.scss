@@ -1,0 +1,93 @@
+.card.mb-3 {
+  min-height: 340px;
+}
+
+@media (min-width: 700px) {
+  /* Bump up size of carousel content */
+  .col-md {
+    max-width: calc(100% - 308px);
+  }
+}
+
+
+::ng-deep.theme-green {
+  box-shadow: none;
+  // height: 80vh;
+
+  .bs-datepicker-body table td span.date-event {
+    background-color: rgb(200, 200, 200);
+    // color: #fff;
+  }
+
+  .bs-datepicker-head, .bs-datepicker-body table td span.selected {
+    // background-color: #143d6b;
+    background-color: #777;
+  }
+
+  .bs-datepicker-body table td span.selected {
+    border-style: solid;
+    border-width: thin;
+    border-color: #000;
+  }
+
+  .bs-datepicker-body table td {
+    color: #000;
+  }
+
+  .bs-datepicker-body table td.week span{
+    // color: #268bff;
+    color: rgb(140, 140, 140);
+  }
+
+}
+
+.list-group {
+  max-height: 300px;
+  margin-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  .list-group-item-action {
+    color: #212529;
+    cursor: pointer;
+  }
+}
+
+.event {
+  max-height: 210px;
+}
+
+.list-group::-webkit-scrollbar {
+	width: 10px;
+  background-color: #F5F5F5;
+}
+
+.list-group::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+.list-group::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+.list-group::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.list-group::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to left, #22ADD4, #1E98BA);
+}
+
+#meetup {
+  max-height: 500px;
+}
+
+.col-lg-10{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-block-end: 15px;
+}

@@ -1,0 +1,80 @@
+<div class="container py-4">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-auto">
+        <bs-datepicker-inline
+          [bsValue]="today"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          [dateCustomClasses]="dateCustomClasses"
+          (bsValueChange)="onDateChange($event)">
+        </bs-datepicker-inline>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body" *ngIf="resources && resources.length else noEvents">
+          <!-- <h4 class="card-title">Events</h4> -->
+          <div *ngIf="selectedEvent">
+            <div class="d-flex w-100 justify-content-between pb-3">
+              <button class="btn btn-outline-primary" (click)="selectEvent()">Back</button>
+              <small>{{ selectedEvent.date | date }}</small>
+            </div>
+            <h5 class="mb-1">{{ selectedEvent.name }}</h5>
+            <small>{{ selectedEvent.address }}</small>
+            <p class="mb-1 event overflow-auto">{{ selectedEvent.description }} at eget metus.</p>
+          </div>
+          <div *ngIf="selectedEvents.length !== 0 && !selectedEvent else ngevents">
+            <h5>{{ selectedDate | date }}</h5>
+            <div class="list-group overflow-auto">
+              <a *ngFor="let event of selectedEvents" class="list-group-item list-group-item-action"
+                (click)="selectEvent(event)">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">{{ event.name }}</h5>
+                  <small>{{ event.date | date }}</small>
+                </div>
+                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small>{{ event.address }}</small>
+              </a>
+            </div>
+          </div>
+          <ng-template #ngevents>
+            <div class="list-group overflow-auto" *ngIf="!selectedEvent">
+              <a *ngFor="let event of this.resources" class="list-group-item list-group-item-action"
+                (click)="selectEvent(event)">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">{{ event.name }}</h5>
+                  <small>{{ event.date | date }}</small>
+                </div>
+                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small>{{ event.address }}</small>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row pt-3" *ngIf="meetUp">
+    <div class="col">
+      <h3>MeetUps</h3>
+      <h4>{{ meetUp.name }}</h4>
+      <div [innerHTML]="meetUp.description"></div>
+    </div>
+    <div class="col-md-3 d-none d-md-block"><img [src]="meetUp.group_photo.photo_link" alt="MeetUp group" height="auto" width="70%" class="img-fluid"></div>
+  </div> -->
+  <h4>Eventos en MeetUps</h4>
+  <a href="https://www.meetup.com" target="_blank" class="btn btn-primary">Ir a MeetUps</a>
+  <!-- <div id="meetup" class="list-group overflow-auto" *ngIf="meets && meets.length else noEvents">
+    <a [href]="meet.link" class="list-group-item list-group-item-action" *ngFor="let meet of meets" target="_blank">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ meet.name }}</h5>
+        <small>{{ meet.local_date }}</small>
+      </div>
+      <div [innerHTML]="meet.description"></div>
+      <p class="mb-1">{{ meet.description }}</p>
+      <small>{{ meet.visibility }}</small>
+    </a>
+  </div> -->
+  <ng-template #noEvents>
+    <p class="py-3 pl-3">There are no events available for display.</p>
+  </ng-template>
+</div>

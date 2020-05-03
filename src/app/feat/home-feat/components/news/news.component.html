@@ -1,4 +1,4 @@
-<div class="new-w3ls py-5 bg-light" id="new">
+<div class="new-w3ls bg-light" id="new">
   <div class="container py-xl-5 py-lg-3">
     <h2 style="font-weight: bold;">News</h2>
     <br>
@@ -6,7 +6,7 @@
       <div class="col-md-4 new-w3" *ngFor="let newitem of resources">
         <div class="news-top">
           <a [href]="newitem.link">
-            <img [src]="newitem.image_url" alt="" class="img-fluid">
+            <img [src]="newitem.image_url" alt="" class="img-fluid" width="100%" height="auto">
           </a>
         </div>
         <div class="news-bottom p-4 bg-white">

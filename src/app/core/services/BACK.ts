@@ -1,8 +1,8 @@
 // import { CarouselItem } from '@shared/interfaces/carousel-item.model';
-import { Game } from '@shared/interfaces/game.model';
+// import { Game } from '@shared/interfaces/game.model';
 // import { Testimonio } from '@shared/interfaces/testimonio.model';
 // import { ComponentItem } from '@shared/interfaces/component-item.model';
-import { Event } from '@shared/interfaces/event.model';
+// import { Event } from '@shared/interfaces/event.model';
 import { About } from '@shared/interfaces/about.model';
 import { Contact } from '@shared/interfaces/contact.model';
 import { Footer } from '@app/shared/interfaces/footer.model';
@@ -49,7 +49,7 @@ const TESTIMONIOS: any[] = [
   }
 ];
 
-export const EVENTS: Event[] = [
+export const EVENTS: any[] = [
   {
     title: 'Event 1',
     description: 'Workshop',

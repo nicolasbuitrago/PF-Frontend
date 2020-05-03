@@ -1,6 +1,14 @@
-export interface Event {
-  title: string;
+import { DataComponent } from './data-component.model';
+
+export interface Event extends DataComponent {
+  id: number;
+  name: string;
   description: string;
   date: Date;
-  place: string;
+  address: string;
+  image_url: string;
+  // latitude: number;
+  // longitude: number;
+  created_at: Date;
+  updated_at: Date;
 }

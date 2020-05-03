@@ -23,6 +23,7 @@ import { SponsorsComponent } from './components/sponsors/sponsors.component';
 import { NewsComponent } from './components/news/news.component';
 import { MentorsComponent } from './components/mentors/mentors.component';
 import { ServicesComponent } from './components/services/services.component';
+import { EventsListComponent } from './components/events-list/events-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ServicesComponent } from './components/services/services.component';
     SponsorsComponent,
     NewsComponent,
     MentorsComponent,
-    ServicesComponent
+    ServicesComponent,
+    EventsListComponent
   ],
   imports: [
     CommonModule,
