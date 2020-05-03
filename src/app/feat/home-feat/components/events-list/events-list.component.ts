@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatepickerDateCustomClasses } from 'ngx-bootstrap/datepicker';
 // import { ContentService } from '@core/services/content.service';
 import { Event } from '@shared/interfaces/event.model';
-import { DataItem } from '../../models/data-item.model';
+import { DataItem } from '@shared/interfaces/data-item.model';
 
 @Component({
   selector: 'app-events-list',

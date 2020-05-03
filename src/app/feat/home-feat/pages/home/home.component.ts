@@ -2,7 +2,7 @@ import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular
 import { ItemDirective } from '@shared/directives/item.directive';
 import { ContentService } from '@core/services/content.service';
 import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.model';
-import { DataItem } from '../../models/data-item.model';
+import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
 import { DataComponent } from '@shared/interfaces/data-component.model';
 

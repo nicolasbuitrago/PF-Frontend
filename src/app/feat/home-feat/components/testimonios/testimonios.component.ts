@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { DataItem } from '../../models/data-item.model';
+import { DataItem } from '@shared/interfaces/data-item.model';
 import { Testimonios } from '@shared/interfaces/testimonios.model';
 
 @Component({

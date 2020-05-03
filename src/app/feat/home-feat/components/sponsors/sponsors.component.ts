@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataItem } from '../../models/data-item.model';
+import { DataItem } from '@shared/interfaces/data-item.model';
 import { Sponsor } from '@shared/interfaces/sponsor.model';
 
 @Component({

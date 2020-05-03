@@ -18,11 +18,12 @@ import { About } from '@shared/interfaces/about.model';
 import { FaqItem } from '@shared/interfaces/faqitem.model';
 import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
+import { StudiosListComponent } from '@app/feat/studios-feat/components/studios-list/studios-list.component';
+import { EventsListComponent } from '@app/feat/home-feat/components/events-list/events-list.component';
 import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
 import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
-import { EventsListComponent } from '@app/feat/home-feat/components/events-list/events-list.component';
 
 
 @Injectable({
@@ -66,6 +67,9 @@ export class ContentService {
       }
       if (component.type === ComponentType.RESOURCE_LIST) {
         switch (component.resource_type) {
+          case ResourceType.STUDIO:
+            component.component = StudiosListComponent;
+            break;
           case ResourceType.EVENT:
             component.component = EventsListComponent;
             break;

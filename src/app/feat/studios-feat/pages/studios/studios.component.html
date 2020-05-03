@@ -1,41 +1,22 @@
-<app-nav-bar></app-nav-bar>
-<main class="album py-5 bg-light full-page">
-  <div class="container pb-3">
-    <h2>Projects</h2>
-  </div>
-  <div class="container">
-    <div class="row" *ngIf="studios && studios.length else empty">
-      <div class="col-lg-4 col-md-6" *ngFor="let studio of studios" >
-        <div class="card mb-4 shadow-sm">
-          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c"/>
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ studio.name }}</text>
-          </svg> -->
-          <img class="bd-placeholder-img card-img-top" [src]="studio.img" alt="Studio" width="100%" height="250">
-          <div class="card-body">
-            <h5 class="card-title">{{ studio.name }}</h5>
-            <!-- <h6 class="card-subtitle text-muted">{{ studio.type }}</h6> -->
-            <span *ngFor="let tag of studio.tags; let i = index"
-              class="badge badge-pill badge-info"
-              [class.ml-1]="i !== 0">
-              {{ tag }}
-            </span>
-            <p class="card-text mt-2">{{ studio.description }}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a class="btn btn-sm btn-outline-primary" [routerLink]="['/studios/info', studio.id]">View</a>
-                <button type="button" class="btn btn-sm btn-outline-primary">Discard</button>
-              </div>
-              <small class="text-muted">{{ studio.city }}</small>
-            </div>
-          </div>
-        </div>
+<app-nav-bar [fixed]="true"></app-nav-bar>
+<app-page-title title="Projects"></app-page-title>
+<main class="full-page">
+
+  <app-spinner [loading]="!components"></app-spinner>
+  <ng-template appItemHost #comps>
+
+  </ng-template>
+  <div class="container h-100 pt-5" *ngIf="components && !components.length">
+    <div class="row align-items-center text-center">
+      <div class="col-md-3">
+        <span style="font-size: 10rem;"><i class="far fa-frown"></i></span>
+      </div>
+      <div class="col-md-9 align-self-center">
+        <h2 class="font-weight-bold">Página sin información</h2>
+        <h3>La página a la que intentas acceder no tiene información para mostrar.</h3>
       </div>
     </div>
-    <ng-template #empty>
-      <p>There are no projects available for display.</p>
-    </ng-template>
   </div>
+
 </main>
 <app-footer></app-footer>

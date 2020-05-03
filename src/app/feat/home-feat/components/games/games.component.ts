@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 // import { ContentService } from '@core/services/content.service';
 import { Game } from '@shared/interfaces/game.model';
-import { DataItem } from '../../models/data-item.model';
+import { DataItem } from '@shared/interfaces/data-item.model';
 
 @Component({
   selector: 'app-games',
