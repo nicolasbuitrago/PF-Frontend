@@ -21,7 +21,7 @@
 
   .bs-datepicker-head, .bs-datepicker-body table td span.selected {
     // background-color: #143d6b;
-    background-color: white;
+    background-color: #777;
   }
 
   .bs-datepicker-body table td span.selected {
@@ -90,67 +90,4 @@
   padding-right: 15px;
   padding-left: 15px;
   padding-block-end: 15px;
-}
-
-/* <!-- News --> */
-.news-bottom {
-  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.13);
-}
-
-.bg-light { /* Fondo de card noticias */
-  background-color: white !important;
-}
-
-.new-w3 {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.new-w3:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-}
-
-.news-bottom.p-4 h3 {
-  font-size: 18px;
-  color: #5B87DA;
-}
-
-.news-bottom h4 {
-  font-size: 23px;
-  line-height: 1.4;
-  letter-spacing: 1px;
-}
-
-.news-bottom i {
-  color: #5B87DA;
-}
-
-.news-bottom a {
-  color: #999;
-  letter-spacing: 1px;
-  font-size: 15px;
-}
-
-.news-bottom a:Hover {
-  color: #000;
-}
-.button-style {
-  padding: 12px 25px;
-  border: none;
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: 2px solid #5B87DA;
-  background: #5B87DA;
-}
-
-.button-style:hover {
-  opacity: .9;
-  color: #fff;
 }

@@ -99,27 +99,13 @@ export class ContentService {
                 case ResourceType.MENTOR:
                   component.component = MentorsComponent;
                   break;
-              }
-              switch (component.resource_type) {
-                case ResourceType.MENTOR:
-                  component.component = MentorsComponent;
-                  break;
-              }
-              switch (component.resource_type) {
-                case ResourceType.NEWITEM:
-                  component.component = NewsComponent;
-                  break;
-              }
-              switch (component.resource_type) {
+                // case ResourceType.FAQITEM:
+                //   component.component = FaqComponent;
+                //   break;
                 case ResourceType.SERVICE:
                   component.component = ServicesComponent;
                   break;
               }
-              /* switch (component.resource_type) {
-                case ResourceType.FAQITEM:
-                  component.component = FaqComponent;
-                  break;
-              } */
             }
           }
         }
@@ -230,10 +216,6 @@ export class ContentService {
   getFooter(): Observable<Footer> {
     return of(FOOTER);
   }
-
-  
-
-  
 
   /**
    * Handle Http operation that failed.
