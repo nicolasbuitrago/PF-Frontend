@@ -15,7 +15,7 @@ import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
 import { Contact } from '@shared/interfaces/contact.model';
 import { About } from '@shared/interfaces/about.model';
-import { FaqItem } from '@shared/interfaces/faqitem.model';
+// import { FaqItem } from '@shared/interfaces/faqitem.model';
 import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { StudiosListComponent } from '@app/feat/studios-feat/components/studios-list/studios-list.component';
@@ -24,6 +24,7 @@ import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/spons
 import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
+import { FaqsComponent } from '@app/feat/home-feat/components/faqs/faqs.component';
 
 
 @Injectable({
@@ -82,9 +83,9 @@ export class ContentService {
           case ResourceType.MENTOR:
             component.component = MentorsComponent;
             break;
-          // case ResourceType.FAQITEM:
-          //   component.component = FaqComponent;
-          //   break;
+          case ResourceType.FAQITEM:
+            component.component = FaqsComponent;
+            break;
           case ResourceType.SERVICE:
             component.component = ServicesComponent;
             break;

@@ -23,7 +23,7 @@ export class EventsComponent implements OnInit {
   }
 
   getEventsPage(): void {
-    this.contentService.getPage('4')
+    this.contentService.getPage('2')
     .subscribe(
       (eventsPage: Page) => {
         this.components = eventsPage.components;

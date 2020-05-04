@@ -280,7 +280,7 @@ export const FOOTER: Footer = {
     instagram: '#instagram'
   },
   address: 'Kra 54 # 68 - 169',
-  phone: 'info@example.com',
-  email: '355-555-555',
+  phone: '355-555-555',
+  email: 'info@example.com',
   web: 'pf-videogames.netlify.com'
 };

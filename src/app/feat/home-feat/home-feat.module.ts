@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { CommonModule } from '@angular/common';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
@@ -24,6 +25,8 @@ import { NewsComponent } from './components/news/news.component';
 import { MentorsComponent } from './components/mentors/mentors.component';
 import { ServicesComponent } from './components/services/services.component';
 import { EventsListComponent } from './components/events-list/events-list.component';
+import { StudiosComponent } from './components/studios/studios.component';
+import { FaqsComponent } from './components/faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -43,11 +46,14 @@ import { EventsListComponent } from './components/events-list/events-list.compon
     NewsComponent,
     MentorsComponent,
     ServicesComponent,
-    EventsListComponent
+    EventsListComponent,
+    StudiosComponent,
+    FaqsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    AccordionModule.forRoot(),
     BsDatepickerModule.forRoot(),
     NgxPageScrollModule,
     HomeFeatRoutingModule
