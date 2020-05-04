@@ -6,7 +6,8 @@ import { delay, share, tap, shareReplay, refCount, catchError, map } from 'rxjs/
 import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.component';
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
 import { SectionComponent } from '@feat/home-feat/components/sections/section/section.component';
-import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
+import { ContactInfoComponent } from '@app/feat/home-feat/components/contact-info/contact-info.component';
+// import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
 import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
@@ -104,14 +105,18 @@ export class ContentService {
             component.component = SectionComponent;
             break;
           }
-          case 'GamesComponent': {
-            component.component = GamesComponent;
+          case ComponentType.CONTACT_INFORMATION: {
+            component.component = ContactInfoComponent;
             break;
           }
-          case 'SectionImgBgComponent': {
-            component.component = CarouselComponent;
-            break;
-          }
+          // case 'GamesComponent': {
+          //   component.component = GamesComponent;
+          //   break;
+          // }
+          // case 'SectionImgBgComponent': {
+          //   component.component = CarouselComponent;
+          //   break;
+          // }
         }
       }
     }

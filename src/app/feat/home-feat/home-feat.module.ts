@@ -27,6 +27,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { EventsListComponent } from './components/events-list/events-list.component';
 import { StudiosComponent } from './components/studios/studios.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FaqsComponent } from './components/faqs/faqs.component';
     ServicesComponent,
     EventsListComponent,
     StudiosComponent,
-    FaqsComponent
+    FaqsComponent,
+    ContactInfoComponent
   ],
   imports: [
     CommonModule,
