@@ -6,17 +6,7 @@
   <ng-template appItemHost #comps>
 
   </ng-template>
-  <div class="container h-100 pt-5" *ngIf="components && !components.length">
-    <div class="row align-items-center text-center">
-      <div class="col-md-3">
-        <span style="font-size: 10rem;"><i class="far fa-frown"></i></span>
-      </div>
-      <div class="col-md-9 align-self-center">
-        <h2 class="font-weight-bold">Page without information</h2>
-        <h3>The page you are trying to access has no information to display.</h3>
-      </div>
-    </div>
-  </div>
+  <app-empty-page [show]="components && !components.length"></app-empty-page>
 
 </main>
 <app-footer></app-footer>

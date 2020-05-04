@@ -11,6 +11,7 @@ import { ItemDirective } from './directives/item.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { EmptyPageComponent } from './components/empty-page/empty-page.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     PageNotFoundComponent,
     SpinnerComponent,
     ItemDirective,
-    SafePipe
+    SafePipe,
+    EmptyPageComponent
   ],
   exports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FooterComponent,
     PageTitleComponent,
     SpinnerComponent,
+    EmptyPageComponent,
     ItemDirective,
     SafePipe
   ]

@@ -25,15 +25,17 @@
         <div class="card-body">
           <h2 class="card-title">{{ studio.name }}</h2>
           <!-- <h4 class="card-subtitle text-muted">{{ studio.type }}</h4> -->
-          <span *ngFor="let tag of studio.tags; let f = first"
-            class="badge badge-pill badge-info"
-            [class.ml-1]="!f">
-            {{ tag }}
-          </span>
-          <p class="card-text mt-2">Address: {{ studio.address }}, {{ studio.city }}</p>
-          <p class="card-text">Phone: {{ studio.phone }}</p>
+          <div class="tags">
+            <span *ngFor="let tag of studio.tags; let f = first"
+              class="badge badge-pill badge-info"
+              [class.ml-1]="!f">
+              {{ tag }}
+            </span>
+          </div>
+          <p class="card-text mt-2 mb-1"><strong>Address:</strong> {{ studio.address }}, {{ studio.city }}</p>
+          <p class="card-text"><strong>Phone:</strong> {{ studio.phone }}</p>
           <p class="card-text">{{ studio.description }}</p>
-          <a [href]="studio.link" class="btn btn-primary">Official page</a>
+          <a [href]="studio.link" target="_blank" class="btn btn-primary">Official page</a>
         </div>
       </div>
       <div class="col-md-4">
