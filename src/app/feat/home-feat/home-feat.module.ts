@@ -13,7 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { GamesComponent } from './components/games/games.component';
-import { SectionComponent } from './components/sections/section/section.component';
+import { SectionComponent } from './components/section/section.component';
 import { SectionImgBgComponent } from './components/sections/section-img-bg/section-img-bg.component';
 import { TestimoniosComponent } from './components/testimonios/testimonios.component';
 import { AboutComponent } from './pages/about/about.component';
