@@ -5,6 +5,8 @@ import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
 import { DataComponent } from '@shared/interfaces/data-component.model';
+import { Section } from '@app/shared/interfaces/section.model';
+import { SectionComponent } from '../../components/section/section.component';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +33,63 @@ export class HomeComponent implements OnInit {
     this.contentService.getMainPage()
     .subscribe((home: Page) => {
       this.components = home.components;
+      const sections: Section[] = [
+        {
+          id: 1,
+          name: 'section1',
+          title: 'Prueba de section 1',
+          text: 'Lorem ipsum no dolor en at aglius marius atlasian yaquipa turiyaqui',
+          link: '#',
+          image_url: 'https://source.unsplash.com/800x800/?video,game',
+          bgImg: true,
+          left: true,
+          full_width: true,
+          created_at: new Date('2020-04-05'),
+          updated_at: new Date('2020-04-05'),
+        },
+        {
+          id: 2,
+          name: 'section2',
+          title: 'Prueba de section 2',
+          text: 'Lorem ipsum no dolor en at aglius marius atlasian yaquipa turiyaqui',
+          link: '#',
+          image_url: 'https://source.unsplash.com/800x800/?tech,game',
+          bgImg: false,
+          left: false,
+          full_width: false,
+          created_at: new Date('2020-04-05'),
+          updated_at: new Date('2020-04-05')
+        }
+      ];
+      const comps: ComponentItem[] = [
+        {
+          id: 1,
+          component_id: 1,
+          css: '',
+          name: 'section 1',
+          page_id: 1,
+          position: 0,
+          type: ComponentType.SECTION,
+          component: SectionComponent,
+          data: sections[0],
+          created_at: new Date('2020-04-05'),
+          updated_at: new Date('2020-04-05')
+        },
+        {
+          id: 2,
+          component_id: 2,
+          css: '',
+          name: 'section 2',
+          page_id: 1,
+          position: 0,
+          type: ComponentType.SECTION,
+          component: SectionComponent,
+          data: sections[1],
+          created_at: new Date('2020-04-05'),
+          updated_at: new Date('2020-04-05')
+        }
+      ];
+      this.components.push(...comps);
       this.loadComponents();
     });
   }
