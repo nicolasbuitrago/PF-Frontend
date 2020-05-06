@@ -8,8 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PageTitleComponent implements OnInit {
 
   @Input() title: string;
+  @Input() imageUrl: string;
 
-  constructor() { }
+  constructor() {
+    this.imageUrl = '/assets/default_title.jpg';
+  }
 
   ngOnInit(): void {
   }

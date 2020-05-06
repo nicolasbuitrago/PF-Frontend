@@ -5,7 +5,7 @@ export interface Mentor extends DataComponent {
   name: string;
   role: string;
   image_url: string;
-  information: string; /* Reemplazar por redes sociales */
+  info: string; /* Reemplazar por redes sociales */
   created_at: Date;
   updated_at: Date;
 }
