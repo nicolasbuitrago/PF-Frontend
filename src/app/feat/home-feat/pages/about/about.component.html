@@ -1,109 +1,13 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
 <app-page-title title="About Us"></app-page-title>
-<main class="full-page">
-  <!-- Mision -->
-  <section>
-    <div class="container pt-sm-5 pt-4">
-      <h2 class="mb-md-4 text-center">About us</h2>
-      <div class="row no-gutters">
-        <div class="col-lg-5">
-            <div [ngStyle]="{ 'background': 'url(' + about.mision.img + ') no-repeat center' }"
-              class="slide-banner d-none d-lg-block"></div>
-        </div>
-        <div class="col-lg-7">
-          <div class="bg-abt light-bg">
-            <div class="container">
-              <div class="title-desc  pb-sm-3">
-                  <h3 class="main-title">Mision</h3>
-                  <p>{{ about.mision.first }}</p>
-              </div>
-              <div class="row flex-column mt-3">
-                <div class="abt-grid">
-                  <div class="row">
-                    <div class="col-sm-3 mb-3 mb-sm-0">
-                      <!-- <div class="abt-icon"> -->
-                      <span class="abt-icon"><i class="far fa-calendar-check"></i></span>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="abt-grid mt-3 pt-lg-2">
-                  <div class="row">
-                    <div class="col-sm-3 mb-3 mb-sm-0">
-                      <!-- <div class="abt-icon"> -->
-                      <span class="abt-icon"><i class="fas fa-chart-line"></i></span>
-                      <!-- </div> -->
-                    </div>
-                    <div class="col-sm-9 pl-sm-0">
-                      <div class="abt-txt ml-sm-0">
-                        <h4>{{ about.mision.plot.title }}</h4>
-                        <p>{{ about.mision.plot.text }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Vision abt-txt-->
-  <section class="pb-lg-5 mt-3" style="margin-block-end: -50px; ">
-    <div class="container pb-md-5 pb-4">
-      <div class="row flex-row-reverse no-gutters">
-        <div class="col-lg-5">
-          <div [ngStyle]="{ 'background': 'url(' + about.vision.img + ') no-repeat center' }"
-            class="slide-banner d-none d-lg-block">
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="bg-abt">
-            <div class="container">
-              <div class="title-desc  pb-sm-3">
-                <h3 class="main-title">Our goal</h3>
-                <p>{{ about.vision.first }}</p>
-              </div>
-              <div class="row flex-column mt-3">
-                <div class="abt-grid">
-                  <div class="row">
-                    <div class="col-sm-3 mb-3 mb-sm-0">
-                      <!-- <div class="abt-icon"> -->
-                      <span class="abt-icon"><i class="far fa-calendar-check"></i></span>
-                      <!-- </div> -->
-                    </div>
-                    <div class="col-sm-9 pl-sm-0">
-                        <div class="abt-txt ml-sm-0">
-                            <h4>{{ about.vision.calendar.title }}</h4>
-                            <p>{{ about.vision.calendar.text }}</p>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="abt-grid mt-3 pt-lg-2">
-                  <div class="row">
-                    <div class="col-sm-3 mb-3 mb-sm-0">
-                      <!-- <div class="abt-icon"> -->
-                      <span class="abt-icon"><i class="fas fa-chart-line"></i></span>
-                      <!-- </div> -->
-                    </div>
-                    <div class="col-sm-9 pl-sm-0">
-                      <div class="abt-txt ml-sm-0">
-                        <h4>{{ about.vision.plot.title }}</h4>
-                        <p>{{ about.vision.plot.text }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<main class="full-page">
+
+  <app-spinner [loading]="!components"></app-spinner>
+  <ng-template appItemHost #comps>
+
+  </ng-template>
+  <app-empty-page [show]="components && !components.length"></app-empty-page>
 
 </main>
 <app-footer></app-footer>
