@@ -11,7 +11,7 @@ div.container-fluid.bg-dark {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 24rem;
+  height: 27rem;
 }
 
 blockquote.blockquote {
@@ -31,3 +31,10 @@ blockquote.blockquote {
     line-height: 1.4;
   }
 }
+
+// @media (max-width: 768px) {
+//   /* Bump up size of carousel content */
+//   .carousel-item {
+//     width:
+//   }
+// }

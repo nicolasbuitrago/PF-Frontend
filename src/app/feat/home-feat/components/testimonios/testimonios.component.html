@@ -1,5 +1,5 @@
 <div class="container-fluid bg-dark">
-  <h1 class="d-none d-sm-block text-center text-white pt-4 font-weight-bold">What People Say</h1>
+  <h1 class="text-center text-white py-4 font-weight-bold">What People Say</h1>
   <div id="myTestimonials" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myTestimonials" [attr.data-slide-to]="i"
@@ -11,7 +11,7 @@
         <div class="container">
           <div class="carousel-caption h-100">
             <div class="container h-100">
-              <div class="row h-100 align-items-center">
+              <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-md-8 order-2 order-md-1">
                   <!-- <h4>{{ testimonio.title }}</h4>
                   <p>{{ testimonio.text }} -- lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur</p>
@@ -23,7 +23,7 @@
                     <footer class="blockquote-footer">{{ testimonio.author_name }} <br><cite title="Source Title">{{ testimonio.author_info }}</cite></footer>
                   </blockquote>
                 </div>
-                <div class="col-md-4 order-1 order-md-2">
+                <div class="col-6 col-sm-5 col-md-4 order-1 order-md-2 d-none d-sm-block">
                   <img class="rounded" src="https://source.unsplash.com/800x800/?person" [alt]="testimonio.author_name" width='100%' height='auto'>
                 </div>
               </div>
