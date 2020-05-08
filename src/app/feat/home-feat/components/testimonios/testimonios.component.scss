@@ -1,15 +1,23 @@
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+div.container-fluid.bg-dark {
+  background-image: url('/assets/fondo.png');
+  background-repeat: repeat;
+}
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  bottom: 3rem;
+  // bottom: 3rem;
   z-index: 10;
 }
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 22rem;
+  height: 24rem;
+}
+
+blockquote.blockquote {
+  footer.blockquote-footer {
+    color: #a0aab3;
+  }
 }
 
 /* RESPONSIVE CSS
