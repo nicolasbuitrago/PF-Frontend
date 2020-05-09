@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DatepickerDateCustomClasses } from 'ngx-bootstrap/datepicker';
 // import { ContentService } from '@core/services/content.service';
 import { Event } from '@shared/interfaces/event.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
@@ -12,38 +11,14 @@ import { DataItem } from '@shared/interfaces/data-item.model';
 export class EventsListComponent implements OnInit, DataItem {
 
   @Input() resources: Event[];
-  selectedDate: Date;
-  today: Date;
-  minDate: Date;
-  maxDate: Date;
   meetUp: any;
   meets: any[];
   selectedEvent: Event;
-  selectedEvents: Event[];
-  dateCustomClasses: DatepickerDateCustomClasses[];
 
-  constructor() {
-    this.selectedDate = new Date();
-    this.today = new Date();
-    this.minDate = new Date();
-    this.maxDate = new Date();
-    this.minDate.setDate(this.minDate.getDate() - 30);
-    this.maxDate.setDate(this.maxDate.getDate() + 30);
-    this.dateCustomClasses = [
-      { date: this.today, classes: ['bg-primary', 'text-white'] }
-    ];
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.getEvents();
-    // this.getMeetUps();
-    // this.getEventsMeetUps();
-    this.selectedEvents = [];
-    for (const event of this.resources) {
-      console.log(event);
-      this.dateCustomClasses.push({ date: new Date(event.date), classes: ['date-event']});
-      this.selectedEvents.push(event);
-    }
+    this.selectedEvent = this.resources[0];
   }
 
   // getEvents(): void {
@@ -81,19 +56,6 @@ export class EventsListComponent implements OnInit, DataItem {
 
   selectEvent(event?: Event) {
     this.selectedEvent = event;
-  }
-
-  onDateChange(value: Date): void {
-    this.selectedDate = value;
-    this.selectedEvents = [];
-    // console.log('Date changed ' + value.getDay());
-    for (const event of this.resources) {
-      // console.log(event.date.getTime() + ' === ' + this.selectedDate.getTime());
-      if (this.equalDate(event.date, value)) {
-        // console.log('Event added ' + event.title);
-        this.selectedEvents.push(event);
-      }
-    }
   }
 
   equalDate(DateA: Date, DateB: Date): boolean {     // this function is good for dates > 01/01/1970

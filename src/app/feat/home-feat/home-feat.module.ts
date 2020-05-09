@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 import { HomeFeatRoutingModule } from './home-feat-routing.module';
@@ -56,7 +55,6 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
     CommonModule,
     SharedModule,
     AccordionModule.forRoot(),
-    BsDatepickerModule.forRoot(),
     NgxPageScrollModule,
     HomeFeatRoutingModule
   ]

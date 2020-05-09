@@ -1,55 +1,27 @@
 <div class="container py-4">
-  <div class="card mb-3">
-    <div class="row no-gutters">
-      <div class="col-md-auto">
-        <bs-datepicker-inline
-          [bsValue]="today"
-          [minDate]="minDate"
-          [maxDate]="maxDate"
-          [dateCustomClasses]="dateCustomClasses"
-          (bsValueChange)="onDateChange($event)">
-        </bs-datepicker-inline>
+  <div class="row no-gutters events my-4">
+    <div class="selected col-md-7 text-white"
+      [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(' + 'https://source.unsplash.com/1200x800/?videogame' + ')'}">
+      <div class="event">
+        <h3 class="mb-1 font-weight-bold">{{ selectedEvent.name }}</h3>
+        <h5>{{ selectedEvent.date | date }}</h5>
+        <p class="mb-1">{{ selectedEvent.description }}</p>
       </div>
-      <div class="col-md-8">
-        <div class="card-body" *ngIf="resources && resources.length else noEvents">
-          <!-- <h4 class="card-title">Events</h4> -->
-          <div *ngIf="selectedEvent">
-            <div class="d-flex w-100 justify-content-between pb-3">
-              <button class="btn btn-outline-primary" (click)="selectEvent()">Back</button>
-              <small>{{ selectedEvent.date | date }}</small>
-            </div>
-            <h5 class="mb-1">{{ selectedEvent.name }}</h5>
-            <small>{{ selectedEvent.address }}</small>
-            <p class="mb-1 event overflow-auto">{{ selectedEvent.description }} at eget metus.</p>
+    </div>
+    <div class="col-md-5">
+      <div class="list-group overflow-auto">
+        <a *ngFor="let event of this.resources" class="list-group-item list-group-item-action"
+          (click)="selectEvent(event)" [class.active]="event.id === selectedEvent.id">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ event.name }}</h5>
+            <small>{{ event.date | date }}</small>
           </div>
-          <div *ngIf="selectedEvents.length !== 0 && !selectedEvent else ngevents">
-            <h5>{{ selectedDate | date }}</h5>
-            <div class="list-group overflow-auto">
-              <a *ngFor="let event of selectedEvents" class="list-group-item list-group-item-action"
-                (click)="selectEvent(event)">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">{{ event.name }}</h5>
-                  <small>{{ event.date | date }}</small>
-                </div>
-                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>{{ event.address }}</small>
-              </a>
-            </div>
-          </div>
-          <ng-template #ngevents>
-            <div class="list-group overflow-auto" *ngIf="!selectedEvent">
-              <a *ngFor="let event of this.resources" class="list-group-item list-group-item-action"
-                (click)="selectEvent(event)">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">{{ event.name }}</h5>
-                  <small>{{ event.date | date }}</small>
-                </div>
-                <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>{{ event.address }}</small>
-              </a>
-            </div>
-          </ng-template>
-        </div>
+          <!-- <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p> -->
+          <small class="ml-1 mb-0">
+            <span class="mr-1"><i class="fas fa-map-marker-alt"></i></span>
+            {{ event.address }}
+          </small>
+        </a>
       </div>
     </div>
   </div>
