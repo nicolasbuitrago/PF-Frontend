@@ -3,7 +3,7 @@
     <h2 style="font-weight: bold;">News</h2>
     <br>
     <div class="row package-grids" *ngIf="resources && resources.length else empty">
-      <div class="col-md-4 new-w3" *ngFor="let newitem of resources">
+      <div class="col-md-4 new-w3" *ngFor="let newitem of news">
         <div class="news-top">
           <a [href]="newitem.link">
             <img [src]="newitem.image_url" alt="" class="img-fluid" width="100%" height="auto">
@@ -21,8 +21,8 @@
     <ng-template #empty>
       <p>There is no news to show.</p>
     </ng-template>
-    <div class="text-center">
-      <!-- <a href="#" class="btn button-style mt-sm-5 mt-4">Read More</a> -->
+    <div class="row justify-content-center">
+      <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button>
     </div>
   </div>
 </div>

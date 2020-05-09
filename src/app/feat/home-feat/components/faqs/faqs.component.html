@@ -20,7 +20,7 @@
           <accordion [closeOthers]="true">
             <accordion-group *ngFor="let faq of category.faqs; let f = first"
              [heading]="faq.question" [isOpen]="f">
-              {{ faq.answer }} This content is straight in the template.
+              {{ faq.answer }}
             </accordion-group>
           </accordion>
         </div>

@@ -38,6 +38,10 @@ body {
   min-height: calc(100vh - 200px);
 }
 
+.btn:disabled {
+  cursor: initial;
+}
+
 // .bg-dark {
 //   background-color: #000000 !important;
 // }

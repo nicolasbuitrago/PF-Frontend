@@ -10,10 +10,18 @@ import { NewItem } from '@app/shared/interfaces/newitem.model';
 export class NewsComponent implements OnInit, DataItem {
 
   @Input() resources: NewItem[];
+  news: NewItem[];
+  counter = 3;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.news = this.resources.slice(0, this.counter);
+  }
+
+  loadMore() {
+    this.counter += 6;
+    this.news = this.resources.slice(0, this.counter);
   }
 
 }
