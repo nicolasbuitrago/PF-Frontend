@@ -15,6 +15,7 @@ import { Page } from '@shared/interfaces/page.model';
 export class StudiosComponent implements OnInit {
 
   components: ComponentItem[];
+  error: boolean;
   // studios: Studio[];
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
@@ -34,6 +35,10 @@ export class StudiosComponent implements OnInit {
       (studiosPage: Page) => {
         this.components = studiosPage.components;
         this.loadComponents();
+      },
+      (err) => {
+        // console.log('Err getStudiosPage = ' + err);
+        this.error = true;
       }
     );
   }

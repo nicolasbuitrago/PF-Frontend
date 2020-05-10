@@ -12,6 +12,7 @@ import { Page } from '@shared/interfaces/page.model';
 export class ContactComponent implements OnInit {
 
   components: ComponentItem[];
+  error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -22,11 +23,15 @@ export class ContactComponent implements OnInit {
   }
 
   getContactPage() {
-    this.contentService.getPage('7')
+    this.contentService.getPage('5')
     .subscribe(
       (contactPage: Page) => {
         this.components = contactPage.components;
         this.loadComponents();
+      },
+      (err) => {
+        // console.log('Err getContactPage = ' + err);
+        this.error = true;
       }
     );
   }

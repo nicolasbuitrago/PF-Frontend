@@ -13,6 +13,7 @@ import { Page } from '@shared/interfaces/page.model';
 export class EventsComponent implements OnInit {
 
   components: ComponentItem[];
+  error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -28,6 +29,10 @@ export class EventsComponent implements OnInit {
       (eventsPage: Page) => {
         this.components = eventsPage.components;
         this.loadComponents();
+      },
+      (err) => {
+        // console.log('Err getEventsPage = ' + err);
+        this.error = true;
       }
     );
   }

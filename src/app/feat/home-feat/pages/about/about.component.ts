@@ -16,6 +16,7 @@ import { SectionComponent } from '../../components/section/section.component';
 export class AboutComponent implements OnInit {
 
   components: ComponentItem[];
+  error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -26,7 +27,7 @@ export class AboutComponent implements OnInit {
   }
 
   getAboutPage() {
-    this.contentService.getPage('7')
+    this.contentService.getPage('4')
     .subscribe(
       (aboutPage: Page) => {
         this.components = aboutPage.components;
@@ -88,6 +89,10 @@ export class AboutComponent implements OnInit {
         ];
         this.components.push(...comps);
         this.loadComponents();
+      },
+      (err) => {
+        // console.log('Err getAboutPage = ' + err);
+        this.error = true;
       }
     );
   }
