@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of, ReplaySubject, Subject, merge } from 'rxjs';
 import { delay, share, tap, shareReplay, refCount, catchError, map } from 'rxjs/operators';
 
@@ -8,16 +8,16 @@ import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/tes
 import { SectionComponent } from '@app/feat/home-feat/components/section/section.component';
 import { ContactInfoComponent } from '@app/feat/home-feat/components/contact-info/contact-info.component';
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
-import { GamesComponent } from '@feat/home-feat/components/games/games.component';
+// import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
 import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
 import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
-import { Contact } from '@shared/interfaces/contact.model';
-import { About } from '@shared/interfaces/about.model';
+// import { Contact } from '@shared/interfaces/contact.model';
+// import { About } from '@shared/interfaces/about.model';
 // import { FaqItem } from '@shared/interfaces/faqitem.model';
-import { Footer } from '@shared/interfaces/footer.model';
+// import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { StudiosListComponent } from '@app/feat/studios-feat/components/studios-list/studios-list.component';
 import { EventsListComponent } from '@app/feat/home-feat/components/events-list/events-list.component';
@@ -26,6 +26,7 @@ import { NewsComponent } from '@app/feat/home-feat/components/news/news.componen
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
 import { FaqsComponent } from '@app/feat/home-feat/components/faqs/faqs.component';
+import { AppBarInformation, FooterInformation } from '@app/shared/interfaces/contact-information.model';
 
 
 @Injectable({
@@ -34,6 +35,7 @@ import { FaqsComponent } from '@app/feat/home-feat/components/faqs/faqs.componen
 export class ContentService {
 
   private urlPages = `${environment.apiUrl}/pages`;
+  private urlInformation = `${environment.apiUrl}/contact_informations`;
   // private urlSections = `${environment.apiUrl}/texts`;
   // private urlCarousel = `${environment.apiUrl}/carousels`;
   // private urlTestimonios = `${environment.apiUrl}/testimonies`;
@@ -219,24 +221,30 @@ export class ContentService {
     );
   }
 
-  getGames(): Observable<Game[]> {
-    return of(GAMES);
+  // getGames(): Observable<Game[]> {
+  //   return of(GAMES);
+  // }
+
+  // games(): Observable<Game[]> {
+  //   return this.games$;
+  // }
+
+  // getContact(): Observable<Contact> {
+  //   return of(CONTACT);
+  // }
+
+  // getAbout(): Observable<About> {
+  //   return of(ABOUT);
+  // }
+
+  getAppBar() {
+    const params = new HttpParams().set('type', 'appbar');
+    return this.http.get<AppBarInformation>(`${this.urlInformation}/website`, { params });
   }
 
-  games(): Observable<Game[]> {
-    return this.games$;
-  }
-
-  getContact(): Observable<Contact> {
-    return of(CONTACT);
-  }
-
-  getAbout(): Observable<About> {
-    return of(ABOUT);
-  }
-
-  getFooter(): Observable<Footer> {
-    return of(FOOTER);
+  getFooter() {
+    const params = new HttpParams().set('type', 'footer');
+    return this.http.get<FooterInformation>(`${this.urlInformation}/website`, { params });
   }
 
   /**

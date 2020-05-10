@@ -32,6 +32,6 @@
     <p>There are no projects available for display.</p>
   </ng-template>
   <pagination [totalItems]="resources.length" (pageChanged)="pageChanged($event)"
-    [itemsPerPage]="itemsPerPage" [maxSize]="5">
+    [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedStudios && selectedStudios.length">
   </pagination>
 </div>

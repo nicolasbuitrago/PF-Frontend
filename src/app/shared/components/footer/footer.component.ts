@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Footer } from '@app/shared/interfaces/footer.model';
-import { ContentService } from '@app/core/services/content.service';
+import { ContentService } from '@core/services/content.service';
 import { AppComponent } from '@app/app.component';
+import { FooterInformation } from '@shared/interfaces/contact-information.model';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +11,7 @@ import { AppComponent } from '@app/app.component';
 export class FooterComponent implements OnInit {
 
   title: string;
-  content: Footer;
+  content: FooterInformation;
 
   constructor(
     private contentService: ContentService,
@@ -20,9 +20,15 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.appComponent.title;
-    this.contentService.getFooter().subscribe((cont: Footer) => {
-      this.content = cont;
-    });
+    this.contentService.getFooter()
+    .subscribe(
+      (cont: FooterInformation) => {
+        this.content = cont;
+      },
+      (err) => {
+        console.log('Err getFooter = ' + err);
+      }
+    );
   }
 
 }

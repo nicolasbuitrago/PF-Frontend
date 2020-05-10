@@ -15,3 +15,17 @@ export interface ContactInformation extends ComponentItem {
   created_at: Date;
   updated_at: Date;
 }
+
+export interface AppBarInformation {
+  name: string;
+  image_url: string;
+}
+
+export interface FooterInformation {
+  name: string;
+  text: string;
+  social_networks: string[];
+  address: string;
+  email: string;
+  phone: string;
+}
