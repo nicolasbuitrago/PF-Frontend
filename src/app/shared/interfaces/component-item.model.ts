@@ -28,7 +28,8 @@ export enum ComponentType {
   // STUDIO = 'StudioComponent',
   CAROUSEL = 'Carousel',
   TESTIMONIOS = 'Testimony',
-  CONTACT_INFORMATION = 'ContactInformation'
+  CONTACT_INFORMATION = 'ContactInformation',
+  SEARCH = 'Search'
   // SPONSORS = 'SponsorsComponent',
   // NEWS = 'NewsComponent',
   // MENTORS = 'MentorsComponent',

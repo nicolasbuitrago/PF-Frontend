@@ -27,6 +27,7 @@ import { EventsListComponent } from './components/events-list/events-list.compon
 import { StudiosComponent } from './components/studios/studios.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ContactInfoComponent } from './components/contact-info/contact-info.com
     EventsListComponent,
     StudiosComponent,
     FaqsComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

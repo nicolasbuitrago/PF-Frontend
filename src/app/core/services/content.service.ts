@@ -26,6 +26,7 @@ import { NewsComponent } from '@app/feat/home-feat/components/news/news.componen
 import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
 import { FaqsComponent } from '@app/feat/home-feat/components/faqs/faqs.component';
+import { SearchComponent } from '@app/feat/home-feat/components/search/search.component';
 
 
 @Injectable({
@@ -107,6 +108,10 @@ export class ContentService {
           }
           case ComponentType.CONTACT_INFORMATION: {
             component.component = ContactInfoComponent;
+            break;
+          }
+          case ComponentType.SEARCH: {
+            component.component = SearchComponent;
             break;
           }
           // case 'GamesComponent': {
