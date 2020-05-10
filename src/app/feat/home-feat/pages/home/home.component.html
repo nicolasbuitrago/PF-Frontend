@@ -1,6 +1,6 @@
 <app-nav-bar [fixed]="fixed"></app-nav-bar>
 <main class="full-page">
-  <div class="text-center py-5 my-5" *ngIf="!components else comps">
+  <div class="text-center py-5 my-5" *ngIf="!components && !error else comps">
     <div class="spinner-border text-primary" style="width: 6rem; height: 6rem; font-size: 3rem;" role="status">
       <span class="sr-only">Loading...</span>
     </div>
@@ -11,7 +11,7 @@
   <ng-template appItemHost #comps>
 
   </ng-template>
-  <app-empty-page [show]="components && !components.length"></app-empty-page>
+  <app-empty-page [show]="error || components && !components.length"></app-empty-page>
 
 </main>
 <app-footer></app-footer>

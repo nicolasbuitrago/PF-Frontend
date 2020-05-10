@@ -2,11 +2,11 @@
 <app-page-title title="Projects"></app-page-title>
 <main class="full-page">
 
-  <app-spinner [loading]="!components"></app-spinner>
+  <app-spinner [loading]="!components && !error"></app-spinner>
   <ng-template appItemHost #comps>
 
   </ng-template>
-  <app-empty-page [show]="components && !components.length"></app-empty-page>
+  <app-empty-page [show]="error || components && !components.length"></app-empty-page>
 
 </main>
 <app-footer></app-footer>

@@ -13,6 +13,7 @@ import { Page } from '@shared/interfaces/page.model';
 export class HomeComponent implements OnInit {
 
   components: ComponentItem[];
+  error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
 
@@ -28,10 +29,16 @@ export class HomeComponent implements OnInit {
 
   getHome(): void {
     this.contentService.getMainPage()
-    .subscribe((home: Page) => {
-      this.components = home.components;
-      this.loadComponents();
-    });
+    .subscribe(
+      (home: Page) => {
+        this.components = home.components;
+        this.loadComponents();
+      },
+      (err) => {
+        console.log('Err getHome = ' + err);
+        this.error = true;
+      }
+    );
   }
 
   loadComponents(): void {
