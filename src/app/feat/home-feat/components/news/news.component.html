@@ -21,10 +21,13 @@
     <ng-template #empty>
       <p>There is no news to show.</p>
     </ng-template>
+    
+    <!-- Aquí se debe redirigir a page Noticias -->
     <div class="row justify-content-center">
       <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button>
     </div>
   </div>
+  <!-- <app-search></app-search> -->
 </div>
 <!-- <p>{{resources | json}}</p> -->
 <!-- News -->
