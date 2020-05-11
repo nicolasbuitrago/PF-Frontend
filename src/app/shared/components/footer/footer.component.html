@@ -10,10 +10,18 @@
         <h6 class="text-center text-md-left mt-4 mb-2 mb-md-0 font-weight-bold">Follow us</h6>
         <div class="row pb-4 pt-2 d-flex align-items-center">
           <div class="col text-center text-md-left">
-            <a class="icon" [href]="content.social_networks[0]"><i class="fab fa-facebook-f mr-4"> </i></a>
-            <a class="icon" [href]="content.social_networks[1]"><i class="fab fa-twitter mr-4"> </i></a>
-            <a class="icon" [href]="content.social_networks[2]"><i class="fab fa-linkedin-in mr-4"> </i></a>
-            <a class="icon" [href]="content.social_networks[3]"><i class="fab fa-instagram"> </i></a>
+            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[2]">
+              <i class="fab fa-facebook-f mr-4"></i>
+            </a>
+            <a class="icon" [href]="content.social_networks[0]">
+              <i class="fab fa-twitter mr-4"></i>
+            </a>
+            <a class="icon" [href]="content.social_networks[1]">
+              <i class="fab fa-linkedin-in mr-4"></i>
+            </a>
+            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[3]">
+              <i class="fab fa-instagram"></i>
+            </a>
           </div>
         </div>
       </div>
