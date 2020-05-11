@@ -14,7 +14,7 @@
 
 #search_form h3 {
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 0.91em;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 	letter-spacing: 1px;
 	font-weight: 600;
@@ -28,12 +28,13 @@
 
 .search_top input[type="text"],
 .search_top input[type="submit"] {
+	border: 1px solid #ced4da;
+    border-radius: 0.25rem;
 	color: #777;
 	background: #fff;
 	outline: none;
 	font-size: 0.91em;
 	padding: 1em 1em;
-	border: none;
 	-webkit-appearance: none;
 	display: inline-block;
 	letter-spacing: 1px;
@@ -54,11 +55,26 @@
 	height: 50px;
 }
 
+.container-2 .icon{
+	position: absolute;
+	top: 50%;
+	margin-left: 17px;
+	margin-top: 17px;
+	z-index: 1;
+	color: #4f5b66;
+  }
+
+.container-2{
+	width: 300px;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+}
 .search_top input[type="submit"] {
 	background: #ffb900;
 	color: #fff;
 	font-weight: 700;
-	font-size: 1.2em;
+	font-size: 0.91em;
 	padding: 0.58em 1em;
 	width: 100%;
 	cursor: pointer;

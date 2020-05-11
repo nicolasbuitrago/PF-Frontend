@@ -32,6 +32,26 @@ blockquote.blockquote {
   }
 }
 
+@media (max-width: 480px) { 
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .text-center {
+    font-size:30px;
+  }
+  blockquote.blockquote {
+    footer.blockquote-footer {
+      font-size: 15px;
+      color: #a0aab3;
+    }
+  }
+  .pt-4, .py-4 {
+    padding-top: 5rem !important;
+  }
+}
+
 // @media (max-width: 768px) {
 //   /* Bump up size of carousel content */
 //   .carousel-item {
