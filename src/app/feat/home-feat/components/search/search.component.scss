@@ -26,15 +26,14 @@
 	margin-top: 10px;
 }
 
-.search_top input[type="text"],
-.search_top input[type="submit"] {
+.search_top input[type="text"] {
 	border: 1px solid #ced4da;
     border-radius: 0.25rem;
 	color: #777;
 	background: #fff;
 	outline: none;
 	font-size: 0.91em;
-	padding: 1em 1em;
+	/* padding-left: 2.375rem; */
 	-webkit-appearance: none;
 	display: inline-block;
 	letter-spacing: 1px;
@@ -53,33 +52,35 @@
 	letter-spacing: 1px;
 	margin-right: 2px;
 	height: 50px;
+	margin-top: 10px !important;
 }
 
-.container-2 .icon{
-	position: absolute;
-	top: 50%;
-	margin-left: 17px;
-	margin-top: 17px;
-	z-index: 1;
-	color: #4f5b66;
-  }
-
-.container-2{
-	width: 300px;
-	vertical-align: middle;
-	white-space: nowrap;
-	position: relative;
-}
-.search_top input[type="submit"] {
-	background: #ffb900;
-	color: #fff;
-	font-weight: 700;
-	font-size: 0.91em;
-	padding: 0.58em 1em;
-	width: 100%;
-	cursor: pointer;
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }
 
-.search_top input[type="submit"]:hover {
-	background: #121312;
+.form-control{
+	margin-top: 10px;
 }
+@media (max-width: 767px){
+	.search_top input[type="text"], .search_top select#country12, .search_top select#country13 {
+		margin-bottom: 0.5em;
+	}
+}
+
+@media (max-width: 375px){
+	.search_top select#country12, .search_top select#country13 {
+		font-size: 0.9em;
+		padding: 0.5em 0.8em;
+		height: 46px;
+	}
+}
+
