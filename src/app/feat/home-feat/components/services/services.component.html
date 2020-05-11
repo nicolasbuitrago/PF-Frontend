@@ -3,9 +3,9 @@
   <div class="row" *ngIf="resources && resources.length else empty">
     <div class="col-lg-4 col-md-6" *ngFor="let service of resources">
       <div class="service-content mb-3" style="text-align: center;">
-        <img class="mb-2" [src]="service.image_url" [alt]="service.name" width="20%" height="auto">
-        <!-- <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
-          [alt]="service.name" width="40%" height="auto"> -->
+        <!-- <img class="mb-2" [src]="service.image_url" [alt]="service.name" width="20%" height="auto"> -->
+        <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
+          [alt]="service.name" width="30%" height="auto">
         <h5>{{ service.name }}</h5>
         <p>{{ service.description }}</p>
         <a [href]="service.link" *ngIf="service.link">
