@@ -28,6 +28,7 @@ import { StudiosComponent } from './components/studios/studios.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SearchComponent } from './components/search/search.component';
+import { RegisterFormComponent } from '@app/feat/home-feat/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { SearchComponent } from './components/search/search.component';
     StudiosComponent,
     FaqsComponent,
     ContactInfoComponent,
-    SearchComponent
+    SearchComponent,
+    RegisterFormComponent
   ],
   imports: [
     CommonModule,

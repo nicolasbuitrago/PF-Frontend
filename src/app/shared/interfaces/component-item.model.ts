@@ -29,7 +29,8 @@ export enum ComponentType {
   CAROUSEL = 'Carousel',
   TESTIMONIOS = 'Testimony',
   CONTACT_INFORMATION = 'ContactInformation',
-  SEARCH = 'Search'
+  SEARCH = 'Search',
+  REGISTER_FORM = 'RegisterForm'
   // SPONSORS = 'SponsorsComponent',
   // NEWS = 'NewsComponent',
   // MENTORS = 'MentorsComponent',
