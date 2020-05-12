@@ -4,6 +4,7 @@ import { ContentService } from '@core/services/content.service';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
+import { AppRouter } from '@app/shared/interfaces/router.model';
 // import { StudioService } from '../../services/studio.service';
 // import { Studio, STUDIO } from '@shared/interfaces/studio.model';
 
@@ -24,13 +25,19 @@ export class StudiosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.studios = [];
-    // this.getStudios();
-    this.getStudiosPage();
+    this.contentService.getRouter().subscribe(
+      (r: AppRouter) => {
+        this.getStudiosPage(`${r.projects_id}`);
+      },
+      (err) => {
+        this.error = true;
+        console.log('Err get studios id = ' + err);
+      }
+    );
   }
 
-  getStudiosPage() {
-    this.contentService.getPage('3')
+  getStudiosPage(pageId: string) {
+    this.contentService.getPage(pageId)
     .subscribe(
       (studiosPage: Page) => {
         this.components = studiosPage.components;

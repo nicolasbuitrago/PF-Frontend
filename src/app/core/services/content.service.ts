@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, of, ReplaySubject, Subject, merge } from 'rxjs';
+import { Observable, of, ReplaySubject, Subject, merge, BehaviorSubject } from 'rxjs';
 import { delay, share, tap, shareReplay, refCount, catchError, map } from 'rxjs/operators';
 
 import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.component';
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
-import { SectionComponent } from '@app/feat/home-feat/components/section/section.component';
-import { ContactInfoComponent } from '@app/feat/home-feat/components/contact-info/contact-info.component';
-import { RegisterFormComponent } from '@app/feat/home-feat/components/register-form/register-form.component';
+import { SectionComponent } from '@feat/home-feat/components/section/section.component';
+import { ContactInfoComponent } from '@feat/home-feat/components/contact-info/contact-info.component';
+import { RegisterFormComponent } from '@feat/home-feat/components/register-form/register-form.component';
 
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 // import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
+import { AppRouter } from '@shared/interfaces/router.model';
 import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
@@ -21,15 +22,15 @@ import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
 // import { FaqItem } from '@shared/interfaces/faqitem.model';
 // import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
-import { StudiosListComponent } from '@app/feat/studios-feat/components/studios-list/studios-list.component';
-import { EventsListComponent } from '@app/feat/home-feat/components/events-list/events-list.component';
-import { SponsorsComponent } from '@app/feat/home-feat/components/sponsors/sponsors.component';
-import { NewsComponent } from '@app/feat/home-feat/components/news/news.component';
-import { MentorsComponent } from '@app/feat/home-feat/components/mentors/mentors.component';
-import { ServicesComponent } from '@app/feat/home-feat/components/services/services.component';
-import { FaqsComponent } from '@app/feat/home-feat/components/faqs/faqs.component';
-import { AppBarInformation, FooterInformation } from '@app/shared/interfaces/contact-information.model';
-import { SearchComponent } from '@app/feat/home-feat/components/search/search.component';
+import { StudiosListComponent } from '@feat/studios-feat/components/studios-list/studios-list.component';
+import { EventsListComponent } from '@feat/home-feat/components/events-list/events-list.component';
+import { SponsorsComponent } from '@feat/home-feat/components/sponsors/sponsors.component';
+import { NewsComponent } from '@feat/home-feat/components/news/news.component';
+import { MentorsComponent } from '@feat/home-feat/components/mentors/mentors.component';
+import { ServicesComponent } from '@feat/home-feat/components/services/services.component';
+import { FaqsComponent } from '@feat/home-feat/components/faqs/faqs.component';
+import { AppBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
+import { SearchComponent } from '@feat/home-feat/components/search/search.component';
 
 
 @Injectable({
@@ -37,11 +38,14 @@ import { SearchComponent } from '@app/feat/home-feat/components/search/search.co
 })
 export class ContentService {
 
+  private urlRouter = `${environment.apiUrl}/app_routers`;
   private urlPages = `${environment.apiUrl}/pages`;
   private urlInformation = `${environment.apiUrl}/contact_informations`;
   // private urlSections = `${environment.apiUrl}/texts`;
   // private urlCarousel = `${environment.apiUrl}/carousels`;
   // private urlTestimonios = `${environment.apiUrl}/testimonies`;
+
+  private currentRouterSubject: BehaviorSubject<AppRouter>;
 
   private meetUpGroup = 'Swifticious';
   events$: Observable<Event[]>;
@@ -50,6 +54,7 @@ export class ContentService {
   games$: Observable<Game[]>;
 
   constructor(private http: HttpClient) {
+    this.currentRouterSubject = new BehaviorSubject<AppRouter>(null);
     this.infiniteGames$ = new Subject<void>().asObservable();
     this.games$ = merge(
       of(GAMES).pipe(tap(() => console.log('***SIDE EFFECT***')))
@@ -61,6 +66,22 @@ export class ContentService {
       ,
       this.infiniteGames$
     ).pipe(shareReplay(1));
+  }
+
+  // public get currentRouterValue(): AppRouter {
+  //   return this.currentRouterSubject.value;
+  // }
+
+  getRouter() {
+    const router = this.currentRouterSubject.value;
+    if (router) {
+      return of(router);
+    } else {
+      // console.log('SIDE EFECT');
+      return this.http.get<AppRouter>(this.urlRouter).pipe(
+        tap(r => this.currentRouterSubject.next(r))
+      );
+    }
   }
 
   getPages() {

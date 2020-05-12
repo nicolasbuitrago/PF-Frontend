@@ -4,6 +4,7 @@ import { ContentService } from '@core/services/content.service';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
+import { AppRouter } from '@app/shared/interfaces/router.model';
 
 @Component({
   selector: 'app-faq',
@@ -20,11 +21,19 @@ export class FaqComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.getFaqPage();
+    this.contentService.getRouter().subscribe(
+      (r: AppRouter) => {
+        this.getFaqPage(`${r.faq_id}`);
+      },
+      (err) => {
+        this.error = true;
+        console.log('Err get faq id = ' + err);
+      }
+    );
   }
 
-  getFaqPage() {
-    this.contentService.getPage('6')
+  getFaqPage(pageId: string) {
+    this.contentService.getPage(pageId)
     .subscribe(
       (eventsPage: Page) => {
         this.components = eventsPage.components;

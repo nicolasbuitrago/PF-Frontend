@@ -4,6 +4,7 @@ import { ContentService } from '@core/services/content.service';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
+import { AppRouter } from '@app/shared/interfaces/router.model';
 
 @Component({
   selector: 'app-events',
@@ -20,11 +21,19 @@ export class EventsComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.getEventsPage();
+    this.contentService.getRouter().subscribe(
+      (r: AppRouter) => {
+        this.getEventsPage(`${r.events_and_news_id}`);
+      },
+      (err) => {
+        this.error = true;
+        console.log('Err get events id = ' + err);
+      }
+    );
   }
 
-  getEventsPage(): void {
-    this.contentService.getPage('2')
+  getEventsPage(pageId: string): void {
+    this.contentService.getPage(pageId)
     .subscribe(
       (eventsPage: Page) => {
         this.components = eventsPage.components;

@@ -4,6 +4,7 @@ import { ContentService } from '@core/services/content.service';
 import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
+import { AppRouter } from '@app/shared/interfaces/router.model';
 
 @Component({
   templateUrl: './contact.component.html',
@@ -19,11 +20,19 @@ export class ContactComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.getContactPage();
+    this.contentService.getRouter().subscribe(
+      (r: AppRouter) => {
+        this.getContactPage(`${r.contact_id}`);
+      },
+      (err) => {
+        this.error = true;
+        console.log('Err get contact id = ' + err);
+      }
+    );
   }
 
-  getContactPage() {
-    this.contentService.getPage('5')
+  getContactPage(pageId: string) {
+    this.contentService.getPage(pageId)
     .subscribe(
       (contactPage: Page) => {
         this.components = contactPage.components;

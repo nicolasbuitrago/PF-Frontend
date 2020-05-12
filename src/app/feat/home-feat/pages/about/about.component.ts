@@ -7,6 +7,7 @@ import { Page } from '@shared/interfaces/page.model';
 import { DataComponent } from '@shared/interfaces/data-component.model';
 import { Section } from '@app/shared/interfaces/section.model';
 import { SectionComponent } from '../../components/section/section.component';
+import { AppRouter } from '@app/shared/interfaces/router.model';
 
 @Component({
   selector: 'app-about',
@@ -23,11 +24,19 @@ export class AboutComponent implements OnInit {
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.getAboutPage();
+    this.contentService.getRouter().subscribe(
+      (r: AppRouter) => {
+        this.getAboutPage(`${r.about_us_id}`);
+      },
+      (err) => {
+        this.error = true;
+        console.log('Err get about id = ' + err);
+      }
+    );
   }
 
-  getAboutPage() {
-    this.contentService.getPage('4')
+  getAboutPage(pageId: string) {
+    this.contentService.getPage(pageId)
     .subscribe(
       (aboutPage: Page) => {
         this.components = aboutPage.components;
