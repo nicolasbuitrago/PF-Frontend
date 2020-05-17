@@ -22,13 +22,12 @@
       <p>There is no news to show.</p>
     </ng-template>
     
-
+    <br>
+    <br>
     <div class="button-row">
-      <a routerLink="/home/all-news" class="btn btn-primary mt-sm-5 mt-4 text-white" role="button" aria-disabled="true">All News</a>
-      <br>
+     <button routerLink="/home/all-news" mat-button mat-raised-button>All News</button>
       <!-- <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button> -->
-      <button type="button" class="btn btn-primary mt-sm-5 mt-4 text-white" mat-raised-button (click)="openDialog()">Add News</button>
-
+      <button mat-button mat-raised-button (click)="openDialog()">Sugerir Noticia</button>
     </div>
   </div>
 </div>

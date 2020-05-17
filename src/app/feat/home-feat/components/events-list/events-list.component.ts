@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 // import { ContentService } from '@core/services/content.service';
 import { Event } from '@shared/interfaces/event.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
+import { EventsFormComponent } from '../events-form/events-form.component';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-events-list',
@@ -15,7 +17,7 @@ export class EventsListComponent implements OnInit, DataItem {
   meets: any[];
   selectedEvent: Event;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.selectedEvent = this.resources[0];
@@ -66,5 +68,18 @@ export class EventsListComponent implements OnInit, DataItem {
     // console.log(msDateA + ' === ' + msDateB);
     return msDateA === msDateB;
   }
+
+  openDialog(): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    const matDialogConfig = new MatDialogConfig();
+    matDialogConfig.autoFocus = true;
+    matDialogConfig.width = '800px';
+    const dialogRef = this.dialog.open(EventsFormComponent, matDialogConfig);
+    dialogRef.afterClosed().subscribe(res => {
+      console.log('Dialog result: ${result}');
+    });
+  }
+
+
 
 }

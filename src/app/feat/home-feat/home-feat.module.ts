@@ -15,8 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatButtonModule } from '@angular/material/button';
+/* import { MatNativeDateModule } from '@angular/material';
+ */
 import { HomeFeatRoutingModule } from './home-feat-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
@@ -46,6 +47,7 @@ import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { EventsFormComponent } from './components/events-form/events-form.component';
 import { NewsFormComponent } from './components/news-form/news-form.component';
+import { BodyBlogComponent } from './components/body-blog/body-blog.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,8 @@ import { NewsFormComponent } from './components/news-form/news-form.component';
     AllNewsComponent,
     BlogComponent,
     EventsFormComponent,
-    NewsFormComponent
+    NewsFormComponent,
+    BodyBlogComponent
 
   ],
   imports: [
@@ -95,8 +98,8 @@ import { NewsFormComponent } from './components/news-form/news-form.component';
     MatInputModule,
     MatAutocompleteModule,
     MatStepperModule,
-    MatIconModule/* ,
-    MatMomentDateModule, */
+    MatIconModule,
+    /* MatNativeDateModule */
   ],
   exports: [
     MatDatepickerModule
