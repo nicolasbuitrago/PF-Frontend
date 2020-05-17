@@ -6,6 +6,8 @@ import { EventsComponent } from './pages/events/events.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { AllNewsComponent } from './pages/all-news/all-news.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,16 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent
   }
+  ,
+  {
+    path: 'all-news',
+    component: AllNewsComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  }
+
 ];
 
 @NgModule({

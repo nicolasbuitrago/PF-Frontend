@@ -1,0 +1,30 @@
+<app-nav-bar [fixed]="true"></app-nav-bar>
+<app-page-title title="News"></app-page-title>
+
+ <main class="full-page">
+
+  <app-search></app-search>
+  <!-- <app-news></app-news> -->
+  <div class="row package-grids" *ngIf="resources && resources.length else empty">
+    <div class="col-md-4 new-w3" *ngFor="let newitem of news">
+      <div class="news-top">
+        <a [href]="newitem.link">
+          <img [src]="newitem.image_url" alt="" class="img-fluid" width="100%" height="auto">
+        </a>
+      </div>
+      <div class="news-bottom p-4 bg-white">
+        <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
+        <h3 class="my-3">{{ newitem.date }}</h3>
+        <a [href]="newitem.link">
+          <i class="far fa-newspaper mr-2"></i>{{ newitem.description}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <ng-template #empty>
+    <p style="text-align: center;">There is no news to show.</p>
+  </ng-template>
+  
+</main>
+
+<app-footer></app-footer>

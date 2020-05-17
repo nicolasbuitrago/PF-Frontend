@@ -1,0 +1,94 @@
+<h1 mat-dialog-title> Sugerir noticia</h1>
+<mat-horizontal-stepper linear #stepper>
+  <!-- Generalidades de la noticia -->
+  <mat-step [stepControl]="newsInfo" errorMessage="Info is required.">
+    <form [formGroup]="newsInfo">
+      <ng-template matStepLabel>Información General</ng-template>
+      <mat-form-field>
+        <mat-label>Título</mat-label>
+          <input matInput placeholder="Nueva noticia" 
+          formControlName="firstCtrl" required>
+        </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Descripción breve</mat-label>
+        <input matInput #message maxlength="170" placeholder="La semana pasa se dieron cita.." 
+          formControlName="firstCtrl" required>
+        <mat-hint align="start"> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 170</mat-hint>
+      </mat-form-field> 
+      <!-- <mat-form-field>
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker"
+        formControlName="firstCtrl" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> 
+      </mat-form-field> -->
+      <br>
+      <div class="button-row">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- Información detallada de la noticia -->
+  <mat-step [stepControl]="detailsInfo" errorMessage="Detalles son requeridos.">
+    <form [formGroup]="detailsInfo">
+      <ng-template matStepLabel>Detalles</ng-template>
+      <mat-form-field>
+        <mat-label>Texto noticia</mat-label>
+        <input matInput #message maxlength="1000" placeholder="Noticia completa"
+         formControlName="secondCtrl" required>
+        <mat-hint align="start"> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Link</mat-label>
+          <input matInput placeholder="Enlace externo">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Imágen</mat-label>
+        <input matInput placeholder="Image" 
+          formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div class="button-row">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Información del autor/ modelo mentors -->
+  <mat-step [stepControl]="detailsInfo" errorMessage="Información es requerida.">
+    <form [formGroup]="detailsInfo">
+      <ng-template matStepLabel>Autor</ng-template>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre, Apellido" 
+        formControlName="thirdCtrl" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Cargo/Rol</mat-label>
+        <input matInput placeholder="Co-fundador estudio" 
+        formControlName="thirdCtrl" required>
+      </mat-form-field>
+      <br>
+      <div class="button-row">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- Envío de información -->
+  <mat-step>
+    <ng-template matStepLabel>Enviar sugerencia</ng-template>
+    <p>¿Está seguro que desea sugerir esta noticia?</p>
+    <div class="button-row">
+      <button mat-button matStepperPrevious>Atrás</button>
+      <button mat-button (click)="stepper.reset()">Reiniciar</button>
+      <!-- <button mat-button [mat-dialog-close]="model.info" cdkFocusInitial> Enviar </button> -->
+      <button mat-button (click)="onNoClick()">Cerrar</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

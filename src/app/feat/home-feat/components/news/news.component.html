@@ -1,5 +1,4 @@
 <div class="new-w3ls bg-light" id="new">
-  <app-search></app-search>
   <div class="container py-xl-5 py-lg-3">
     <h2 style="font-weight: bold;">News</h2>
     <br>
@@ -23,12 +22,15 @@
       <p>There is no news to show.</p>
     </ng-template>
     
-    <!-- Aquí se debe redirigir a page Noticias -->
-    <div class="row justify-content-center">
-      <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button>
+
+    <div class="button-row">
+      <a routerLink="/home/all-news" class="btn btn-primary mt-sm-5 mt-4 text-white" role="button" aria-disabled="true">All News</a>
+      <br>
+      <!-- <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button> -->
+      <button type="button" class="btn btn-primary mt-sm-5 mt-4 text-white" mat-raised-button (click)="openDialog()">Add News</button>
+
     </div>
   </div>
-  <!-- <app-search></app-search> -->
 </div>
 <!-- <p>{{resources | json}}</p> -->
 <!-- News -->
