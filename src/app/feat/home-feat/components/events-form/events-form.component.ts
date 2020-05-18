@@ -17,7 +17,8 @@ export class EventsFormComponent implements OnInit {
 
   ngOnInit() {
     this.generalInfo = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
+      date: ['', Validators.required]
     });
   }
 

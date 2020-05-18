@@ -16,8 +16,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-/* import { MatNativeDateModule } from '@angular/material';
- */
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { HomeFeatRoutingModule } from './home-feat-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { EventsComponent } from './pages/events/events.component';
@@ -47,7 +48,6 @@ import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { EventsFormComponent } from './components/events-form/events-form.component';
 import { NewsFormComponent } from './components/news-form/news-form.component';
-import { BodyBlogComponent } from './components/body-blog/body-blog.component';
 
 @NgModule({
   declarations: [
@@ -76,8 +76,7 @@ import { BodyBlogComponent } from './components/body-blog/body-blog.component';
     AllNewsComponent,
     BlogComponent,
     EventsFormComponent,
-    NewsFormComponent,
-    BodyBlogComponent
+    NewsFormComponent
 
   ],
   imports: [
@@ -99,7 +98,8 @@ import { BodyBlogComponent } from './components/body-blog/body-blog.component';
     MatAutocompleteModule,
     MatStepperModule,
     MatIconModule,
-    /* MatNativeDateModule */
+    MatNativeDateModule,
+    MatTooltipModule
   ],
   exports: [
     MatDatepickerModule

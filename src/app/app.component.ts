@@ -10,7 +10,7 @@ import { slideInAnimation } from '@shared/animations';
 })
 export class AppComponent {
 
-  title = 'Videogames';
+  title = 'LITIACARIBE';
 
   getAnimationData(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
