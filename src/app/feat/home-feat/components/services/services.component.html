@@ -1,12 +1,12 @@
 <div class="container text-left py-5">
   <h1 class="py-2 font-weight-bold text-center mb-4">Services</h1>
-  <div class="row" *ngIf="resources && resources.length else empty">
+  <div class="row justify-content-around" *ngIf="resources && resources.length else empty">
     <div class="col-lg-4 col-md-6" *ngFor="let service of resources">
       <div class="service-content mb-3" style="text-align: center;">
-        <!-- <img class="mb-2" [src]="service.image_url" [alt]="service.name" width="20%" height="auto"> -->
-        <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
-          [alt]="service.name" width="30%" height="auto">
-        <h5>{{ service.name }}</h5>
+        <img class="mb-2" [src]="service.image_url" [alt]="service.name" width="30%" height="auto">
+        <!-- <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
+          [alt]="service.name" width="30%" height="auto"> -->
+        <h5 class="font-weight-bold">{{ service.name }}</h5>
         <p>{{ service.description }}</p>
         <a [href]="service.link" *ngIf="service.link">
           <span class="mr-1"><i class="fas fa-plus"></i></span>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <ng-template #empty>
-    <p class="text-center pb-2">There is no services to show.</p>
+    <p class="text-center pb-2">There are no services to show.</p>
   </ng-template>
   <div class="row justify-content-center pt-3">
       <a class="btn btn-primary btn-lg text-white">Get Started</a>

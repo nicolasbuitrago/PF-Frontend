@@ -12,14 +12,14 @@
         <div class="news-bottom p-4 bg-white">
           <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
           <h3 class="my-3">{{ newitem.date }}</h3>
-          <a [href]="newitem.link">
+          <a [href]="newitem.link" target="_blank">
             <i class="far fa-newspaper mr-2"></i>{{ newitem.description}}
           </a>
         </div>
       </div>
     </div>
     <ng-template #empty>
-      <p>There is no news to show.</p>
+      <p>There are no news to show.</p>
     </ng-template>
 
     <div class="button-row mt-3 mt-md-4 pb-3">

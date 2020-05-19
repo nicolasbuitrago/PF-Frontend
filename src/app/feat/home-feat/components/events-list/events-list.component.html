@@ -1,7 +1,7 @@
 <div class="container py-4">
   <div class="row no-gutters events my-4" *ngIf="resources && resources.length else noEvents">
     <div class="selected col-md-7 text-white"
-      [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(' + 'https://source.unsplash.com/1200x800/?videogame' + ')'}">
+      [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(' + selectedEvent.image_url + ')'}">
       <div class="event">
         <h3 class="mb-1 font-weight-bold">{{ selectedEvent.name }}</h3>
         <h5>{{ selectedEvent.date | date }}</h5>

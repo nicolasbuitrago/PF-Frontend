@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark">
   <h1 class="text-center text-white py-4 font-weight-bold">What People Say</h1>
-  <div id="myTestimonials" class="carousel slide" data-ride="carousel">
+  <div id="myTestimonials" class="carousel slide" data-ride="carousel" *ngIf="data && data.items else empty">
     <ol class="carousel-indicators">
       <li data-target="#myTestimonials" [attr.data-slide-to]="i"
           [class.active]='f'
@@ -19,12 +19,13 @@
                   <small>{{ testimonio.author_info }}</small> -->
                   <h4>{{ testimonio.title }}</h4>
                   <blockquote class="blockquote text-center">
-                    <p class="mb-2">{{ testimonio.text }} -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit delectus omnis sequi pariatur</p>
+                    <p class="mb-2">{{ testimonio.text }} </p>
                     <footer class="blockquote-footer">{{ testimonio.author_name }} <br><cite title="Source Title">{{ testimonio.author_info }}</cite></footer>
                   </blockquote>
                 </div>
                 <div class="col-6 col-sm-5 col-md-4 order-1 order-md-2 d-none d-sm-block">
-                  <img class="rounded" src="https://source.unsplash.com/800x800/?person" [alt]="testimonio.author_name" width='100%' height='auto'>
+                  <!-- <img class="rounded" src="https://source.unsplash.com/800x800/?person" [alt]="testimonio.author_name" width='100%' height='auto'> -->
+                  <img class="rounded author" [src]="testimonio.image_url" [alt]="testimonio.author_name" width='100%' height='auto'>
                 </div>
               </div>
             </div>
@@ -50,4 +51,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <ng-template #empty>
+    <p>There are no testimonials to show.</p>
+  </ng-template>
 </div>
