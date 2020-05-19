@@ -10,9 +10,11 @@ import { slideInAnimation } from '@shared/animations';
 })
 export class AppComponent {
 
-  title = 'LITIACARIBE';
+  title = 'LitiaCaribe';
 
   getAnimationData(outlet: RouterOutlet) {
+    // tslint:disable:no-string-literal
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+    // tslint:enable:no-string-literal
   }
 }
