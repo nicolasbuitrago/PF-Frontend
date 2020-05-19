@@ -31,7 +31,8 @@ export class NewsComponent implements OnInit, DataItem {
     // tslint:disable-next-line:no-shadowed-variable
     const matDialogConfig = new MatDialogConfig();
     matDialogConfig.autoFocus = true;
-    matDialogConfig.width = '800px';
+    // matDialogConfig.width = '800px';
+    matDialogConfig.height = '90%';
     const dialogRef = this.dialog.open(NewsFormComponent, matDialogConfig);
     dialogRef.afterClosed().subscribe(res => {
       console.log('Dialog result: ${result}');

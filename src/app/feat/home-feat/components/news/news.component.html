@@ -1,4 +1,4 @@
-<div class="new-w3ls bg-light" id="new">
+<div class="new-w3ls bg-light pb-3" id="new">
   <div class="container py-xl-5 py-lg-3">
     <h2 style="font-weight: bold;">News</h2>
     <br>
@@ -21,13 +21,11 @@
     <ng-template #empty>
       <p>There is no news to show.</p>
     </ng-template>
-    
-    <br>
-    <br>
-    <div class="button-row">
-     <button routerLink="/home/all-news" mat-button mat-raised-button>All News</button>
+
+    <div class="button-row mt-3 mt-md-4">
+     <button routerLink="/home/all-news" mat-raised-button color="primary">All News</button>
       <!-- <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button> -->
-      <button mat-button mat-raised-button (click)="openDialog()">Suggest a News</button>
+      <button mat-raised-button (click)="openDialog()" color="accent">Suggest a New</button>
     </div>
   </div>
 </div>

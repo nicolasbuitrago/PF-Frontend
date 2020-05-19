@@ -1,108 +1,115 @@
 <h1 mat-dialog-title> Add New</h1>
-<p> Be part of the LitiaCaribe community and add an new that involves the cluster!</p>
-<mat-horizontal-stepper linear #stepper>
-  <!-- Generalidades de la noticia -->
-  <mat-step [stepControl]="newsInfo" errorMessage="Info is required.">
-    <form [formGroup]="newsInfo">
-      <ng-template matStepLabel>General Information</ng-template>
-      <mat-form-field class="full-width">
-        <mat-label>Title</mat-label>
-          <input matInput placeholder="Title New" 
-          formControlName="firstCtrl" required>
-        </mat-form-field>
-      <br>
-      <mat-form-field class="full-width">
-        <mat-label>Description</mat-label>
-        <textarea matInput #message maxlength="170" placeholder="The last week..." 
-          formControlName="firstCtrl" required></textarea>
-        <mat-hint align="start"> </mat-hint>
-        <mat-hint align="end">{{message.value.length}} / 170</mat-hint>
-      </mat-form-field> 
-      <mat-form-field>
-        <mat-label>Date</mat-label>
-        <input matInput formControlName="firstCtrl" [matDatepicker]="dp3">
-        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
-      </mat-form-field>
-      <br>
-      <div class="button-row">
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-<!-- Información detallada de la noticia -->
-  <mat-step [stepControl]="detailsInfo" errorMessage="Details are required.">
-    <form [formGroup]="detailsInfo">
-      <ng-template matStepLabel>Details</ng-template>
-
-      <mat-form-field class="full-width">
-        <mat-label>Content</mat-label>
-        <textarea matInput #text maxlength="1000" placeholder="Body new..."
-         formControlName="secondCtrl" required></textarea>
-        <mat-hint align="start"> </mat-hint>
-        <mat-hint align="end">{{text.value.length}} / 1000</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>Link</mat-label>
-          <input matInput placeholder="External link">
-      </mat-form-field>
-      <br>
-      <div class="dragFile" *ngIf="!previewImg"
-      (click)="imageInput.click()" appDragDrop (onFileDropped)="droppedFile($event)">
-      <p>Click or drag the image to add</p>
-      <input hidden type="file" #imageInput (change)="uploadFile($event)">
-      <!-- <a mat-stroked-button color="primary" (click)="imageInput.click()" style="margin-bottom: 1rem;">Añadir imagen</a> -->
-      </div>
-      <div class="preview" *ngIf="previewImg && previewImg !== null">
-        <img [src]="previewImg">
+<mat-dialog-content>
+  <p class="mb-1"> Be part of the LitiaCaribe community and add an new that involves the cluster!</p>
+  <mat-horizontal-stepper linear #stepper>
+    <!-- Generalidades de la noticia -->
+    <mat-step [stepControl]="newsInfo" errorMessage="Info is required.">
+      <form [formGroup]="newsInfo">
+        <ng-template matStepLabel>General Information</ng-template>
+        <mat-form-field class="full-width">
+          <mat-label>Title</mat-label>
+            <input matInput placeholder="Title New" formControlName="firstCtrl" required>
+          </mat-form-field>
         <br>
-        <a mat-stroked-button color="warn" (click)="deleteImage()" style="margin-top: 0.5rem;">Eliminar imagen</a>
-      </div>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput #message maxlength="170" placeholder="The last week..."
+            formControlName="firstCtrl" required></textarea>
+          <mat-hint align="start"> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 170</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="firstCtrl" [matDatepicker]="dp3">
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <div class="button-row">
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+  <!-- Información detallada de la noticia -->
+    <mat-step [stepControl]="detailsInfo" errorMessage="Details are required.">
+      <form [formGroup]="detailsInfo">
+        <ng-template matStepLabel>Details</ng-template>
+
+        <mat-form-field class="full-width">
+          <mat-label>Content</mat-label>
+          <textarea matInput #text maxlength="1000" placeholder="Body new..."
+          formControlName="secondCtrl" required></textarea>
+          <mat-hint align="start"> </mat-hint>
+          <mat-hint align="end">{{text.value.length}} / 1000</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Link</mat-label>
+            <input matInput placeholder="External link">
+        </mat-form-field>
+        <br>
+        <div class="dragFile" *ngIf="!previewImg"
+        (click)="imageInput.click()" appDragDrop (onFileDropped)="droppedFile($event)">
+        <p>Click or drag the image to add</p>
+        <input hidden type="file" #imageInput (change)="uploadFile($event)">
+        <!-- <a mat-stroked-button color="primary" (click)="imageInput.click()" style="margin-bottom: 1rem;">Añadir imagen</a> -->
+        </div>
+        <div class="preview" *ngIf="previewImg && previewImg !== null">
+          <img [src]="previewImg">
+          <br>
+          <a mat-stroked-button color="warn" (click)="deleteImage()" style="margin-top: 0.5rem;">Eliminar imagen</a>
+        </div>
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- Información del autor/ modelo mentors -->
+    <mat-step [stepControl]="authorInfo" errorMessage="Info are required.">
+      <form [formGroup]="authorInfo">
+        <ng-template matStepLabel>Author</ng-template>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name, Lastname"
+          formControlName="thirdCtrl" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field >
+          <mat-label>Role</mat-label>
+          <input matInput placeholder="Co-creator studio">
+        </mat-form-field>
+
+        <mat-form-field style="padding-left: 2%;">
+          <mat-label>Email contact</mat-label>
+          <input matInput placeholder="email@email.com"
+          formControlName="thirdCtrl" required>
+        </mat-form-field>
+        <br>
+        <div class="button-row">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-- Envío de información -->
+    <mat-step [stepControl]="authorInfo">
+      <ng-template matStepLabel>Send suggestion</ng-template>
+      <p>Are you sure you want to send this news?</p>
       <div class="button-row">
+        <!-- <button mat-button [mat-dialog-close]="model.info" cdkFocusInitial> Enviar </button> -->
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button  cdkFocusInitial> Send </button>
+        <!-- <button mat-button (click)="onNoClick()">Cancel</button> -->
+        <button mat-button (click)="stepper.reset()">Restart</button>
       </div>
-    </form>
-  </mat-step>
-  <!-- Información del autor/ modelo mentors -->
-  <mat-step [stepControl]="authorInfo" errorMessage="Info are required.">
-    <form [formGroup]="authorInfo">
-      <ng-template matStepLabel>Author</ng-template>
-      <mat-form-field class="full-width">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name, Lastname" 
-        formControlName="thirdCtrl" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field >
-        <mat-label>Role</mat-label>
-        <input matInput placeholder="Co-creator studio">
-      </mat-form-field>
-      
-      <mat-form-field style="padding-left: 2%;">
-        <mat-label>Email contact</mat-label>
-        <input matInput placeholder="email@email.com" 
-        formControlName="thirdCtrl" required>
-      </mat-form-field>
-      <br>
-      <div class="button-row">
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <!-- Envío de información -->
-  <mat-step [stepControl]="authorInfo">
-    <ng-template matStepLabel>Send suggestion</ng-template>
-    <p>Are you sure you want to send this news?</p>
-    <div class="button-row">
-      <!-- <button mat-button [mat-dialog-close]="model.info" cdkFocusInitial> Enviar </button> -->
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button  cdkFocusInitial> Send </button>
-      <button mat-button (click)="onNoClick()">Cancel</button>
-      <button mat-button (click)="stepper.reset()">Restart</button>  
-    </div>
-  </mat-step>
-  <!-- prueb -->
-</mat-horizontal-stepper>
+    </mat-step>
+    <!-- prueb -->
+  </mat-horizontal-stepper>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="onNoClick()" color="warn">Cancel</button>
+  <!-- <button mat-stroked-button (click)="stepper.reset()">Restart</button>
+  <button mat-stroked-button matStepperPrevious>Back</button>
+  <button mat-stroked-button cdkFocusInitial> Send </button> -->
+</div>

@@ -1,3 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@charset 'utf-8';
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/helpers'; /* Placeholders and utils classes */
+
+@import 'base/base';
+@import 'base/reset';
+@import 'base/typography';
+
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -12,8 +24,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$videogames-primary: mat-palette($mat-indigo);
-$videogames-accent: mat-palette($mat-pink, A200, A100, A400);
+$videogames-primary: mat-palette($mat-blue);
+$videogames-accent: mat-palette($mat-blue-gray, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $videogames-warn: mat-palette($mat-red);
@@ -25,18 +37,6 @@ $videogames-theme: mat-light-theme($videogames-primary, $videogames-accent, $vid
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($videogames-theme);
-
-/* You can add global styles to this file, and also import other style files */
-@charset 'utf-8';
-
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-@import 'abstracts/helpers'; /* Placeholders and utils classes */
-
-@import 'base/base';
-@import 'base/reset';
-@import 'base/typography';
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
