@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
 
   title: string;
   content: FooterInformation;
+  year = new Date().getFullYear();
 
   constructor(
     private contentService: ContentService,
