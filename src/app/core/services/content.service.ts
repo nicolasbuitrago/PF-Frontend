@@ -7,7 +7,7 @@ import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
 import { SectionComponent } from '@feat/home-feat/components/section/section.component';
 import { ContactInfoComponent } from '@feat/home-feat/components/contact-info/contact-info.component';
-import { RegisterFormComponent } from '@feat/home-feat/components/register-form/register-form.component';
+import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 // import { GamesComponent } from '@feat/home-feat/components/games/games.component';
@@ -141,14 +141,14 @@ export class ContentService {
             component.component = ContactInfoComponent;
             break;
           }
-          case ComponentType.SEARCH: {
-            component.component = SearchComponent;
-            break;
-          }
-          case ComponentType.REGISTER_FORM : {
-            component.component = RegisterFormComponent;
-            break;
-          }
+          // case ComponentType.SEARCH: {
+          //   component.component = SearchComponent;
+          //   break;
+          // }
+          // case ComponentType.REGISTER_FORM : {
+          //   component.component = RegisterFormComponent;
+          //   break;
+          // }
           // case 'GamesComponent': {
           //   component.component = GamesComponent;
           //   break;

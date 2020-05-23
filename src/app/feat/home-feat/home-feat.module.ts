@@ -43,11 +43,13 @@ import { StudiosComponent } from './components/studios/studios.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 import { SearchComponent } from './components/search/search.component';
-import { RegisterFormComponent } from '@app/feat/home-feat/components/register-form/register-form.component';
+import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { EventsFormComponent } from './components/events-form/events-form.component';
-import { NewsFormComponent } from './components/news-form/news-form.component';
+import { EventsFormComponent } from './components/forms/events-form/events-form.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { VinculationComponent } from './components/vinculation/vinculation.component';
+import { VinculationFormComponent } from './components/forms/vinculation-form/vinculation-form.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { NewsFormComponent } from './components/news-form/news-form.component';
     AllNewsComponent,
     BlogComponent,
     EventsFormComponent,
-    NewsFormComponent
+    NewsFormComponent,
+    VinculationComponent,
+    VinculationFormComponent
 
   ],
   imports: [

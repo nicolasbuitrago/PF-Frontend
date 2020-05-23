@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { NewItem } from '@app/shared/interfaces/newitem.model';
-import { NewsFormComponent } from '../news-form/news-form.component';
+import { NewsFormComponent } from '../forms/news-form/news-form.component';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Form } from '@shared/interfaces/form.model';
 
