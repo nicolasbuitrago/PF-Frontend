@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { JoinUsComponent } from './pages/join-us/join-us.component';
 
 const routes: Routes = [
   {
@@ -36,11 +37,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
-  }
-  ,
+  },
   {
     path: 'all-news',
     component: AllNewsComponent
+  },
+  {
+    path: 'join-us',
+    component: JoinUsComponent
   },
   {
     path: 'blog',

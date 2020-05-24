@@ -50,6 +50,7 @@ import { EventsFormComponent } from './components/forms/events-form/events-form.
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { VinculationComponent } from './components/vinculation/vinculation.component';
 import { VinculationFormComponent } from './components/forms/vinculation-form/vinculation-form.component';
+import { JoinUsComponent } from './pages/join-us/join-us.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { VinculationFormComponent } from './components/forms/vinculation-form/vi
     EventsFormComponent,
     NewsFormComponent,
     VinculationComponent,
-    VinculationFormComponent
+    VinculationFormComponent,
+    JoinUsComponent
 
   ],
   imports: [

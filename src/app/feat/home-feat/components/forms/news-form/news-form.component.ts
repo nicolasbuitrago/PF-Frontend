@@ -1,8 +1,10 @@
 import {Component, Inject, OnInit, Input} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Form } from '@shared/interfaces/form.model';
+// import { Form } from '@shared/interfaces/form.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+// import { ContentService } from '@core/services/content.service';
+// import { NavBarInformation } from '@shared/interfaces/contact-information.model';
 
 /* AÑADIR NUEVAS NOTICIAS */
 @Component({
@@ -24,7 +26,9 @@ export class NewsFormComponent implements OnInit {
     // tslint:disable-next-line:variable-name
     private sanitizer: DomSanitizer,
     public dialogRef: MatDialogRef<NewsFormComponent>,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    // private contentService: ContentService
+  ) { }
 
 
   /* matcher = new MyErrorStateMatcher(); */

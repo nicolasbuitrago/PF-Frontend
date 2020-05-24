@@ -31,6 +31,8 @@ import { ServicesComponent } from '@feat/home-feat/components/services/services.
 import { FaqsComponent } from '@feat/home-feat/components/faqs/faqs.component';
 import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
 import { SearchComponent } from '@feat/home-feat/components/search/search.component';
+import { Vinculate } from '@app/shared/interfaces/vinculate.model';
+import { stringify } from 'querystring';
 
 
 @Injectable({
@@ -293,6 +295,10 @@ export class ContentService {
         tap(f => this.currentFooterSubject.next(f))
       );
     }
+  }
+
+  vinculate(email: string, phone: string, why: string, roleType: string) {
+    return this.http.post<Vinculate>(`${environment.apiUrl}/vinculations`, {email, phone, why, role_type: roleType});
   }
 
   /**
