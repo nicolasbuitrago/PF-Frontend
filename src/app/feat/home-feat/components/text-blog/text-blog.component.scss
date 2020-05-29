@@ -1,0 +1,182 @@
+@import '~styles/abstracts/_variables.scss';
+.single-top p {
+  color:#302e2e;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 1em 0;
+  line-height: 1.8em;
+  .img{
+    margin-top: 12%;
+  }
+}
+
+.title-blog{
+  margin-top: 20px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.blog-image{
+  width: 90%;
+  margin-bottom: 2%;
+  margin-top: 5%;
+}
+.info-blog li{
+  margin: 0;
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+}
+
+.contact-form {
+  padding: 2em;
+  border: 20px solid #eee;
+  border-radius: 20px;
+}
+
+h5.cont-form {
+  margin: 1em 0;
+  text-align: left;
+  text-transform: initial;
+  font-size: 1.7em;
+  color: $primary;
+  font-weight: 600;
+}
+
+form.register .form-control {
+  padding: 15px 20px;
+  border: 1px solid #dbdde2;
+  border-radius: 0;
+  -webkit-box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  -moz-box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  box-shadow: 2px 8px 10px 0px rgba(50, 46, 46, 0.23);
+  letter-spacing: 1px;
+}
+
+.contact-form {
+  padding: 2em;
+  border: none
+  
+}
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+
+/*--banner-right--*/
+.subtitle{
+  margin: 1em 0 0 auto;
+  font-weight: bold;
+  font-size: 30px;
+}
+h3.tittle.media {
+  margin-top: 1em;
+}
+.banner-right-text {
+  float: right;
+  width:33%;
+     padding: 2em 1em 1.5em 1em;
+}
+.general-text img ,.top-text img{
+  width: 100%;
+    margin-bottom: 0.7em;
+}
+.general-text p {
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.9em;
+  color: #777;
+}
+.general-text.two {
+  margin-top: 1em;
+}
+
+
+/* JOIN */
+.w3l-subscription-6 .subscription-grids.row {
+  align-items: center;
+}
+
+.w3l-subscription-6 .forms-gds {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.hny-title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a.read-more.btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  margin: 20px 0 1em auto;
+  font-weight: 600;
+  padding: 12px 32px;
+  font-size: 16px;
+  background-color: #232020;
+  color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -moz-border-radius: 25px;
+}
+
+a.read-more.btn:hover {
+  background-color: #5B87DA;
+}
+.w3l-subscription-6 .form-right-inf input[type="email"] {
+  background: #f1eeee;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0px 15px;
+  color: #232020;
+  height: 53px;
+  text-align: left;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  -moz-border-radius-topleft: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.w3l-subscription-6 .forms-gds button.btn {
+  cursor: pointer;
+  line-height: 30px;
+  text-decoration: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background: #5B87DA;
+  height: 53px;
+  transition: 0.3s ease;
+  border: none;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  -moz-border-radius-topright: 25px;
+  -moz-border-radius-bottomright: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  width: 100%;
+}
+
+.w3l-subscription-6 .forms-gds button.btn:hover {
+  background: #232020;
+}
+
+

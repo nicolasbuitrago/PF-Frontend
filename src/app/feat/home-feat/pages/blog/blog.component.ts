@@ -1,10 +1,11 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewChild, Input } from '@angular/core';
 import { ItemDirective } from '@shared/directives/item.directive';
 import { ContentService } from '@core/services/content.service';
 import { ComponentItem, ComponentType } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
 import { AppRouter } from '@app/shared/interfaces/router.model';
+import { NewItem } from '@app/shared/interfaces/newitem.model';
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +13,8 @@ import { AppRouter } from '@app/shared/interfaces/router.model';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-
+  @Input() resources: NewItem[];
+  news: NewItem[];
   components: ComponentItem[];
   error: boolean;
 

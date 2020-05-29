@@ -48,6 +48,8 @@ import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { EventsFormComponent } from './components/events-form/events-form.component';
 import { NewsFormComponent } from './components/news-form/news-form.component';
+import { TextBlogComponent } from './components/text-blog/text-blog.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { NewsFormComponent } from './components/news-form/news-form.component';
     AllNewsComponent,
     BlogComponent,
     EventsFormComponent,
-    NewsFormComponent
+    NewsFormComponent,
+    TextBlogComponent,
+    CoursesComponent
 
   ],
   imports: [

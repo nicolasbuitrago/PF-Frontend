@@ -5,14 +5,14 @@
     <div class="row package-grids" *ngIf="resources && resources.length else empty">
       <div class="col-md-4 new-w3" *ngFor="let newitem of news">
         <div class="news-top">
-          <a [href]="newitem.link">
+          <a target="_blank" [href]="newitem.link">
             <img [src]="newitem.image_url" alt="" class="img-fluid" width="100%" height="auto">
           </a>
         </div>
         <div class="news-bottom p-4 bg-white">
           <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
           <h3 class="my-3">{{ newitem.date }}</h3>
-          <a [href]="newitem.link">
+          <a target="_blank"  routerLink="/home/blog">
             <i class="far fa-newspaper mr-2"></i>{{ newitem.description}}
           </a>
         </div>
@@ -25,11 +25,12 @@
     <br>
     <br>
     <div class="button-row">
-     <button routerLink="/home/all-news" mat-button mat-raised-button>All News</button>
+     <button target="_blank" routerLink="/home/all-news" mat-button mat-raised-button>All News</button>
       <!-- <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button> -->
       <button mat-button mat-raised-button (click)="openDialog()">Suggest a News</button>
     </div>
   </div>
+  
 </div>
 <!-- <p>{{resources | json}}</p> -->
 <!-- News -->

@@ -1,0 +1,103 @@
+<!-- CONTENIDO DE UNA NOTICIA -->
+
+<div class="container">
+    <div class="row" >
+        <!-- <div class="row" *ngIf="resources && resources.length else empty"> -->
+        <div class="content-top col-md-8">  
+            <!-- <div class="content-top col-md-8" *ngFor="let newitem of news">  --> 
+            <div class="single">
+                <div class="single-top">
+                    <!-- <img class="blog-image rounded-lg" [src]="newitem.image_url"> -->
+                    <img class="blog-image rounded-lg" src="https://source.unsplash.com/700x300/?technology">
+                    <!-- <h1 class="title-blog"> {{ newitem.title }}</h1> -->
+                    <h1 class="title-blog">Title NOTICIA</h1>
+                        <div class="info-blog">
+                            <ul>  
+                                <!-- <li><span class="mr-1"><i class="far fa-newspaper mr-2"></i>{{ newitem.date }}</span> </li> -->
+                                <li><span class="mr-1"><i class="far fa-newspaper mr-2"></i>JUN 2020</span> </li>
+                                <li><span class="mr-1"><i class="far fa-user mr-2" color="primary"></i>By admin</span> </li>
+                            </ul>
+                        </div>
+                    <!-- <p>{{newitem.full_text}}</p> -->
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tinci arted.
+                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliq usit e
+                        adipiscing elit, sed diam nonummy nibh euismod tinci. Donec sed odio dui. Duis mollis, est non cons 
+                        commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Amet, consectetuer  diam teri
+                        adipiscing elit, sed diam nonummy nibh euismod tinci.</p>
+                </div>
+            </div>
+
+            <!-- Add comments -->
+            <div class="contact-form" >
+                <form action="#" method="post" class="register">
+                    <h5 class="cont-form" style="font-size: large;">Leave a comment</h5>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input class="form-control" type="text" name="name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input class="form-control" type="text" name="email" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Your comment</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <a class="btn btn-primary btn-lg text-white" style="float: right; margin-bottom: 5%;">Add a comment</a>
+                </form>
+            </div>   
+    
+        </div>
+        <div class="content-top col-md-4" style="margin-top: 5%;">
+                
+            <div class="w3l-subscription-6">
+                <!--/register -->
+                <div class="subscription-infhny">
+                    <div class="container-fluid">
+                        <div class="subscription-grids row">
+                            <div class="subscription-right form-right-inf ">
+                                <div class="p-lg-2 ">
+                                    <h3 class="hny-title">Be part of the  <span>LitiaCaribe</span> community</h3>
+                                        <p>Sign up  as a studio and upload your projects!</p>
+            
+                                    <form action="#" method="post" class="signin-form mt-4">
+                                        <div class="forms-gds">
+                                            <div class="form-input">
+                                                <input type="email" name="" placeholder="Your email here" required="">
+                                            </div>
+                                            <div class="form-input"><button class="btn">Join</button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="subscription-left forms-25-info col-lg-6 ">
+                            </div>
+                        </div>
+            
+                        <!--//customers -->
+                    </div>
+                </div>
+
+                <h3 class="subtitle">Others news</h3>
+               <!--/general-news-->
+                <div class="general-news">
+                   <div class="general-inner">
+                       <div class="general-text">
+                            <a href="single.html"><img src="images/gen1.jpg" class="img-responsive" alt=""></a>
+                               <h5 class="top"><a href="single.html">Consetetur sadipscing elit</a></h5>
+                               <p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore dolore magna aliquyam eratsed diam justo duo dolores rebum.</p>
+                               <p>On Jun 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a><a class="span_link" href="single.html"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
+                        </div>
+                    </div>
+               </div>	
+
+               <a routerLink="/home/all-news" class="read-more btn">
+                All news</a>
+            </div>
+    
+        </div>
+    </div>
+    <ng-template #empty>
+        <p style="text-align: center;">There is no news to show.</p>
+    </ng-template>
+</div>
