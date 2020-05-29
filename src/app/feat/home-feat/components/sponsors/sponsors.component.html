@@ -5,8 +5,8 @@
       <div class="row partner-grids text-center justify-content-around" *ngIf="resources && resources.length else empty">
         <div class="col-6 col-sm-4 col-md-2 sponsor mb-4" *ngFor="let sponsor of resources">
           <a target="_blank" [href]="sponsor.link" class="">
-            <img src="https://source.unsplash.com/800x800/?brand" [alt]="sponsor.name" width="100%" height="auto">
-            <!-- <img class="sponsor" [src]="sponsor.image_url" [alt]="sponsor.name" width="100%" height="auto"> -->
+            <!-- <img src="https://source.unsplash.com/800x800/?brand" [alt]="sponsor.name" width="100%" height="auto"> -->
+            <img class="sponsor" [src]="sponsor.image_url" [alt]="sponsor.name" width="100%" height="auto">
           </a>
         </div>
         <!-- <div class="imgResponsiva" *ngFor="let sponsor of resources" >

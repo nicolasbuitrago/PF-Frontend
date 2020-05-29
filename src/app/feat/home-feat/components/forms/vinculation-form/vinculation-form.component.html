@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Join Us</h1>
+<mat-dialog-content>
+  <p class="mb-1"> Be part of the {{ name }} community and add an new that involves the cluster!</p>
+  <form [formGroup]="getForm" (ngSubmit)="vinculate()">
+    <ng-template matStepLabel>General Information</ng-template>
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="getForm.controls.email.hasError('required')">
+        Email is required
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Why</mat-label>
+      <textarea matInput #message maxlength="350" placeholder="The last week..."
+        formControlName="why"></textarea>
+      <!-- <mat-hint align="start"> </mat-hint> -->
+      <mat-hint align="end">{{message.value.length}} / 350</mat-hint>
+      <mat-error *ngIf="getForm.controls.why.hasError('required')">
+        Why is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="Phone" formControlName="phone">
+      <mat-error *ngIf="getForm.controls.phone.hasError('required')">
+        Phone is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Role</mat-label>
+      <mat-select placeholder="Role" formControlName="roleType">
+        <mat-option>Uno</mat-option>
+        <mat-option>Dos</mat-option>
+        <mat-option>Tres</mat-option>
+      </mat-select>
+      <mat-error *ngIf="getForm.controls.roleType.hasError('required')">
+        Role is required
+      </mat-error>
+    </mat-form-field>
+    <!-- <br>
+    <div class="button-row">
+      <button mat-button matStepperNext>Next</button>
+    </div> -->
+  </form>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true">Cancel</button>
+  <!-- <button mat-stroked-button (click)="stepper.reset()">Restart</button>
+  <button mat-stroked-button matStepperPrevious>Back</button>
+   -->
+  <button mat-stroked-button (click)="vinculate()" cdkFocusInitial color="primary" > Send </button>
+</div>
+

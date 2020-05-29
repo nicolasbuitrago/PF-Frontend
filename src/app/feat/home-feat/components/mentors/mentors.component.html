@@ -3,14 +3,18 @@
   <div class="row mt-3 justify-content-around" *ngIf="resources && resources.length else empty">
     <div class="col-sm-6 col-lg-4" *ngFor="let mentor of resources">
       <div class="box mb-4">
-        <!-- <img [src]="mentor.image_url" class="img-fluid rounded-lg"> -->
-        <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg">
+        <img [src]="mentor.image_url" class="img-fluid rounded-lg" [alt]="mentor.name">
+        <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
         <div class="box-content">
           <h3 class="title">{{ mentor.name }}</h3>
           <span class="post font-weight-bold">{{ mentor.role }}</span>
           <ul class="social">
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a [href]="mentor.contact_information.social_networks[0]" target="_blank">
+              <i class="fab fa-twitter"></i></a>
+            </li>
+            <li><a [href]="mentor.contact_information.social_networks[1]" target="_blank">
+              <i class="fab fa-linkedin-in"></i></a>
+            </li>
           </ul>
         </div>
       </div>

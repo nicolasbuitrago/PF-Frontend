@@ -7,7 +7,7 @@ import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
 import { SectionComponent } from '@feat/home-feat/components/section/section.component';
 import { ContactInfoComponent } from '@feat/home-feat/components/contact-info/contact-info.component';
-import { RegisterFormComponent } from '@feat/home-feat/components/register-form/register-form.component';
+import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 // import { GamesComponent } from '@feat/home-feat/components/games/games.component';
@@ -29,8 +29,10 @@ import { NewsComponent } from '@feat/home-feat/components/news/news.component';
 import { MentorsComponent } from '@feat/home-feat/components/mentors/mentors.component';
 import { ServicesComponent } from '@feat/home-feat/components/services/services.component';
 import { FaqsComponent } from '@feat/home-feat/components/faqs/faqs.component';
-import { AppBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
+import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
 import { SearchComponent } from '@feat/home-feat/components/search/search.component';
+import { Vinculate } from '@app/shared/interfaces/vinculate.model';
+import { stringify } from 'querystring';
 
 
 @Injectable({
@@ -46,6 +48,8 @@ export class ContentService {
   // private urlTestimonios = `${environment.apiUrl}/testimonies`;
 
   private currentRouterSubject: BehaviorSubject<AppRouter>;
+  private currentNavBarSubject: BehaviorSubject<NavBarInformation>;
+  private currentFooterSubject: BehaviorSubject<FooterInformation>;
 
   private meetUpGroup = 'Swifticious';
   events$: Observable<Event[]>;
@@ -55,17 +59,21 @@ export class ContentService {
 
   constructor(private http: HttpClient) {
     this.currentRouterSubject = new BehaviorSubject<AppRouter>(null);
+    this.currentNavBarSubject = new BehaviorSubject<NavBarInformation>(null);
+    this.currentFooterSubject = new BehaviorSubject<FooterInformation>(null);
     this.infiniteGames$ = new Subject<void>().asObservable();
-    this.games$ = merge(
-      of(GAMES).pipe(tap(() => console.log('***SIDE EFFECT***')))
-      // this
-      //   .http
-      //   .get<Game[]>('some-url')
-      // first share, in the example it's been written before using the merge and infiniteStream$
-      // .pipe(share())
-      ,
-      this.infiniteGames$
-    ).pipe(shareReplay(1));
+    // this.games$ = merge(
+    //   of(GAMES).pipe(
+    //     tap(() => console.log('***SIDE EFFECT***'))
+    //   )
+    //   // this
+    //   //   .http
+    //   //   .get<Game[]>('some-url')
+    //   // first share, in the example it's been written before using the merge and infiniteStream$
+    //   // .pipe(share())
+    //   ,
+    //   this.infiniteGames$
+    // ).pipe(shareReplay(1));
   }
 
   // public get currentRouterValue(): AppRouter {
@@ -135,14 +143,14 @@ export class ContentService {
             component.component = ContactInfoComponent;
             break;
           }
-          case ComponentType.SEARCH: {
-            component.component = SearchComponent;
-            break;
-          }
-          case ComponentType.REGISTER_FORM : {
-            component.component = RegisterFormComponent;
-            break;
-          }
+          // case ComponentType.SEARCH: {
+          //   component.component = SearchComponent;
+          //   break;
+          // }
+          // case ComponentType.REGISTER_FORM : {
+          //   component.component = RegisterFormComponent;
+          //   break;
+          // }
           // case 'GamesComponent': {
           //   component.component = GamesComponent;
           //   break;
@@ -265,14 +273,32 @@ export class ContentService {
   //   return of(ABOUT);
   // }
 
-  getAppBar() {
-    const params = new HttpParams().set('type', 'appbar');
-    return this.http.get<AppBarInformation>(`${this.urlInformation}/website`, { params });
+  getNavBar() {
+    const navbar: NavBarInformation = this.currentNavBarSubject.value;
+    if (navbar) {
+      return of(navbar);
+    } else {
+      const params = new HttpParams().set('type', 'appbar');
+      return this.http.get<NavBarInformation>(`${this.urlInformation}/website`, { params }).pipe(
+        tap(n => this.currentNavBarSubject.next(n))
+      );
+    }
   }
 
   getFooter() {
-    const params = new HttpParams().set('type', 'footer');
-    return this.http.get<FooterInformation>(`${this.urlInformation}/website`, { params });
+    const footer: FooterInformation = this.currentFooterSubject.value;
+    if (footer) {
+      return of(footer);
+    } else {
+      const params = new HttpParams().set('type', 'footer');
+      return this.http.get<FooterInformation>(`${this.urlInformation}/website`, { params }).pipe(
+        tap(f => this.currentFooterSubject.next(f))
+      );
+    }
+  }
+
+  vinculate(email: string, phone: string, why: string, roleType: string) {
+    return this.http.post<Vinculate>(`${environment.apiUrl}/vinculations`, {email, phone, why, role_type: roleType});
   }
 
   /**

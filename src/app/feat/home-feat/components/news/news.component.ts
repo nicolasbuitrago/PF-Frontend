@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { NewItem } from '@app/shared/interfaces/newitem.model';
-import { NewsFormComponent } from '../news-form/news-form.component';
-import { MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { NewsFormComponent } from '../forms/news-form/news-form.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Form } from '@shared/interfaces/form.model';
 
 @Component({
   selector: 'app-news',
@@ -30,7 +31,8 @@ export class NewsComponent implements OnInit, DataItem {
     // tslint:disable-next-line:no-shadowed-variable
     const matDialogConfig = new MatDialogConfig();
     matDialogConfig.autoFocus = true;
-    matDialogConfig.width = '800px';
+    // matDialogConfig.width = '800px';
+    matDialogConfig.height = '90%';
     const dialogRef = this.dialog.open(NewsFormComponent, matDialogConfig);
     dialogRef.afterClosed().subscribe(res => {
       console.log('Dialog result: ${result}');

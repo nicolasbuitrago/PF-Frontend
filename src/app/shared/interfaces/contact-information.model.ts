@@ -16,7 +16,7 @@ export interface ContactInformation extends ComponentItem {
   updated_at: Date;
 }
 
-export interface AppBarInformation {
+export interface NavBarInformation {
   name: string;
   image_url: string;
 }

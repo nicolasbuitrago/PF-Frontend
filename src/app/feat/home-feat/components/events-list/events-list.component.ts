@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 // import { ContentService } from '@core/services/content.service';
 import { Event } from '@shared/interfaces/event.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
-import { EventsFormComponent } from '../events-form/events-form.component';
+import { EventsFormComponent } from '../forms/events-form/events-form.component';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -73,10 +73,11 @@ export class EventsListComponent implements OnInit, DataItem {
     // tslint:disable-next-line:no-shadowed-variable
     const matDialogConfig = new MatDialogConfig();
     matDialogConfig.autoFocus = true;
-    matDialogConfig.width = '800px';
+    // matDialogConfig.width = '800px';
+    matDialogConfig.height = '90%';
     const dialogRef = this.dialog.open(EventsFormComponent, matDialogConfig);
     dialogRef.afterClosed().subscribe(res => {
-      console.log('Dialog result: ${result}');
+      console.log('Dialog result = ' + res);
     });
   }
 

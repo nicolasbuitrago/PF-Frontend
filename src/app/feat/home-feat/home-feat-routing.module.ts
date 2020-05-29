@@ -36,8 +36,7 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
-  }
-  ,
+  },
   {
     path: 'all-news',
     component: AllNewsComponent

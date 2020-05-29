@@ -1,37 +1,37 @@
-<div class="container-fluid" *ngIf="!data.bgImg"
+<div class="container-fluid" *ngIf="!data.background_image"
   [ngClass]="{'py-5':!data.image_url, 'my-5':!data.image_url}"> <!--, 'container-fluid':!data.full_width, 'container':data.full_width -->
   <div class="row justify-content-center text-center" *ngIf="data.full_width">
     <div class="col-lg align-self-center py-5 py-lg-0 my-5 my-lg-0"
-      [class.order-2]="data.left">
+      [class.order-2]="data.image_left">
       <h2 class="font-weight-bold">{{ data.title }}</h2>
-      <h4>{{ data.text }}</h4>
-      <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link">GO</a>
+      <h4>{{ data.description }}</h4>
+      <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link" target="_blank">GO</a>
     </div>
     <div class="col-lg-5 px-0 d-none d-lg-block" *ngIf="data.image_url"
-      [class.order-1]="data.left">
+      [class.order-1]="data.image_left">
       <img [src]="data.image_url" height="auto" width="100%">
     </div>
   </div>
   <div class="container py-4 py-md-5" *ngIf="!data.full_width">
     <div class="row align-items-center bg-gray rounded">
       <div class="col-lg-5 px-0 d-none d-lg-block" *ngIf="data.image_url"
-        [class.order-2]="!data.left">
+        [class.order-2]="!data.image_left">
         <img [src]="data.image_url"width="100%" height="auto" >
       </div>
       <div class="col-lg">
         <div class="px-2 px-md-3 py-4 py-md-5">
           <div class="align-self-center py-5 py-lg-0 my-5 my-lg-0"
-            [class.order-1]="!data.left">
+            [class.order-1]="!data.image_left">
             <h2 class="font-weight-bold">{{ data.title }}</h2>
-            <p>{{ data.text }}</p>
-            <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link">GO</a>
+            <p>{{ data.description }}</p>
+            <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link" target="_blank">GO</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid bg-overlay text-white py-4 py-md-5" *ngIf="data.bgImg"
+<div class="container-fluid bg-overlay text-white py-4 py-md-5" *ngIf="data.background_image"
   [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(' + data.image_url + ')'}">
 	<!-- <div class="row justify-content-center text-center pt-3 pt-md-5">
     <h1 class="font-weight-bold">{{ data.title }}</h1>
@@ -46,8 +46,8 @@
   <div class="row justify-content-center text-center pt-3 pt-md-5 my-3 my-md-5">
     <div class="col">
       <h1 class="font-weight-bold pt-3">{{ data.title }}</h1>
-      <h4 class="pt-3">{{ data.text }}</h4>
-      <a class="btn btn-primary btn-lg mt-3 mb-5">Go</a>
+      <h4 class="pt-3">{{ data.description }}</h4>
+      <a [href]="data.link" class="btn btn-primary btn-lg mt-3 mb-5" *ngIf="data.link" target="_blank">GO</a>
     </div>
   </div>
 </div>

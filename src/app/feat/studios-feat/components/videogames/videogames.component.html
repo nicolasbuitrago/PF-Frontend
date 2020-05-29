@@ -4,8 +4,8 @@
     <div class="row mt-3" *ngIf="games && games.length else empty">
       <div class="col-md-4" *ngFor="let game of games">
         <div class="box">
-          <!-- <img [src]="game.image_url" class="img-fluid rounded-lg"> -->
-          <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg">
+          <img [src]="game.image_url" [alt]="game.name" class="img-fluid rounded-lg">
+          <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
           <div class="box-content">
             <h3 class="title">{{ game.name }}</h3>
             <span class="post">{{ game.description }}</span>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <ng-template #empty>
-      <p>There are no members to show.</p>
+      <p>There are no games to show.</p>
     </ng-template>
   </div>
   <!-- <div class="container pt-lg-3 pt-sm-2">

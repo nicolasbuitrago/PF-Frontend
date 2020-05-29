@@ -1,4 +1,4 @@
-<div class="new-w3ls bg-light" id="new">
+<div class="new-w3ls bg-light pb-3" id="new">
   <div class="container py-xl-5 py-lg-3">
     <h2 style="font-weight: bold;">News</h2>
     <br>
@@ -12,25 +12,24 @@
         <div class="news-bottom p-4 bg-white">
           <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
           <h3 class="my-3">{{ newitem.date }}</h3>
-          <a target="_blank"  routerLink="/home/blog">
+          <a [href]="newitem.link" target="_blank">
             <i class="far fa-newspaper mr-2"></i>{{ newitem.description}}
           </a>
         </div>
       </div>
     </div>
     <ng-template #empty>
-      <p>There is no news to show.</p>
+      <p>There are no news to show.</p>
     </ng-template>
-    
-    <br>
-    <br>
-    <div class="button-row">
-     <button target="_blank" routerLink="/home/all-news" mat-button mat-raised-button>All News</button>
+
+    <div class="button-row mt-3 mt-md-4 pb-3">
+     <button target="_blank" routerLink="/home/all-news" mat-raised-button color="primary">All News</button>
       <!-- <button (click)="loadMore()" class="btn btn-primary mt-sm-5 mt-4 text-white" [disabled]="counter >= resources.length">Read More</button> -->
-      <button mat-button mat-raised-button (click)="openDialog()">Suggest a News</button>
+      <!-- <button mat-raised-button (click)="openDialog()" color="accent">Suggest a New</button> -->
     </div>
   </div>
   
 </div>
+
 <!-- <p>{{resources | json}}</p> -->
 <!-- News -->

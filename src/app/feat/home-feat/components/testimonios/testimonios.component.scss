@@ -20,6 +20,10 @@ blockquote.blockquote {
   }
 }
 
+img.author {
+  max-height: 22rem;
+}
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -32,7 +36,7 @@ blockquote.blockquote {
   }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1rem;

@@ -1,7 +1,6 @@
-<footer class="footer text-white bg-dark pt-1" *ngIf="content">
+<footer class="footer text-white bg-dark pt-1" *ngIf="content && content.text else emptyFooter">
   <div class="container pt-md-2 text-center text-md-left mt-5">
     <div class="row mt-3">
-
       <div class="col-md-4 col-lg-5 col-xl-4 mx-auto mb-4">
         <h6 class="text-uppercase font-weight-bold">{{ title }}</h6>
         <hr class="primary accent-2 mb-3 mt-0 d-inline-block mx-auto">
@@ -48,7 +47,13 @@
       </div>
     </div>
   </div>
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center py-3">© {{year}} Copyright:
     <a routerLink="/home"> {{ content.name }}</a>
   </div>
 </footer>
+
+<ng-template #emptyFooter>
+  <footer class="footer text-white bg-dark py-4 px-2" style="min-height: 125px;">
+    <p>There is no contact information to display on the footer.</p>
+  </footer>
+</ng-template>
