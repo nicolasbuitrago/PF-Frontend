@@ -31,7 +31,7 @@
           </div>
         </div>
         <!-- Add comments -->
-        <div class="contact-form" >
+        <!-- <div class="contact-form" >
           <form action="#" method="post" class="register">
             <h5 class="cont-form" style="font-size: large;">Leave a comment</h5>
             <div class="form-group">
@@ -48,7 +48,8 @@
             </div>
             <a class="btn btn-primary btn-lg text-white" style="float: right; margin-bottom: 5%;">Add a comment</a>
           </form>
-        </div>
+        </div> -->
+        <disqus [identifier]="disqusId" [url]="url"></disqus>
       </div>
       <div class="content-top col-md-4" style="margin-top: 5%;">
         <div class="w3l-subscription-6">

@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "^4.4.1",
     "ngx-bootstrap": "^5.5.0",
+    "ngx-disqus": "^2.4.3",
     "ngx-page-scroll": "^7.0.0",
     "ngx-page-scroll-core": "^7.0.0",
     "rxjs": "~6.5.4",
@@ -32,7 +33,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.900.7",
+    "@angular-devkit/build-angular": "^0.901.7",
     "@angular/cli": "~9.0.2",
     "@angular/compiler-cli": "~9.0.1",
     "@angular/language-service": "~9.0.1",

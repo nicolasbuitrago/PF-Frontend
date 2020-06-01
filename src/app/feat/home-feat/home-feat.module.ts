@@ -3,6 +3,7 @@ import { SharedModule } from '@app/shared';
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { DisqusModule } from 'ngx-disqus';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -90,6 +91,7 @@ import { NewsFormComponent } from './components/forms/news-form/news-form.compon
     SharedModule,
     AccordionModule.forRoot(),
     NgxPageScrollModule,
+    DisqusModule,
     HomeFeatRoutingModule,
     FormsModule,
     ReactiveFormsModule,

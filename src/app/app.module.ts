@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { DISQUS_SHORTNAME } from 'ngx-disqus';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: DISQUS_SHORTNAME, useValue: 'pf-videogames' }
   ],
   bootstrap: [AppComponent]
 })

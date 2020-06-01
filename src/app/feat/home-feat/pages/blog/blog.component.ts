@@ -1,7 +1,8 @@
 import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { ContentService } from '@core/services/content.service';
 import { New } from '@app/shared/interfaces/new.model';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -14,11 +15,18 @@ export class BlogComponent implements OnInit {
   newItem: New;
   otherNews: New[];
   error: boolean;
+  disqusId: string;
+  url: string;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private contentService: ContentService
-  ) { }
+  ) {
+    this.disqusId = this.router.url;
+    this.url = `${environment.url}${this.disqusId}`;
+    console.log(this.disqusId);
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
