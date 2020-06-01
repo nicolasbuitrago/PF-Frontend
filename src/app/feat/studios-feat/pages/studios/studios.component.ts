@@ -16,6 +16,7 @@ import { AppRouter } from '@app/shared/interfaces/router.model';
 export class StudiosComponent implements OnInit {
 
   components: ComponentItem[];
+  headerImage: string;
   error: boolean;
   // studios: Studio[];
 
@@ -39,8 +40,11 @@ export class StudiosComponent implements OnInit {
   getStudiosPage(pageId: string) {
     this.contentService.getPage(pageId)
     .subscribe(
-      (studiosPage: Page) => {
-        this.components = studiosPage.components;
+      (page: Page) => {
+        if (page.header_image) {
+          this.headerImage = page.header_image;
+        }
+        this.components = page.components;
         this.loadComponents();
       },
       (err) => {

@@ -11,10 +11,10 @@ export class PageTitleComponent implements OnInit {
   @Input() imageUrl: string;
 
   constructor() {
-    this.imageUrl = '/assets/default_title.jpg';
   }
 
   ngOnInit(): void {
+    this.imageUrl = this.imageUrl || '/assets/default_title.jpg';
   }
 
 }

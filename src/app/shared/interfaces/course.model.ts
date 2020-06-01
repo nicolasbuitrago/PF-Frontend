@@ -1,13 +1,13 @@
 import { DataComponent } from './data-component.model';
 
-export interface Courses extends DataComponent {
+export interface Course extends DataComponent {
   id: number;
   title: string;
+  author: string;
   date: Date;
   description: string;
   image_url: string;
-  author: string;
-  url: string; /* url register */
+  link: string;
   created_at: Date;
   updated_at: Date;
 }

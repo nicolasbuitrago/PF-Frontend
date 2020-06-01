@@ -13,6 +13,7 @@ import { AppRouter } from '@app/shared/interfaces/router.model';
 export class ContactComponent implements OnInit {
 
   components: ComponentItem[];
+  headerImage: string;
   error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
@@ -35,6 +36,9 @@ export class ContactComponent implements OnInit {
     this.contentService.getPage(pageId)
     .subscribe(
       (contactPage: Page) => {
+        if (contactPage.header_image) {
+          this.headerImage = contactPage.header_image;
+        }
         this.components = contactPage.components;
         this.loadComponents();
       },

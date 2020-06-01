@@ -50,8 +50,8 @@ import { TextBlogComponent } from './components/text-blog/text-blog.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
-import { VinculationComponent } from './components/vinculation/vinculation.component';
-import { VinculationFormComponent } from './components/forms/vinculation-form/vinculation-form.component';
+// import { VinculationComponent } from './components/vinculation/vinculation.component';
+// import { VinculationFormComponent } from './components/forms/vinculation-form/vinculation-form.component';
 
 @NgModule({
   declarations: [
@@ -82,9 +82,7 @@ import { VinculationFormComponent } from './components/forms/vinculation-form/vi
     EventsFormComponent,
     NewsFormComponent,
     TextBlogComponent,
-    CoursesComponent,
-    VinculationComponent,
-    VinculationFormComponent
+    CoursesComponent
 
   ],
   imports: [

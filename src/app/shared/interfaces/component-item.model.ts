@@ -1,9 +1,5 @@
-import { Type } from '@angular/core';
 import { DataComponent } from './data-component.model';
-
-// export class ComponentItem {
-//   constructor(public component: Type<any>, public data: any) {}
-// }
+import { Type } from '@angular/core';
 
 export interface ComponentItem {
   id: number;
@@ -23,29 +19,24 @@ export interface ComponentItem {
 
 export enum ComponentType {
   RESOURCE_LIST = 'ResourceListComponent',
+  RESOURCE = 'ResourceComponent',
   SECTION = 'Text',
-  // GAME = 'GameComponent',
-  // STUDIO = 'StudioComponent',
+  // GAME = 'Game',
+  // STUDIO = 'Studio',
   CAROUSEL = 'Carousel',
   TESTIMONIOS = 'Testimony',
-  CONTACT_INFORMATION = 'ContactInformation',
-  SEARCH = 'Search',
-  REGISTER_FORM = 'RegisterForm'
-  // SPONSORS = 'SponsorsComponent',
-  // NEWS = 'NewsComponent',
-  // MENTORS = 'MentorsComponent',
-  // SERVICES = 'ServicesComponent',
-  // FAQ = 'FaqComponent'
+  CONTACT_INFORMATION = 'ContactInformation'
 }
 
 export enum ResourceType {
   EVENT = 'Event',
+  NEW = 'New',
   SECTION = 'Text',
   GAME = 'Game',
   STUDIO = 'Studio',
   SPONSOR = 'Sponsor',
-  NEWITEM = 'New',
   MENTOR = 'Mentor',
+  FAQ = 'Faq',
   SERVICE = 'Service',
-  FAQITEM = 'Faq'
+  COURSE = 'Course'
 }

@@ -1,5 +1,5 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
-<app-page-title title="Contact Us"></app-page-title>
+<app-page-title title="Contact Us" [imageUrl]="headerImage"></app-page-title>
 
  <main class="full-page">
 
@@ -9,7 +9,7 @@
   </ng-template>
   <app-empty-page [show]="error || components && !components.length"></app-empty-page>
 
-  <app-register-form></app-register-form>
+  <!-- <app-register-form></app-register-form> -->
   <!-- <button mat-button mat-raised-button (click)="openDialog()">¡Quiero hacer parte del cluster!</button> -->
 
   <!-- <app-search></app-search> -->

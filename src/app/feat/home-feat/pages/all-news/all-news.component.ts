@@ -5,7 +5,7 @@ import { ComponentItem } from '@shared/interfaces/component-item.model';
 import { DataItem } from '@shared/interfaces/data-item.model';
 import { Page } from '@shared/interfaces/page.model';
 import { AppRouter } from '@app/shared/interfaces/router.model';
-import { NewItem } from '@app/shared/interfaces/newitem.model';
+import { New } from '@app/shared/interfaces/new.model';
 
 @Component({
   selector: 'app-all-news',
@@ -13,8 +13,8 @@ import { NewItem } from '@app/shared/interfaces/newitem.model';
   styleUrls: ['./all-news.component.scss']
 })
 export class AllNewsComponent implements OnInit {
-  @Input() resources: NewItem[];
-  news: NewItem[];
+  @Input() resources: New[];
+  news: New[];
   components: ComponentItem[];
   error: boolean;
 

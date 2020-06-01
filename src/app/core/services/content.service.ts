@@ -33,6 +33,7 @@ import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact
 import { SearchComponent } from '@feat/home-feat/components/search/search.component';
 import { Vinculate } from '@app/shared/interfaces/vinculate.model';
 import { stringify } from 'querystring';
+import { CoursesComponent } from '@app/feat/home-feat/components/courses/courses.component';
 
 
 @Injectable({
@@ -112,17 +113,20 @@ export class ContentService {
           case ResourceType.SPONSOR:
             component.component = SponsorsComponent;
             break;
-          case ResourceType.NEWITEM:
+          case ResourceType.NEW:
             component.component = NewsComponent;
             break;
           case ResourceType.MENTOR:
             component.component = MentorsComponent;
             break;
-          case ResourceType.FAQITEM:
+          case ResourceType.FAQ:
             component.component = FaqsComponent;
             break;
           case ResourceType.SERVICE:
             component.component = ServicesComponent;
+            break;
+          case ResourceType.COURSE:
+            component.component = CoursesComponent;
             break;
         }
       } else {

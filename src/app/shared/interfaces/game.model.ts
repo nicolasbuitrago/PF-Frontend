@@ -6,9 +6,9 @@ export interface Game extends DataComponent {
   name: string;
   description: string;
   tags: string[];
+  image_url: string;
   link: string;
   video: string;
-  image_url?: string;
   created_at: Date;
   updated_at: Date;
 }

@@ -14,6 +14,7 @@ import { AppRouter } from '@app/shared/interfaces/router.model';
 export class FaqComponent implements OnInit {
 
   components: ComponentItem[];
+  headerImage: string;
   error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
@@ -35,8 +36,11 @@ export class FaqComponent implements OnInit {
   getFaqPage(pageId: string) {
     this.contentService.getPage(pageId)
     .subscribe(
-      (eventsPage: Page) => {
-        this.components = eventsPage.components;
+      (page: Page) => {
+        if (page.header_image) {
+          this.headerImage = page.header_image;
+        }
+        this.components = page.components;
         this.loadComponents();
       },
       (err) => {

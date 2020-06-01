@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Courses } from '@app/shared/interfaces/courses.model';
+import { Course } from '@app/shared/interfaces/course.model';
 
 @Component({
   selector: 'app-courses',
@@ -8,7 +8,7 @@ import { Courses } from '@app/shared/interfaces/courses.model';
 })
 export class CoursesComponent implements OnInit {
 
-  @Input() resources: Courses[];
+  @Input() resources: Course[];
 
   constructor() { }
 

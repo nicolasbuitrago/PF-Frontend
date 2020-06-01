@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataItem } from '@shared/interfaces/data-item.model';
-import { NewItem } from '@app/shared/interfaces/newitem.model';
+import { New } from '@app/shared/interfaces/new.model';
 import { NewsFormComponent } from '../forms/news-form/news-form.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Form } from '@shared/interfaces/form.model';
+// import { Form } from '@shared/interfaces/form.model';
 
 @Component({
   selector: 'app-news',
@@ -12,8 +12,8 @@ import { Form } from '@shared/interfaces/form.model';
 })
 
 export class NewsComponent implements OnInit, DataItem {
-  @Input() resources: NewItem[];
-  news: NewItem[];
+  @Input() resources: New[];
+  news: New[];
   counter = 3;
 
   constructor(public dialog: MatDialog) {}

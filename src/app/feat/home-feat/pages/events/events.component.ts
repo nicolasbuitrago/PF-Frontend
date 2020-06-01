@@ -14,6 +14,7 @@ import { AppRouter } from '@app/shared/interfaces/router.model';
 export class EventsComponent implements OnInit {
 
   components: ComponentItem[];
+  headerImage: string;
   error: boolean;
 
   @ViewChild(ItemDirective, {static: true}) itemHost: ItemDirective;
@@ -36,6 +37,9 @@ export class EventsComponent implements OnInit {
     this.contentService.getPage(pageId)
     .subscribe(
       (eventsPage: Page) => {
+        if (eventsPage.header_image) {
+          this.headerImage = eventsPage.header_image;
+        }
         this.components = eventsPage.components;
         this.loadComponents();
       },
