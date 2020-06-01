@@ -34,6 +34,7 @@ import { SearchComponent } from '@feat/home-feat/components/search/search.compon
 import { Vinculate } from '@app/shared/interfaces/vinculate.model';
 import { stringify } from 'querystring';
 import { CoursesComponent } from '@app/feat/home-feat/components/courses/courses.component';
+import { New } from '@app/shared/interfaces/new.model';
 
 
 @Injectable({
@@ -301,8 +302,12 @@ export class ContentService {
     }
   }
 
-  vinculate(email: string, phone: string, why: string, roleType: string) {
-    return this.http.post<Vinculate>(`${environment.apiUrl}/vinculations`, {email, phone, why, role_type: roleType});
+  getNews() {
+    return this.http.get<New[]>(`${environment.apiUrl}/news`);
+  }
+
+  getNew(id: string) {
+    return this.http.get<New>(`${environment.apiUrl}/news/${id}`);
   }
 
   /**
