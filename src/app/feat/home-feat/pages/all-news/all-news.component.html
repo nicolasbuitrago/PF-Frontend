@@ -4,11 +4,11 @@
  <main class="full-page">
   <div class="container pb-4">
     <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
-    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mb-4" (click)="clear()">Clear results</button>
+    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
     <div class="card-columns" *ngIf="selectedNews && selectedNews.length else empty">
       <div class="card border-0 mb-4" *ngFor="let newitem of selectedNews">
         <div class="news-top">
-          <a [href]="newitem.link" target="_blank">
+          <a [href]="newitem.link" target="_blank" *ngIf="newitem.link">
             <img [src]="newitem.image_url" [alt]="newitem.title" class="img-fluid">
           </a>
           <a [routerLink]="['../new',newitem.id]" *ngIf="!newitem.link">

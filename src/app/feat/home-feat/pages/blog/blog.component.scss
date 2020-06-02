@@ -151,7 +151,7 @@ a.read-more.btn:hover {
   border-bottom-left-radius: 25px;
 }
 
-.w3l-subscription-6 .forms-gds button.btn {
+.w3l-subscription-6 .forms-gds a.btn {
   cursor: pointer;
   line-height: 30px;
   text-decoration: none;
@@ -174,9 +174,14 @@ a.read-more.btn:hover {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   width: 100%;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
 }
 
-.w3l-subscription-6 .forms-gds button.btn:hover {
+.w3l-subscription-6 .forms-gds a.btn:hover {
   background: #232020;
 }
 

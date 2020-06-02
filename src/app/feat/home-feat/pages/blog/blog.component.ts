@@ -18,6 +18,8 @@ export class BlogComponent implements OnInit {
   disqusId: string;
   url: string;
   apiUrl: string;
+  isLoadingNew: boolean;
+  isLoadingOthers: boolean;
 
   constructor(
     private router: Router,
@@ -26,8 +28,8 @@ export class BlogComponent implements OnInit {
   ) {
     this.disqusId = this.router.url;
     this.url = `${environment.url}${this.disqusId}`;
-    this.apiUrl = `${environment}home/register?email=`
-    console.log(this.disqusId);
+    this.apiUrl = `${environment.apiUrl}home/register?email=`;
+    // console.log(this.disqusId);
   }
 
   ngOnInit(): void {
@@ -36,12 +38,20 @@ export class BlogComponent implements OnInit {
     this.getNews();
   }
 
+  get isLoading() {
+    return this.isLoadingNew || this.isLoadingOthers;
+  }
+
   getNew() {
+    this.isLoadingNew = true;
     this.contentService.getNew(this.id).subscribe(
       (newItem: New) => {
+        this.isLoadingNew = false;
         this.newItem = newItem;
       },
       (err) => {
+        this.isLoadingNew = false;
+        this.router.navigateByUrl('/home/news');
         this.error = true;
         console.log(err);
       }
@@ -49,15 +59,18 @@ export class BlogComponent implements OnInit {
   }
 
   getNews() {
+    this.isLoadingOthers = true;
     this.contentService.getNews().subscribe(
       (news: New[]) => {
+        this.isLoadingOthers = false;
         if (news.length > 3) {
-          this.otherNews = news.slice(news.length - 4, 3);
+          this.otherNews = news.slice(news.length - 4, news.length - 1);
         } else {
           this.otherNews = news;
         }
       },
       (err) => {
+        this.isLoadingOthers = false;
         this.error = true;
         console.log(err);
       }

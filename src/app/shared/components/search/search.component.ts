@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      search: ['', Validators.required],
+      search: [''],
       newest: ['false'],
       filter: ['']
     });
@@ -59,9 +59,9 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    if (this.form.invalid) {
-      return;
-    }
+    // if (this.form.invalid) {
+    //   return;
+    // }
     // console.log('Enviando');
     this.contentService.search(
       this.resourceType,

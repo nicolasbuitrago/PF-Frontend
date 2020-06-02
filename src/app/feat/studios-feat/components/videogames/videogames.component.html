@@ -2,7 +2,7 @@
   <div class="container py-lg-3 py-4">
     <h3 class="mb-4 text-dark text-center font-weight-bold">Videogames</h3>
     <app-search [resourceType]="resourceType" (data)="searchResult($event)" [parentId]="games[0].studio_id"></app-search>
-    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mb-4" (click)="clear()">Clear results</button>
+    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
     <div class="card-columns mt-3" *ngIf="selectedGames && selectedGames.length else empty">
       <div class="card" *ngFor="let game of selectedGames">
         <div class="box">

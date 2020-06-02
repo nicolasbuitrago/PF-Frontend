@@ -1,6 +1,6 @@
 <div class="container py-4">
   <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
-  <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mb-4" (click)="clear()">Clear results</button>
+  <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
   <div class="card-columns mb-md-4" *ngIf="selectedStudios && selectedStudios.length else empty">
     <!-- <div class="col-lg-4 col-md-6 mb-4"> -->
     <div class="card shadow-sm" *ngFor="let studio of selectedStudios">

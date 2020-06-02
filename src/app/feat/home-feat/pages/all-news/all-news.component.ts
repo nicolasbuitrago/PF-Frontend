@@ -13,7 +13,7 @@ export class AllNewsComponent implements OnInit {
   news: New[];
   selectedNews: New[];
   error: boolean;
-  counter = 6;
+  counter = 12;
   resourceType: string;
   viewResult: boolean;
 
@@ -51,6 +51,14 @@ export class AllNewsComponent implements OnInit {
   clear() {
     this.viewResult = false;
     this.selectedNews = this.news.slice(0, this.counter);
+  }
+
+  reorder(data: New[]) {
+    const resultant: New[] = [];
+    let i = 0; while (i < data.length) { resultant.push(data[i]); i = i + 3; }
+    i = 1; while (i < data.length) { resultant.push(data[i]); i = i + 3; }
+    i = 2; while (i < data.length) { resultant.push(data[i]); i = i + 3; }
+    return resultant;
   }
 
 }

@@ -15,13 +15,18 @@
             <!-- <h1 class="title-blog">Title NOTICIA</h1> -->
             <div class="info-blog">
               <ul class="pl-1">
-                <li class="mr-3"><span class="mr-1"><i class="far fa-newspaper mr-2"></i>{{ newItem.date }}</span> </li>
+                <li class="mr-3"><span class="mr-1"><i class="far fa-newspaper mr-2"></i>{{ newItem.date }}</span></li>
                 <!-- <li><span class="mr-1"><i class="far fa-newspaper mr-2"></i>JUN 2020</span> </li> -->
-                <li><span class="mr-1"><i class="far fa-user mr-2" color="primary"></i>By admin</span> </li>
+                <li *ngIf="newItem.contact_information || newItem.user">
+                  <span class="mr-1">
+                    <i class="far fa-user mr-2" color="primary"></i>
+                    By {{ newItem.contact_information ? newItem.contact_information.name : newItem.user.username }}
+                  </span>
+              </li>
               </ul>
             </div>
-            <img class="img-fluid blog-image rounded-lg" src="https://source.unsplash.com/700x300/?technology">
-            <p class="text-justify">{{newItem.full_text}}</p>
+            <img class="img-fluid blog-image rounded-lg" [src]="newItem.image_url">
+            <p class="text-justify mb-4">{{newItem.full_text}}</p>
             <!-- <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tinci arted.
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliq usit e
               adipiscing elit, sed diam nonummy nibh euismod tinci. Donec sed odio dui. Duis mollis, est non cons
@@ -30,28 +35,9 @@
             </p> -->
           </div>
         </div>
-        <!-- Add comments -->
-        <!-- <div class="contact-form" >
-          <form action="#" method="post" class="register">
-            <h5 class="cont-form" style="font-size: large;">Leave a comment</h5>
-            <div class="form-group">
-              <label>Your Name</label>
-              <input class="form-control" type="text" name="name" required="">
-            </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input class="form-control" type="text" name="email" required="">
-            </div>
-            <div class="form-group">
-              <label>Your comment</label>
-              <textarea class="form-control"></textarea>
-            </div>
-            <a class="btn btn-primary btn-lg text-white" style="float: right; margin-bottom: 5%;">Add a comment</a>
-          </form>
-        </div> -->
         <disqus [identifier]="disqusId" [url]="url"></disqus>
       </div>
-      <div class="content-top col-md-4" style="margin-top: 5%;">
+      <div class="content-top col-md-4 pb-4" style="margin-top: 5%;">
         <div class="w3l-subscription-6">
           <!--/register -->
           <div class="subscription-infhny">
@@ -67,7 +53,7 @@
                           <input type="email" #email placeholder="Your email here">
                         </div>
                         <div class="form-input">
-                          <a class="btn" [href]="apiUrl + email.value">Join</a>
+                          <a class="btn text-center" [href]="apiUrl + email.value"><span class="mt-2">Join</span></a>
                         </div>
                       </div>
                     </form>
@@ -112,14 +98,16 @@
       </div>
     </div>
     <ng-template #emptyNews>
-      <p style="text-align: center;">There is no news to show.</p>
+      <p class="text-center mt-4 py-3">There is no news to show.</p>
     </ng-template>
   </div>
 
   <ng-template #empty>
-    <p style="text-align: center;">There is no new to show.</p>
+    <p class="text-center mt-4 py-3">There is no new to show.</p>
   </ng-template>
 
 </main>
+
+<app-spinner [loading]="isLoading"></app-spinner>
 
 <app-footer></app-footer>
