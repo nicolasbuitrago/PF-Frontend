@@ -17,6 +17,7 @@ export class BlogComponent implements OnInit {
   error: boolean;
   disqusId: string;
   url: string;
+  apiUrl: string;
 
   constructor(
     private router: Router,
@@ -25,6 +26,7 @@ export class BlogComponent implements OnInit {
   ) {
     this.disqusId = this.router.url;
     this.url = `${environment.url}${this.disqusId}`;
+    this.apiUrl = `${environment}home/register?email=`
     console.log(this.disqusId);
   }
 
@@ -50,7 +52,7 @@ export class BlogComponent implements OnInit {
     this.contentService.getNews().subscribe(
       (news: New[]) => {
         if (news.length > 3) {
-          this.otherNews = news.slice(news.length - 3, 3);
+          this.otherNews = news.slice(news.length - 4, 3);
         } else {
           this.otherNews = news;
         }

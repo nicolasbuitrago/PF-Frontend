@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row" >
       <!-- <div class="row" *ngIf="resources && resources.length else empty"> -->
-      <div class="content-top col-md-8">
+      <div class="content-top col-md-8 pb-4">
       <!-- <div class="content-top col-md-8" *ngFor="let newItem of news">   -->
         <div class="single">
           <div class="single-top" *ngIf="newItem else empty">
@@ -22,12 +22,12 @@
             </div>
             <img class="img-fluid blog-image rounded-lg" src="https://source.unsplash.com/700x300/?technology">
             <p class="text-justify">{{newItem.full_text}}</p>
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tinci arted.
+            <!-- <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tinci arted.
               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliq usit e
               adipiscing elit, sed diam nonummy nibh euismod tinci. Donec sed odio dui. Duis mollis, est non cons
               commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Amet, consectetuer  diam teri
               adipiscing elit, sed diam nonummy nibh euismod tinci.
-            </p>
+            </p> -->
           </div>
         </div>
         <!-- Add comments -->
@@ -64,10 +64,10 @@
                     <form action="#" method="post" class="signin-form mt-4">
                       <div class="forms-gds">
                         <div class="form-input">
-                          <input type="email" name="" placeholder="Your email here" required="">
+                          <input type="email" #email placeholder="Your email here">
                         </div>
                         <div class="form-input">
-                          <button class="btn">Join</button>
+                          <a class="btn" [href]="apiUrl + email.value">Join</a>
                         </div>
                       </div>
                     </form>
@@ -83,7 +83,8 @@
           <!--/general-news-->
           <div class="general-news" *ngIf="otherNews && otherNews.length else emptyNews">
             <div class="general-inner rounded-lg border mb-2" *ngFor="let otherNew of otherNews">
-              <a [href]="otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
+              <a [href]="otherNew.link" target="_blank" *ngIf="otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
+              <a routerLink="{{otherNew.id}}" *ngIf="!otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
               <div class="general-text">
                 <h5 class="top">
                   <a [href]="otherNew.link" target="_blank" *ngIf="otherNew.link">{{ otherNew.title }}</a>
