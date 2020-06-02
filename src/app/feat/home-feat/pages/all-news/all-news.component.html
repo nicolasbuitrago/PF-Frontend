@@ -13,7 +13,10 @@
           </a>
         </div>
         <div class="news-bottom p-4 bg-white">
-          <a [href]="newitem.link">
+          <a [href]="newitem.link" target="_blank" *ngIf="newitem.link">
+            <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
+          </a>
+          <a [routerLink]="['../new',newitem.id]" target="_blank" *ngIf="!newitem.link">
             <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
           </a>
           <h3 class="my-3">{{ newitem.date }}</h3>

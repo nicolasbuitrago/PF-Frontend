@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
 
   private form: FormGroup;
   @Input() resourceType: string;
+  @Input() parentId: number;
   @Output() data = new EventEmitter<DataComponent[]>();
   tags: string[];
 
@@ -66,7 +67,8 @@ export class SearchComponent implements OnInit {
       this.resourceType,
       this.form.value.search,
       this.form.value.filter,
-      this.form.value.newest
+      this.form.value.newest,
+      this.parentId
     ).subscribe(
       (data: DataComponent[]) => {
         this.data.emit(data);

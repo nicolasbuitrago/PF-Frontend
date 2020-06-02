@@ -236,7 +236,7 @@ export class ContentService {
     return this.http.get<New>(`${environment.apiUrl}/news/${id}`);
   }
 
-  search(resourceType: string, search: string, filter: string, newest: string) {
+  search(resourceType: string, search: string, filter: string, newest: string, studio?: number) {
     let params = new HttpParams().set('resource_type', resourceType);
     if (search) {
       params = params.set('search', search);
@@ -245,6 +245,9 @@ export class ContentService {
       params = params.set('filters', filter);
     }
     params = params.set('newest', newest);
+    if (studio) {
+      params = params.set('parent_resource_id', String(studio));
+    }
     return this.http.get<DataComponent[]>(`${environment.apiUrl}/searches`, { params }).pipe(
       map((data: any) => {
         if (data.length) {

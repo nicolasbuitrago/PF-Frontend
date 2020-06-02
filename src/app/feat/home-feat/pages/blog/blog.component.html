@@ -85,7 +85,10 @@
             <div class="general-inner rounded-lg border mb-2" *ngFor="let otherNew of otherNews">
               <a [href]="otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
               <div class="general-text">
-                <h5 class="top"><a [href]="otherNew.link">{{ otherNew.title }}</a></h5>
+                <h5 class="top">
+                  <a [href]="otherNew.link" target="_blank" *ngIf="otherNew.link">{{ otherNew.title }}</a>
+                  <a routerLink="{{otherNew.id}}" *ngIf="!otherNew.link">{{ otherNew.title }}</a>
+                </h5>
                 <p class="mb-0">{{ otherNew.date | date }}</p>
                 <p class="mb-0">{{ otherNew.description }}</p>
               </div>
