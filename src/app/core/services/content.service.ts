@@ -35,6 +35,7 @@ import { Vinculate } from '@app/shared/interfaces/vinculate.model';
 import { stringify } from 'querystring';
 import { CoursesComponent } from '@app/feat/home-feat/components/courses/courses.component';
 import { New } from '@app/shared/interfaces/new.model';
+import { DataComponent } from '@app/shared/interfaces/data-component.model';
 
 
 @Injectable({
@@ -308,6 +309,34 @@ export class ContentService {
 
   getNew(id: string) {
     return this.http.get<New>(`${environment.apiUrl}/news/${id}`);
+  }
+
+  search(resourceType: string, search: string, filter: string = '', newest: string) {
+    let params = new HttpParams().
+    set('resource_type', resourceType).
+    set('search', search);
+    // params = params.set('filters', filter);
+    params = params.set('newest', newest);
+    return this.http.get<DataComponent[]>(`${environment.apiUrl}/searches`, { params });
+  }
+
+  getTags(resourceType: string) {
+    const params = new HttpParams();
+    params.set('resource_type', resourceType);
+    return this.http.get<string[]>(`${environment.apiUrl}/searches/attributes/tags`, { params });
+  }
+
+  toString(tags: string[]): string {
+    let tag = '';
+    for (let i = 0; i < tags.length; i++) {
+      const element = tags[i];
+      if (i < tags.length - 1) {
+        tag += element + ',';
+      } else {
+        tag += element;
+      }
+    }
+    return tag;
   }
 
   /**

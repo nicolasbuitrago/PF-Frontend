@@ -1,13 +1,8 @@
-<div id="search_form" class="search_top text-center">
+<!-- <div id="search_form" class="search_top text-center">
     <form action="#" method="post" class="ban-form row">
-        <div class="col-md-3 banf">
-            <!-- Buscar por palabra en la pagina -->
-            
-            <!-- <span class="fa fa-search fa-xs	form-control-feedback"></span> --> 
+        <div class="col-md-4 banf">
             <input class="form-control" type="text" name="Search" placeholder="Search" required="">
-
         </div>
-
         <div class="col-md-3 banf">
             <select class="form-control" id="option1">
                 <label>Order</label>
@@ -20,8 +15,57 @@
                 <option>Ascendente</option>
             </select>
         </div>
-        <div class="col-md-3 banf">
+        <div class="col-md-2 banf">
             <button class="btn btn-primary mt-sm-5 mt-4 text-white" style="margin-top: 0.6rem !important; width: 9em; margin-bottom: 1rem;">Search Now</button>
         </div>
     </form>
-</div>
+</div> -->
+
+<section class="container pt-3 my-2">
+  <!-- <form class="form-inline">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="search" placeholder="Search">
+
+    <label class="my-1 mr-2" for="preference">Preference</label>
+    <select class="custom-select my-1 mr-sm-2" id="preference">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <label class="my-1 mr-2" for="order">Order</label>
+    <select class="custom-select my-1 mr-sm-2" id="order">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary mb-2">Search</button>
+  </form> -->
+  <form [formGroup]="getForm" (ngSubmit)="search()">
+    <div class="form-row">
+      <div class="form-group col">
+        <!-- <label for="search">Search</label> -->
+        <input type="text" class="form-control" id="search" placeholder="Search" formControlName="search">
+      </div>
+      <div class="form-group col-md-3">
+        <!-- <label class="mr-2" for="order">Order</label> -->
+        <select class="custom-select mr-sm-2" id="order" formControlName="newest">
+          <!-- <option selected>Order</option> -->
+          <option value="true">Ascendant</option>
+          <option value="false">Descendant</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3" *ngIf="haveTags">
+        <!-- <label class="mr-2" for="preference">Preference</label> -->
+        <select class="custom-select mr-sm-2" id="preference" formControlName="filter">
+          <option selected>Tags</option>
+          <option *ngFor="let tag of tags" value="tag">{{ tag }}</option>
+        </select>
+      </div>
+      <div class="col-md-auto">
+        <button class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </form>
+</section>

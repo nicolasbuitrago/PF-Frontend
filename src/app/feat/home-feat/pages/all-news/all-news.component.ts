@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '@core/services/content.service';
 import { New } from '@shared/interfaces/new.model';
+import { ResourceType } from '@shared/interfaces/component-item.model';
 
 @Component({
   selector: 'app-all-news',
@@ -13,8 +14,12 @@ export class AllNewsComponent implements OnInit {
   selectedNews: New[];
   error: boolean;
   counter = 6;
+  resourceType: string;
+  viewResult: boolean;
 
-  constructor(private contentService: ContentService) { }
+  constructor(private contentService: ContentService) {
+    this.resourceType = ResourceType.NEW;
+  }
 
   ngOnInit(): void {
     this.getNews();
@@ -35,6 +40,16 @@ export class AllNewsComponent implements OnInit {
 
   loadMore() {
     this.counter += 6;
+    this.selectedNews = this.news.slice(0, this.counter);
+  }
+
+  searchResult(data) {
+    this.viewResult = true;
+    this.selectedNews = data as New[];
+  }
+
+  clear() {
+    this.viewResult = false;
     this.selectedNews = this.news.slice(0, this.counter);
   }
 
