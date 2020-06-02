@@ -3,9 +3,9 @@
 	<div class="post-6-mian">
 		<div class="container py-lg-5">
 			<h2 class="hny-title text-center mb-0 ">Courses</h2>
-      <p class="mb-5 text-center">Handpicked Favourites just for you</p>
-			<div class="post-hny-grids row mt-3" *ngIf="resources && resources.length else empty">
-				<div class="col-lg-4 col-md-6 grids5-info column-img" id="zoomIn" *ngFor="let course of resources">
+      <p class="mb-4 text-center">Handpicked Favourites just for you</p>
+			<div class="card-columns mt-3" *ngIf="resources && resources.length else empty">
+				<div class="card grids5-info column-img" *ngFor="let course of resources">
 					<a target="_blank" [href]="course.link">
 						<figure>
               <img class="img-fluid" [src]="course.image_url" [alt]="course.title">

@@ -2,37 +2,36 @@
 <app-page-title title="News"></app-page-title>
 
  <main class="full-page">
-  <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
-  <div class="container mb-4">
-    <button *ngIf="viewResult" class="btn btn-outline-danger" (click)="clear()">Clear results</button>
-  </div>
-
   <div class="container pb-4">
-    <div class="row package-grids" *ngIf="news && news.length else empty">
-      <div class="col-md-4 new-w3" *ngFor="let newitem of selectedNews">
+    <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
+    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mb-4" (click)="clear()">Clear results</button>
+    <div class="card-columns" *ngIf="selectedNews && selectedNews.length else empty">
+      <div class="card border-0 mb-4" *ngFor="let newitem of selectedNews">
         <div class="news-top">
           <a [href]="newitem.link">
             <img [src]="newitem.image_url" [alt]="newitem.title" class="img-fluid">
           </a>
         </div>
         <div class="news-bottom p-4 bg-white">
-          <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
-          <h3 class="my-3">{{ newitem.date }}</h3>
           <a [href]="newitem.link">
-            <i class="far fa-newspaper mr-2"></i>{{ newitem.description }}
+            <h4 class="text-dark mb-3">{{ newitem.title }}</h4>
           </a>
+          <h3 class="my-3">{{ newitem.date }}</h3>
+          <p>
+            <i class="far fa-newspaper mr-2"></i>{{ newitem.description }}
+          </p>
         </div>
       </div>
     </div>
   </div>
   <ng-template #empty>
-    <p style="text-align: center;">There are no news to show.</p>
+    <p style="text-align: center;" class="pt-3">There are no news to show.</p>
   </ng-template>
   <app-spinner [loading]="!news && !error"></app-spinner>
 
   <div class="container pb-4" *ngIf="news && news.length">
     <div class="row justify-content-center">
-      <button mat-raised-button color="primary" (click)="loadMore()" class="mt-sm-5 my-4" [disabled]="counter >= news.length">Load More</button>
+      <button mat-raised-button color="primary" (click)="loadMore()" class="mt-sm-4 mb-4" [disabled]="counter >= news.length">Load More</button>
     </div>
   </div>
 

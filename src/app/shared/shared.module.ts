@@ -12,11 +12,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SafePipe } from './pipes/safe.pipe';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { EmptyPageComponent } from './components/empty-page/empty-page.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ],
   declarations: [
@@ -27,7 +29,8 @@ import { EmptyPageComponent } from './components/empty-page/empty-page.component
     SpinnerComponent,
     ItemDirective,
     SafePipe,
-    EmptyPageComponent
+    EmptyPageComponent,
+    SearchComponent
   ],
   exports: [
     CommonModule,
@@ -37,6 +40,7 @@ import { EmptyPageComponent } from './components/empty-page/empty-page.component
     PageTitleComponent,
     SpinnerComponent,
     EmptyPageComponent,
+    SearchComponent,
     ItemDirective,
     SafePipe
   ]

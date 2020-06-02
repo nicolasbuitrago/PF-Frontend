@@ -1,57 +1,30 @@
-<!-- <div class="container py-4">
-  <div class="row" *ngIf="selectedStudios && selectedStudios.length else empty">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let studio of selectedStudios" >
-      <div class="card shadow-sm h-100">
-        <img class="bd-placeholder-img card-img-top" [src]="studio.image_url" [alt]="studio.name" width="100%" height="250">
-        <div class="card-body">
-          <h5 class="card-title">{{ studio.name }}</h5>
-          <span *ngFor="let tag of studio.tags; let f = first"
-            class="badge badge-pill badge-info"
-            [class.ml-1]="!f">
-            {{ tag }}
-          </span>
-          <p class="card-text mt-2">{{ studio.description }}</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <a class="btn btn-sm btn-outline-primary" [routerLink]="['/studios/info', studio.id]">View</a>
-            <small class="text-muted">{{ studio.city }}</small>
-          </div>
+<div class="container py-4">
+  <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
+  <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mb-4" (click)="clear()">Clear results</button>
+  <div class="card-columns mb-md-4" *ngIf="selectedStudios && selectedStudios.length else empty">
+    <!-- <div class="col-lg-4 col-md-6 mb-4"> -->
+    <div class="card shadow-sm" *ngFor="let studio of selectedStudios">
+      <img class="bd-placeholder-img card-img-top" [src]="studio.image_url" [alt]="studio.name" width="100%" height="250">
+      <div class="card-body">
+        <h5 class="card-title">{{ studio.name }}</h5>
+        <span *ngFor="let tag of studio.tags; let f = first"
+          class="badge badge-pill badge-info"
+          [class.ml-1]="!f">
+          {{ tag }}
+        </span>
+        <p class="card-text mt-2">{{ studio.description }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <a class="btn btn-sm btn-outline-primary" [routerLink]="['/studios/info', studio.id]">View</a>
+          <small class="text-muted">{{ studio.city }}</small>
         </div>
       </div>
     </div>
-  </div>
-  <ng-template #empty>
-    <p>There are no projects available for display.</p>
-  </ng-template>
-  <pagination [totalItems]="resources.length" (pageChanged)="pageChanged($event)"
-    [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedStudios && selectedStudios.length">
-  </pagination>
-</div> -->
-
-<div class="container py-4">
-  <div class="card-columns" *ngIf="selectedStudios && selectedStudios.length else empty">
-    <!-- <div class="col-lg-4 col-md-6 mb-4"> -->
-      <div class="card shadow-sm" *ngFor="let studio of selectedStudios">
-        <img class="bd-placeholder-img card-img-top" [src]="studio.image_url" [alt]="studio.name" width="100%" height="250">
-        <div class="card-body">
-          <h5 class="card-title">{{ studio.name }}</h5>
-          <span *ngFor="let tag of studio.tags; let f = first"
-            class="badge badge-pill badge-info"
-            [class.ml-1]="!f">
-            {{ tag }}
-          </span>
-          <p class="card-text mt-2">{{ studio.description }}</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <a class="btn btn-sm btn-outline-primary" [routerLink]="['/studios/info', studio.id]">View</a>
-            <small class="text-muted">{{ studio.city }}</small>
-          </div>
-        </div>
-      </div>
     <!-- </div> -->
   </div>
   <ng-template #empty>
     <p>There are no projects available for display.</p>
   </ng-template>
-  <pagination [totalItems]="resources.length" (pageChanged)="pageChanged($event)"
+  <pagination [totalItems]="studios.length" (pageChanged)="pageChanged($event)"
     [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedStudios && selectedStudios.length">
   </pagination>
 </div>

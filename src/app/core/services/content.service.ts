@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, of, ReplaySubject, Subject, merge, BehaviorSubject } from 'rxjs';
-import { delay, share, tap, shareReplay, refCount, catchError, map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of, Subject, merge, BehaviorSubject } from 'rxjs';
+import { delay, share, tap, catchError, map } from 'rxjs/operators';
 
 import { CarouselComponent } from '@feat/home-feat/components/carousel/carousel.component';
 import { TestimoniosComponent } from '@feat/home-feat/components/testimonios/testimonios.component';
 import { SectionComponent } from '@feat/home-feat/components/section/section.component';
 import { ContactInfoComponent } from '@feat/home-feat/components/contact-info/contact-info.component';
-import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
+// import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
 // import { GamesComponent } from '@feat/home-feat/components/games/games.component';
@@ -16,7 +16,7 @@ import { AppRouter } from '@shared/interfaces/router.model';
 import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
 import { Event } from '@shared/interfaces/event.model';
 import { Game } from '@shared/interfaces/game.model';
-import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
+// import { HOME, EVENTS, GAMES, ABOUT, CONTACT, FOOTER } from './BACK';
 // import { Contact } from '@shared/interfaces/contact.model';
 // import { About } from '@shared/interfaces/about.model';
 // import { FaqItem } from '@shared/interfaces/faqitem.model';
@@ -30,9 +30,9 @@ import { MentorsComponent } from '@feat/home-feat/components/mentors/mentors.com
 import { ServicesComponent } from '@feat/home-feat/components/services/services.component';
 import { FaqsComponent } from '@feat/home-feat/components/faqs/faqs.component';
 import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
-import { SearchComponent } from '@feat/home-feat/components/search/search.component';
-import { Vinculate } from '@app/shared/interfaces/vinculate.model';
-import { stringify } from 'querystring';
+// import { SearchComponent } from '@app/shared/components/search/search.component';
+// import { Vinculate } from '@app/shared/interfaces/vinculate.model';
+// import { stringify } from 'querystring';
 import { CoursesComponent } from '@app/feat/home-feat/components/courses/courses.component';
 import { New } from '@app/shared/interfaces/new.model';
 import { DataComponent } from '@app/shared/interfaces/data-component.model';
@@ -180,65 +180,6 @@ export class ContentService {
     );
   }
 
-  // getHome(): Observable<ComponentItem[]> {
-  //   const items: ComponentItem[] = [];
-  //   for (const item of HOME) {
-  //     switch (item.component) {
-  //       case ComponentType.CAROUSEL: {
-  //         items.push({
-  //           component: CarouselComponent,
-  //           data: item.data
-  //         });
-  //         break;
-  //       }
-  //       case ComponentType.TESTIMONIOS: {
-  //         items.push({
-  //           component: TestimoniosComponent,
-  //           data: item.data
-  //         });
-  //         break;
-  //       }
-  //       case 'SectionComponent': {
-  //         items.push({
-  //           component: SectionComponent,
-  //           data: item.data
-  //         });
-  //         break;
-  //       }
-  //       case 'GamesComponent': {
-  //         items.push({
-  //           component: GamesComponent,
-  //           data: item.data
-  //         });
-  //         break;
-  //       }
-  //       case 'SectionImgBgComponent': {
-  //         items.push({
-  //           component: SectionImgBgComponent,
-  //           data: item.data
-  //         });
-  //         break;
-  //       }
-  //     }
-  //   }
-  //   return of(items);
-  // }
-
-  getEvents(): Observable<Event[]> {
-    // if (!this.events$) {
-    //   // this.events$ = this.http.get<Event[]>('url')
-    //   // .pipe(shareReplay(1))
-    //   // .pipe(refCount());
-    //   this.events$ =  of(EVENTS).pipe(
-    //     tap(() => console.log('***SIDE EFFECT***')),
-    //     delay(5000)
-    //   ).pipe(shareReplay(1))
-    //   .pipe(refCount());
-    // }
-
-    return of(EVENTS);
-  }
-
   /** GET meets. Will 404 if id not found */
   getMeetUp() {
     // this.httpOptions.params.append('email', email);
@@ -262,22 +203,6 @@ export class ContentService {
       // catchError(this.handleError<any[]>('getEvents', []))
     );
   }
-
-  // getGames(): Observable<Game[]> {
-  //   return of(GAMES);
-  // }
-
-  // games(): Observable<Game[]> {
-  //   return this.games$;
-  // }
-
-  // getContact(): Observable<Contact> {
-  //   return of(CONTACT);
-  // }
-
-  // getAbout(): Observable<About> {
-  //   return of(ABOUT);
-  // }
 
   getNavBar() {
     const navbar: NavBarInformation = this.currentNavBarSubject.value;
@@ -311,18 +236,28 @@ export class ContentService {
     return this.http.get<New>(`${environment.apiUrl}/news/${id}`);
   }
 
-  search(resourceType: string, search: string, filter: string = '', newest: string) {
-    let params = new HttpParams().
-    set('resource_type', resourceType).
-    set('search', search);
-    // params = params.set('filters', filter);
+  search(resourceType: string, search: string, filter: string, newest: string) {
+    let params = new HttpParams().set('resource_type', resourceType);
+    if (search) {
+      params = params.set('search', search);
+    }
+    if (filter) {
+      params = params.set('filters', filter);
+    }
     params = params.set('newest', newest);
-    return this.http.get<DataComponent[]>(`${environment.apiUrl}/searches`, { params });
+    return this.http.get<DataComponent[]>(`${environment.apiUrl}/searches`, { params }).pipe(
+      map((data: any) => {
+        if (data.length) {
+          return data;
+        } else {
+          return [];
+        }
+      })
+    );
   }
 
   getTags(resourceType: string) {
-    const params = new HttpParams();
-    params.set('resource_type', resourceType);
+    const params = new HttpParams().set('resource_type', resourceType);
     return this.http.get<string[]>(`${environment.apiUrl}/searches/attributes/tags`, { params });
   }
 

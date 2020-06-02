@@ -44,7 +44,11 @@ export class SearchComponent implements OnInit {
   getTags() {
     this.contentService.getTags(this.resourceType).subscribe(
       (tags: string[]) => {
-        this.tags = tags;
+        if (tags.length) {
+          this.tags = tags;
+        } else {
+          this.tags = [];
+        }
       },
       (err) => {
         this.tags = [];
@@ -57,7 +61,7 @@ export class SearchComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log('Enviando');
+    // console.log('Enviando');
     this.contentService.search(
       this.resourceType,
       this.form.value.search,
@@ -68,6 +72,7 @@ export class SearchComponent implements OnInit {
         this.data.emit(data);
       },
       (err) => {
+        this.data.emit([]);
         console.log('Err = ' + err);
       }
     );

@@ -43,7 +43,6 @@ import { EventsListComponent } from './components/events-list/events-list.compon
 import { StudiosComponent } from './components/studios/studios.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { ContactInfoComponent } from './components/contact-info/contact-info.component';
-import { SearchComponent } from './components/search/search.component';
 import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
@@ -76,7 +75,6 @@ import { NewsFormComponent } from './components/forms/news-form/news-form.compon
     StudiosComponent,
     FaqsComponent,
     ContactInfoComponent,
-    SearchComponent,
     RegisterFormComponent,
     AllNewsComponent,
     BlogComponent,
