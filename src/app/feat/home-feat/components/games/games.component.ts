@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-// import { ContentService } from '@core/services/content.service';
-import { Game } from '@shared/interfaces/game.model';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination/public_api';
 import { DataItem } from '@shared/interfaces/data-item.model';
+import { Game } from '@shared/interfaces/game.model';
+import { ResourceType } from '@shared/interfaces/component-item.model';
 
 @Component({
   selector: 'app-games',
@@ -12,44 +12,37 @@ import { DataItem } from '@shared/interfaces/data-item.model';
 export class GamesComponent implements OnInit, DataItem {
 
   @Input() resources: Game[];
-  selectedPage = 0;
-  pageSize = 3;
-
   games: Game[];
+  selectedGames: Game[];
+  itemsPerPage = 3;
+  resourceType: string;
+  viewResult: boolean;
 
-  pags = 0;
-
-  constructor() { }
+  constructor() {
+    this.resourceType = ResourceType.GAME;
+  }
 
   ngOnInit(): void {
-    // this.getGames();
-    this.games = null;
+    this.games = this.resources;
+    this.selectedGames = this.resources.slice(0, this.itemsPerPage);
   }
 
-  // getGames(): void {
-  //   this.contentService.getGames()
-  //   .subscribe(games => this.games = games);
-  //   this.pags = Math.ceil(this.games.length / this.pageSize);
-  // }
-
-  isReady(): boolean {
-    return true;
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.selectedGames = this.resources.slice(startItem, endItem);
   }
 
-  array(n: number): number[] {
-    return [...Array(n).keys()];
+  searchResult(data) {
+    this.viewResult = true;
+    this.games = data as Game[];
+    this.selectedGames = this.games.slice(0, this.itemsPerPage);
   }
 
-  previous(): void {
-    this.selectedPage -= 1;
-  }
-
-  next(): void {
-    this.selectedPage += 1;
-  }
-
-  to(p: number): void {
-    this.selectedPage = p;
+  clear() {
+    this.viewResult = false;
+    this.games = this.resources;
+    this.selectedGames = this.resources.slice(0, this.itemsPerPage);
   }
 
 }

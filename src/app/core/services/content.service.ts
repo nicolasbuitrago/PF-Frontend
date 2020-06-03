@@ -10,7 +10,6 @@ import { ContactInfoComponent } from '@feat/home-feat/components/contact-info/co
 // import { RegisterFormComponent } from '@app/feat/home-feat/components/forms/register-form/register-form.component';
 
 // import { SectionImgBgComponent } from '@feat/home-feat/components/sections/section-img-bg/section-img-bg.component';
-// import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { environment } from '@env/environment';
 import { AppRouter } from '@shared/interfaces/router.model';
 import { ComponentItem, ComponentType, ResourceType } from '@shared/interfaces/component-item.model';
@@ -23,6 +22,7 @@ import { Game } from '@shared/interfaces/game.model';
 // import { Footer } from '@shared/interfaces/footer.model';
 import { Page } from '@shared/interfaces/page.model';
 import { StudiosListComponent } from '@feat/studios-feat/components/studios-list/studios-list.component';
+import { GamesComponent } from '@feat/home-feat/components/games/games.component';
 import { EventsListComponent } from '@feat/home-feat/components/events-list/events-list.component';
 import { SponsorsComponent } from '@feat/home-feat/components/sponsors/sponsors.component';
 import { NewsComponent } from '@feat/home-feat/components/news/news.component';
@@ -30,12 +30,12 @@ import { MentorsComponent } from '@feat/home-feat/components/mentors/mentors.com
 import { ServicesComponent } from '@feat/home-feat/components/services/services.component';
 import { FaqsComponent } from '@feat/home-feat/components/faqs/faqs.component';
 import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact-information.model';
-// import { SearchComponent } from '@app/shared/components/search/search.component';
-// import { Vinculate } from '@app/shared/interfaces/vinculate.model';
+// import { SearchComponent } from '@shared/components/search/search.component';
+// import { Vinculate } from '@shared/interfaces/vinculate.model';
 // import { stringify } from 'querystring';
-import { CoursesComponent } from '@app/feat/home-feat/components/courses/courses.component';
-import { New } from '@app/shared/interfaces/new.model';
-import { DataComponent } from '@app/shared/interfaces/data-component.model';
+import { CoursesComponent } from '@feat/home-feat/components/courses/courses.component';
+import { New } from '@shared/interfaces/new.model';
+import { DataComponent } from '@shared/interfaces/data-component.model';
 
 
 @Injectable({
@@ -129,6 +129,9 @@ export class ContentService {
             break;
           case ResourceType.COURSE:
             component.component = CoursesComponent;
+            break;
+          case ResourceType.GAME:
+            component.component = GamesComponent;
             break;
         }
       } else {

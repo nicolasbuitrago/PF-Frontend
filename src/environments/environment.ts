@@ -4,6 +4,7 @@
 
 export const environment = {
   url: 'https://localhost:4200',
+  cmsUrl: 'https://pf-cms.netlify.app',
   apiUrl: '/api',
   production: false
 };

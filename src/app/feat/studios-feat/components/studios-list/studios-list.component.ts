@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { Studio } from '@shared/interfaces/studio.model';
-import { ContentService } from '@app/core/services/content.service';
+// import { ContentService } from '@app/core/services/content.service';
 import { ResourceType } from '@app/shared/interfaces/component-item.model';
 
 @Component({

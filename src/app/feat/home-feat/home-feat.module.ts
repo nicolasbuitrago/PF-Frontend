@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { DisqusModule } from 'ngx-disqus';
 
@@ -88,6 +89,7 @@ import { NewsFormComponent } from './components/forms/news-form/news-form.compon
     CommonModule,
     SharedModule,
     AccordionModule.forRoot(),
+    PaginationModule.forRoot(),
     NgxPageScrollModule,
     DisqusModule,
     HomeFeatRoutingModule,

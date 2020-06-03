@@ -1,62 +1,40 @@
 <div id="myVideogames" class="album py-5 bg-light">
-  <div class="container pb-3">
-    <h2>Featured Studies</h2>
-  </div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6"
-          *ngFor="let game of games | slice: (selectedPage) * pageSize : (selectedPage) * pageSize + pageSize">
-        <div class="card mb-4 shadow-sm">
-          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c"/>
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{game.name}}</text>
-          </svg> -->
-          <img class="bd-placeholder-img card-img-top" src="{{ game.image_url }}" alt="Game" width="100%" height="250">
-          <div class="card-body">
-            <h5 class="card-title">{{ game.name }}</h5>
-            <!-- <h6 class="card-subtitle text-muted">{{ game.studio }}</h6> -->
-            <span *ngFor="let tag of game.tags; let i = index"
-              class="badge badge-pill badge-info"
-              [class.ml-1]="i !== 0">
-              {{ tag }}
-            </span>
-            <p class="card-text mt-2">{{ game.description }}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <!-- <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Discard</button>
-              </div> -->
-              <!-- <small class="text-muted">{{ game.type }}</small> -->
+    <h2 class="text-center">Featured games</h2>
+    <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
+    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
+    <div class="row mt-3 justify-content-around" *ngIf="selectedGames && selectedGames.length else empty">
+      <div class="col-lg-4 col-md-6" *ngFor="let game of selectedGames">
+        <div class="card mb-4">
+          <div class="box">
+            <img [src]="game.image_url" [alt]="game.name" class="rounded-lg" width="100%" height="300">
+            <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
+            <div class="box-content">
+              <h3 class="title">{{ game.name }}</h3>
+              <span class="post">{{ game.description }}</span>
+              <span class="tags">
+                <span *ngFor="let tag of game.tags; let f = first"
+                  class="tag badge badge-pill badge-info"
+                  [class.ml-1]="!f">
+                  {{ tag }}
+                </span>
+              </span>
+              <ul class="social">
+                <li><a [href]="game.link"><span><i class="fas fa-link"></i></span></a></li>
+                <li><a [href]="game.video"><span><i class="fab fa-youtube"></i></span></a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <ng-template #empty>
+      <p class="my-4">There are no games available for display.</p>
+    </ng-template>
+    <div class="row justify-content-center" *ngIf="games.length > itemsPerPage">
+      <pagination [totalItems]="games.length" (pageChanged)="pageChanged($event)"
+        [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedGames && selectedGames.length">
+      </pagination>
+    </div>
   </div>
-  <nav aria-label="Page navigation games">
-    <ul class="pagination justify-content-center">
-      <li class="page-item"
-          [class.disabled]="selectedPage == 0">
-        <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="previous()" tabindex="-1"
-          [attr.aria-disabled]="selectedPage == 0 ? 'true' : null">1</a>
-      </li>
-      <li class="page-item" *ngFor='let p of array(pags)'
-          [class.active]='p == selectedPage'
-          [attr.aria-current]="p == selectedPage ? 'page' : null">
-        <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="to(p)" *ngIf='p != selectedPage'>{{ p+1 }}</a>
-        <span class="page-link" *ngIf='p == selectedPage'>
-          {{ p+1 }}
-          <span class="sr-only">(current)</span>
-        </span>
-      </li>
-      <li class="page-item"
-          [class.disabled]="selectedPage == pags-1">
-        <a class="page-link" pageScroll [pageScrollDuration]='0' href="#myVideogames" (click)="next()"
-            [attr.aria-disabled]="selectedPage == pags-1 ? 'true' : null">
-          2
-        </a>
-      </li>
-    </ul>
-  </nav>
 </div>
