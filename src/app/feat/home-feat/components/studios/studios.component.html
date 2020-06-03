@@ -9,7 +9,7 @@
         </svg> -->
         <img class="bd-placeholder-img card-img-top" [src]="studio.img" alt="Studio" width="100%" height="250">
         <div class="card-body">
-          <h5 class="card-title">{{ studio.name }}</h5>
+          <h5 class="card-title" style="font-weight: bold;">{{ studio.name }}</h5>
           <!-- <h6 class="card-subtitle text-muted">{{ studio.type }}</h6> -->
           <span *ngFor="let tag of studio.tags; let f = first"
             class="badge badge-pill badge-info"

@@ -6,7 +6,7 @@
     <div class="card-columns mt-3" *ngIf="selectedGames && selectedGames.length else empty">
       <div class="card" *ngFor="let game of selectedGames">
         <div class="box">
-          <img [src]="game.image_url" [alt]="game.name" class="img-fluid rounded-lg">
+          <img [src]="game.image_url" target="_blank" [alt]="game.name" class="img-fluid rounded-lg">
           <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
           <div class="box-content">
             <h3 class="title">{{ game.name }}</h3>
@@ -19,8 +19,8 @@
               </span>
             </span>
             <ul class="social">
-              <li><a [href]="game.link"><span><i class="fas fa-link"></i></span></a></li>
-              <li><a [href]="game.video"><span><i class="fab fa-youtube"></i></span></a></li>
+              <li><a [href]="game.link" target="_blank"><span><i class="fas fa-link"></i></span></a></li>
+              <li><a [href]="game.video" target="_blank"><span><i class="fab fa-youtube"></i></span></a></li>
             </ul>
           </div>
         </div>

@@ -3,7 +3,7 @@
 	<div class="post-6-mian">
 		<div class="container py-lg-5">
 			<h2 class="hny-title text-center mb-0 ">Courses</h2>
-      <p class="mb-4 text-center">Handpicked Favourites just for you</p>
+      <p class="mb-4 text-center">Educate yourself to be tomorrow's industry.</p>
 			<div class="card-columns mt-3" *ngIf="resources && resources.length else empty">
 				<div class="card grids5-info column-img" *ngFor="let course of resources">
 					<a target="_blank" [href]="course.link">
@@ -21,65 +21,7 @@
 					</div>
         </div>
       </div>
-      <!-- iNFO DE PRUEBA -->
-      <!-- <div class="post-hny-grids row mt-5">
-        <div class="col-lg-3 col-md-6 grids5-info column-img" id="zoomIn">
-          <a href="#">
-            <figure>
-              <img class="img-fluid" src="https://source.unsplash.com/700x300/?animation">
-            </figure>
-          </a>
-          <div class="blog-thumbhny-caption">
-            <ul class="blog-info-list">
-              <li><a href="#admin">By admin</a></li>
-              <li class="date-post">
-                Aug 10, 2020</li>
-            </ul>
-            <h4><a href="#">Here to bring your life style to the next level.</a></h4>
-          </div>
-        </div>
-				<div class="col-lg-3 col-md-6 grids5-info column-img" id="zoomIn">
-					<a href="#">
-						<figure>
-              <img class="img-fluid" src="https://source.unsplash.com/700x300/?videogame">
-						</figure>
-					</a>
-					<div class="blog-thumbhny-caption">
-						<ul class="blog-info-list">
-							<li><a href="#admin">By admin</a></li>
-							<li class="date-post">
-								Aug 10, 2020</li>
-						</ul>
-						<h4><a href="#">Here to bring your life style to the next level.</a></h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 grids5-info column-img" id="zoomIn">
-					<figure>
-            <img class="img-fluid" src="https://source.unsplash.com/700x300/?sketchs">
-					</figure>
-					<div class="blog-thumbhny-caption">
-						<ul class="blog-info-list">
-							<li><a href="#admin">By admin</a></li>
-							<li class="date-post">
-								Aug 10, 2020</li>
-						</ul>
-						<h4><a href="#">Here to bring your life style to the next level.</a></h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 grids5-info column-img" id="zoomIn">
-					<figure>
-            <img class="img-fluid" src="https://source.unsplash.com/700x300/?events">
-					</figure>
-					<div class="blog-thumbhny-caption">
-						<ul class="blog-info-list">
-							<li><a href="#admin">By admin</a></li>
-							<li class="date-post">
-								Aug 10, 2020</li>
-						</ul>
-						<h4><a href="#">Here to bring your life style to the next level.</a></h4>
-					</div>
-				</div>
-      </div> -->
+     
       <ng-template #empty>
         <p class="mb-5 text-center">There are no courses to show.</p>
       </ng-template>
