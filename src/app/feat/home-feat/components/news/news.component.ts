@@ -19,7 +19,8 @@ export class NewsComponent implements OnInit, DataItem {
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.news = this.resources.slice(0, this.counter);
+    this.news = this.resources.slice
+    (0, this.counter);
   }
 
   loadMore() {
