@@ -3,25 +3,27 @@
     <h3 class="mb-4 text-dark text-center font-weight-bold">Videogames</h3>
     <app-search [resourceType]="resourceType" (data)="searchResult($event)" [parentId]="games[0].studio_id"></app-search>
     <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
-    <div class="card-columns mt-3" *ngIf="selectedGames && selectedGames.length else empty">
-      <div class="card" *ngFor="let game of selectedGames">
-        <div class="box">
-          <img [src]="game.image_url" target="_blank" [alt]="game.name" class="img-fluid rounded-lg">
-          <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
-          <div class="box-content">
-            <h3 class="title">{{ game.name }}</h3>
-            <span class="post">{{ game.description }}</span>
-            <span class="tags">
-              <span *ngFor="let tag of game.tags; let f = first"
-                class="tag badge badge-pill badge-info"
-                [class.ml-1]="!f">
-                {{ tag }}
+    <div class="row mt-3 justify-content-around" *ngIf="selectedGames && selectedGames.length else empty">
+      <div class="col-lg-4 col-md-6" *ngFor="let game of selectedGames">
+        <div class="card mb-4">
+          <div class="box">
+            <img [src]="game.image_url" target="_blank" [alt]="game.name" class="rounded-lg">
+            <!-- <img src="https://source.unsplash.com/600x600/?videogame" class="img-fluid rounded-lg"> -->
+            <div class="box-content">
+              <h3 class="title">{{ game.name }}</h3>
+              <span class="post">{{ game.description }}</span>
+              <span class="tags">
+                <span *ngFor="let tag of game.tags; let f = first"
+                  class="tag badge badge-pill badge-info"
+                  [class.ml-1]="!f">
+                  {{ tag }}
+                </span>
               </span>
-            </span>
-            <ul class="social">
-              <li><a [href]="game.link" target="_blank"><span><i class="fas fa-link"></i></span></a></li>
-              <li><a [href]="game.video" target="_blank"><span><i class="fab fa-youtube"></i></span></a></li>
-            </ul>
+              <ul class="social">
+                <li><a [href]="game.link" target="_blank"><span><i class="fas fa-link"></i></span></a></li>
+                <li><a [href]="game.video" target="_blank"><span><i class="fab fa-youtube"></i></span></a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

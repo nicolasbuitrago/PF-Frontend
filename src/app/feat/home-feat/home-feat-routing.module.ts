@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { AllServicesComponent } from './pages/all-services/all-services.component';
 
 const routes: Routes = [
   {
@@ -44,8 +45,11 @@ const routes: Routes = [
   {
     path: 'new/:id',
     component: BlogComponent
+  },
+  {
+    path: 'services',
+    component: AllServicesComponent
   }
-
 ];
 
 @NgModule({

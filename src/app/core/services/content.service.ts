@@ -36,6 +36,7 @@ import { NavBarInformation, FooterInformation } from '@shared/interfaces/contact
 import { CoursesComponent } from '@feat/home-feat/components/courses/courses.component';
 import { New } from '@shared/interfaces/new.model';
 import { DataComponent } from '@shared/interfaces/data-component.model';
+import { Service } from '@app/shared/interfaces/service.model';
 
 
 @Injectable({
@@ -237,6 +238,10 @@ export class ContentService {
 
   getNew(id: string) {
     return this.http.get<New>(`${environment.apiUrl}/news/${id}`);
+  }
+
+  getServices() {
+    return this.http.get<Service[]>(`${environment.apiUrl}/services`);
   }
 
   search(resourceType: string, search: string, filter: string, newest: string, studio?: number) {

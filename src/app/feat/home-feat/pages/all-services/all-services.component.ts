@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Service } from '@app/shared/interfaces/service.model';
-import { ContentService } from '@app/core/services/content.service';
-import { ResourceType } from '@app/shared/interfaces/component-item.model';
+import { Service } from '@shared/interfaces/service.model';
+import { ContentService } from '@core/services/content.service';
+import { ResourceType } from '@shared/interfaces/component-item.model';
 
 @Component({
   selector: 'app-all-services',
@@ -10,20 +10,17 @@ import { ResourceType } from '@app/shared/interfaces/component-item.model';
 })
 export class AllServicesComponent implements OnInit {
   services: Service[];
+  // selectedServices: Service[];
   error: boolean;
-  counter = 12;
-  resourceType: string;
-  viewResult: boolean;
+  // counter = 12;
 
-  constructor(private contentService: ContentService) {
-    this.resourceType = ResourceType.SERVICE;
-  }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    /* this.getServices(); */
+    this.getServices();
   }
 
-  /* getServices() {
+  getServices() {
     this.contentService.getServices().subscribe(
       (services: Service[]) => {
         this.services = this.services;
@@ -33,10 +30,5 @@ export class AllServicesComponent implements OnInit {
         console.log(err);
       }
     );
-  } */
-
-  /* loadMore() {
-    this.counter += 6;
-    this.selectedNews = this.news.slice(0, this.counter);
-  } */
+  }
 }
