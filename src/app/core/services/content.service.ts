@@ -232,6 +232,10 @@ export class ContentService {
     }
   }
 
+  getEvents() {
+    return this.http.get<Event[]>(`${environment.apiUrl}/events`);
+  }
+
   getNews() {
     return this.http.get<New[]>(`${environment.apiUrl}/news`);
   }

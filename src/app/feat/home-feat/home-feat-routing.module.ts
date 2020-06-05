@@ -9,6 +9,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { AllNewsComponent } from './pages/all-news/all-news.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { AllServicesComponent } from './pages/all-services/all-services.component';
+import { AllEventsComponent } from './pages/all-events/all-events.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'services',
     component: AllServicesComponent
+  },
+  {
+    path: 'all-events',
+    component: AllEventsComponent
   }
 ];
 

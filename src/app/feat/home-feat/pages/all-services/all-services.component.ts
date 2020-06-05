@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Service } from '@shared/interfaces/service.model';
 import { ContentService } from '@core/services/content.service';
-import { ResourceType } from '@shared/interfaces/component-item.model';
+import { Service } from '@shared/interfaces/service.model';
 
 @Component({
   selector: 'app-all-services',
@@ -9,6 +8,7 @@ import { ResourceType } from '@shared/interfaces/component-item.model';
   styleUrls: ['./all-services.component.scss']
 })
 export class AllServicesComponent implements OnInit {
+
   services: Service[];
   // selectedServices: Service[];
   error: boolean;
@@ -23,7 +23,7 @@ export class AllServicesComponent implements OnInit {
   getServices() {
     this.contentService.getServices().subscribe(
       (services: Service[]) => {
-        this.services = this.services;
+        this.services = services;
       },
       (err) => {
         this.error = true;

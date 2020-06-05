@@ -1,5 +1,5 @@
 <app-nav-bar [fixed]="true"></app-nav-bar>
-<app-page-title title="Services"></app-page-title>
+<app-page-title title="Our Services"></app-page-title>
 
 <main class="full-page">
   <div class="container text-left py-5">
@@ -23,5 +23,6 @@
     </ng-template>
   </div>
 </main>
+<app-spinner [loading]="!services && !error"></app-spinner>
 
 <app-footer></app-footer>

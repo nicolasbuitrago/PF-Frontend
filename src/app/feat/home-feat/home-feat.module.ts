@@ -52,6 +52,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { AllServicesComponent } from './pages/all-services/all-services.component';
+import { AllEventsComponent } from './pages/all-events/all-events.component';
 // import { VinculationComponent } from './components/vinculation/vinculation.component';
 // import { VinculationFormComponent } from './components/forms/vinculation-form/vinculation-form.component';
 
@@ -84,7 +85,8 @@ import { AllServicesComponent } from './pages/all-services/all-services.componen
     NewsFormComponent,
     TextBlogComponent,
     CoursesComponent,
-    AllServicesComponent
+    AllServicesComponent,
+    AllEventsComponent
 
   ],
   imports: [

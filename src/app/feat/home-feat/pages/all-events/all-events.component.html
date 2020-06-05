@@ -1,0 +1,26 @@
+<app-nav-bar [fixed]="true"></app-nav-bar>
+<app-page-title title="Events"></app-page-title>
+
+<main class="full-page">
+  <div class="container text-left py-5">
+    <div class="row justify-content-around" *ngIf="events && events.length else empty">
+      <div class="col-lg-6" *ngFor="let event of events" [id]="event.id">
+        <div class="event-content mb-3" style="text-align: center;">
+          <img class="mb-2" [src]="event.image_url" [alt]="event.name" width="100%" height="auto">
+          <!-- <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
+            [alt]="event.name" width="30%" height="auto"> -->
+          <h5 class="font-weight-bold">{{ event.name }}</h5>
+          <p class="text-muted mb-1">{{ event.date | date }}</p>
+          <p class="mb-1">Place: {{ event.address }}</p>
+          <p>{{ event.description }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #empty>
+      <p class="text-center pb-2">There are no events to show.</p>
+    </ng-template>
+  </div>
+</main>
+<app-spinner [loading]="!events && !error"></app-spinner>
+
+<app-footer></app-footer>
