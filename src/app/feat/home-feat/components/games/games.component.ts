@@ -30,7 +30,7 @@ export class GamesComponent implements OnInit, DataItem {
   pageChanged(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
-    this.selectedGames = this.resources.slice(startItem, endItem);
+    this.selectedGames = this.games.slice(startItem, endItem);
   }
 
   searchResult(data) {

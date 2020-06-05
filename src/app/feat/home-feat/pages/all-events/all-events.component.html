@@ -2,9 +2,11 @@
 <app-page-title title="Events"></app-page-title>
 
 <main class="full-page">
-  <div class="container text-left py-5">
-    <div class="row justify-content-around" *ngIf="events && events.length else empty">
-      <div class="col-lg-6" *ngFor="let event of events" [id]="event.id">
+  <div class="container text-left pt-3 pb-5">
+    <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
+    <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
+    <div class="row justify-content-around" *ngIf="selectedEvents && selectedEvents.length else empty">
+      <div class="col-lg-6" *ngFor="let event of selectedEvents" [id]="event.id">
         <div class="event-content mb-3" style="text-align: center;">
           <img class="mb-2" [src]="event.image_url" [alt]="event.name" width="100%" height="auto">
           <!-- <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
@@ -19,6 +21,11 @@
     <ng-template #empty>
       <p class="text-center pb-2">There are no events to show.</p>
     </ng-template>
+    <div class="row justify-content-center" *ngIf="events && events.length > itemsPerPage">
+      <pagination [totalItems]="events.length" (pageChanged)="pageChanged($event)"
+        [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedEvents && selectedEvents.length">
+      </pagination>
+    </div>
   </div>
 </main>
 <app-spinner [loading]="!events && !error"></app-spinner>
