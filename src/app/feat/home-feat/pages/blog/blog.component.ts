@@ -28,7 +28,7 @@ export class BlogComponent implements OnInit {
   ) {
     this.disqusId = this.router.url;
     this.url = `${environment.url}${this.disqusId}`;
-    this.apiUrl = `${environment.cmsUrl}home/register?email=`;
+    this.apiUrl = `${environment.cmsUrl}/home/register?email=`;
     // console.log(this.disqusId);
   }
 
@@ -40,6 +40,10 @@ export class BlogComponent implements OnInit {
 
   get isLoading() {
     return this.isLoadingNew || this.isLoadingOthers;
+  }
+
+  join(email) {
+    console.log(email.value);
   }
 
   getNew() {

@@ -3,13 +3,13 @@
     <!-- <div class="selected col-md-7 text-white"  *ngIf="event.notext" -->
     <div class="selected col-md-7 text-white"
       [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url(' + selectedEvent.image_url + ')'}">
-      <div class="event">
+      <div class="event pr-2">
         <h3 class="mb-1 font-weight-bold">{{ selectedEvent.name }}</h3>
         <a><strong>{{ selectedEvent.date | date }}</strong></a>
-        <p class="mb-1" *ngIf="selectedEvent.description">{{ selectedEvent.description }}</p>
+        <p class="mb-1 d-none d-sm-block" *ngIf="selectedEvent.description">{{ selectedEvent.description }}</p>
       </div>
     </div>
-    <div class="col-md-5 h-100">
+    <div class="col-md-5">
       <div class="list-group overflow-auto">
         <a *ngFor="let event of this.resources" class="list-group-item list-group-item-action"
           (click)="selectEvent(event)" [class.active]="event.id === selectedEvent.id">
@@ -20,10 +20,15 @@
           <!-- <p class="mb-1 text-truncate">{{ event.description }} at eget metus. Maecenas sed diam eget risus varius blandit.</p> -->
           <small class="ml-1 mb-0">
             <!--  <span class="mr-1"><i class="fas fa-map-marker-alt"></i></span> -->
-            <span class="mr-1"><img src="../../../../../assets/ubicacion-orange.svg" style="width: 3%;"></span>
+            <span class="mr-1" style="color: orange;"><i class="fas fa-map-marker-alt"></i></span>
             {{ event.address }}
           </small>
         </a>
+      </div>
+      <div class="conatiner my-2">
+        <div class="row justify-content-center">
+          <a routerLink="../all-events" class="btn btn-primary">View all events</a>
+        </div>
       </div>
     </div>
   </div>

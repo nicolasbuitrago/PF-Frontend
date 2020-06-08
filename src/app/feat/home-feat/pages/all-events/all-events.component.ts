@@ -15,7 +15,7 @@ export class AllEventsComponent implements OnInit {
   events: Event[];
   selectedEvents: Event[];
   error: boolean;
-  itemsPerPage = 3;
+  itemsPerPage = 6;
   resourceType: string;
   viewResult: boolean;
 

@@ -4,13 +4,11 @@
 <main class="full-page">
   <div class="container text-left py-5">
     <div class="row justify-content-around" *ngIf="services && services.length else empty">
-      <div class="col-lg-6" *ngFor="let service of services" [id]="service.id">
-        <div class="service-content mb-3" style="text-align: center;">
-          <img class="mb-2" [src]="service.image_url" [alt]="service.name" width="100%" height="auto">
-          <!-- <img class="mb-2 rounded-lg" src="https://source.unsplash.com/600x600/?technology"
-            [alt]="service.name" width="30%" height="auto"> -->
+      <div class="col-lg-6 mb-3 mb-lg-4" *ngFor="let service of services" [id]="service.id">
+        <div class="d-flex flex-column justify-content-center align-items-center py-3 px-2 px-lg-3 rounded-lg shadow-sm h-100 text-center" style="background-color: #eeee;">
+          <img class="mb-2 pb-2" [src]="service.image_url" [alt]="service.name" width="40%" height="auto">
           <h5 class="font-weight-bold">{{ service.name }}</h5>
-          <p>{{ service.description }}</p>
+          <p class="mb-0 align-middle">{{ service.description }}</p>
           <a [href]="service.link" *ngIf="service.link">
             <span class="mr-1"><i class="fas fa-plus"></i></span>
             View more
@@ -19,7 +17,7 @@
       </div>
     </div>
     <ng-template #empty>
-      <p class="text-center pb-2">There are no services to show.</p>
+      <p class="text-center pb-2 px-2">There are no services to show.</p>
     </ng-template>
   </div>
 </main>

@@ -42,7 +42,8 @@
                           <input type="email" #email placeholder="Your email here">
                         </div>
                         <div class="form-input">
-                          <a class="btn text-center" [href]="apiUrl + email.value"><span class="mt-2">Join</span></a>
+                          <a class="btn text-center" [href]="apiUrl + email.value" (click)="join(email)"><span class="mt-2">Join</span></a>
+                          <!-- <a class="btn text-center" [cli]><span class="mt-2">Join</span></a> -->
                         </div>
                       </div>
                     </form>
@@ -74,7 +75,7 @@
             <div class="row justify-content-center">
               <a  routerLink="/home/news" class="read-more btn mx-auto">All news</a>
             </div>
-            
+
           </div>
         </div>
       </div>
