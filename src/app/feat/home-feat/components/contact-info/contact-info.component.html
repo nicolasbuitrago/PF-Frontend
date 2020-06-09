@@ -4,25 +4,25 @@
       <div class="col-lg-7">
         <h5 class="cont-form"> </h5>
         <div class="contact-form">
-          <form action="#" method="post" class="register">
+          <form [formGroup]="getForm" (ngSubmit)="contactEmail()" class="register">
             <div class="form-group">
               <label>Name</label>
-              <input class="form-control" type="text" placeholder="John Doe" name="email" required="">
+              <input class="form-control" type="text" placeholder="John Doe" formControlName="name">
             </div>
             <div class="form-group">
               <label>Phone number</label>
-              <input class="form-control" type="text" placeholder="30030330" name="phone" required="">
+              <input class="form-control" type="text" placeholder="30030330" formControlName="phone">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input class="form-control" type="email" placeholder="example@email.com" name="email" required="">
+              <input class="form-control" type="email" placeholder="example@email.com" formControlName="email">
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea placeholder="How we can help you." class="form-control"></textarea>
+              <textarea placeholder="How we can help you." class="form-control" formControlName="message"></textarea>
             </div>
             <div class="form-group mb-0">
-              <button type="submit" class="btn btn-primary btn-block bg-theme text-white w-100 font-weight-bold text-uppercase">Send</button>
+              <button class="btn btn-primary btn-block bg-theme text-white w-100 font-weight-bold text-uppercase">Send</button>
             </div>
           </form>
         </div>
