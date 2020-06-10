@@ -60,11 +60,11 @@
           <div class="general-news" *ngIf="otherNews && otherNews.length else emptyNews">
             <div class="general-inner rounded-lg border mb-2" *ngFor="let otherNew of otherNews">
               <a [href]="otherNew.link" target="_blank" *ngIf="otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
-              <a routerLink="{{otherNew.id}}" *ngIf="!otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
+              <a [routerLink]="['../', otherNew.id]" *ngIf="!otherNew.link"><img [src]="otherNew.image_url" class="img-fluid rounded-lg" [alt]="otherNew.title"></a>
               <div class="general-text">
                 <h5 class="top">
                   <a [href]="otherNew.link" target="_blank" *ngIf="otherNew.link">{{ otherNew.title }}</a>
-                  <a routerLink="{{otherNew.id}}" *ngIf="!otherNew.link">{{ otherNew.title }}</a>
+                  <a [routerLink]="['../', otherNew.id]" *ngIf="!otherNew.link">{{ otherNew.title }}</a>
                 </h5>
                 <p class="mb-0">{{ otherNew.date | date }}</p>
                 <p class="mb-0">{{ otherNew.description }}</p>
@@ -75,7 +75,6 @@
             <div class="row justify-content-center">
               <a  routerLink="/home/news" class="read-more btn mx-auto">All news</a>
             </div>
-
           </div>
         </div>
       </div>
