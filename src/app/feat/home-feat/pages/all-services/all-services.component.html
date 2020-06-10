@@ -3,8 +3,8 @@
 
 <main class="full-page">
   <div class="container text-left py-5">
-    <div class="row justify-content-around" *ngIf="services && services.length else empty">
-      <div class="col-lg-6 mb-3 mb-lg-4" *ngFor="let service of services" [id]="service.id">
+    
+      <!-- <div class="col-lg-6 mb-3 mb-lg-4" *ngFor="let service of services" [id]="service.id">
         <div class="d-flex flex-column justify-content-center align-items-center py-3 px-2 px-lg-3 rounded-lg shadow-sm h-100 text-center" style="background-color: #eeee;">
           <img class="mb-2 pb-2" [src]="service.image_url" [alt]="service.name" width="40%" height="auto">
           <h5 class="font-weight-bold">{{ service.name }}</h5>
@@ -14,8 +14,29 @@
             View more
           </a>
         </div>
+      </div> -->
+      <div class="services py-lg-5 py-md-4 py-md-3 py-2" id="services">
+        <div class="container">
+          <h3 class="mb-lg-4 mb-md-3 mb-sm-2 ">Services</h3>
+          <p class="w3_dwn">We are focused on increasing the chances of success and reducing the likelihood of death for video game studios in the Caribbean region by helping to overcome market failures, facilitating access to mentors and seed capital.</p>
+          <div class="w3_rm">
+            <a class="btn btn-lg btn-primary" routerLink="../about" target="_blank" role="button">View more</a>
+          </div>
+          <div class="w3l_abtdwn">
+            <div class="row mb-5" *ngIf="services && services.length else empty">
+              <div class="col-md-3 col-sm-12 w3l_c1" *ngFor="let service of services" [id]="service.id">
+                <img class="mb-2 pb-2" [src]="service.image_url" [alt]="service.name" width="40%" height="auto">
+                <h5 class="font-weight-bold">{{ service.name }}</h5>
+                <p class="mb-0 align-middle mb-2">{{ service.description }}</p>
+                <a [href]="service.link" *ngIf="service.link">
+                  <span class="mr-1"><i class="fas fa-plus"></i></span>
+                  View more
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     <ng-template #empty>
       <p class="text-center pb-2 px-2">There are no services to show.</p>
     </ng-template>
