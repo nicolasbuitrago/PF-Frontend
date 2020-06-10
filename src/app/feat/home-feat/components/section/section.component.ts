@@ -17,4 +17,8 @@ export class SectionComponent implements OnInit, DataItem {
   ngOnInit(): void {
   }
 
+  get isRegister() {
+    return this.data.link.includes('register');
+  }
+
 }
