@@ -10,6 +10,6 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   sendContact(name: string, phone: string, email: string, message: string) {
-    return this.http.post<any>(`${environment.apiUrl}/contact_email`, {name, phone, email, message});
+    return this.http.post<any>(`${environment.apiUrl}contact_email`, {name, phone, email, message});
   }
 }
