@@ -9,16 +9,16 @@
         <h6 class="text-center text-md-left mt-4 mb-2 mb-md-0 font-weight-bold">Follow us</h6>
         <div class="row pb-4 pt-2 d-flex align-items-center">
           <div class="col text-center text-md-left">
-            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[2]">
+            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[2]" target="_blank">
               <i class="fab fa-facebook-f mr-4"></i>
             </a>
-            <a class="icon" [href]="content.social_networks[0]">
+            <a class="icon" [href]="content.social_networks[0]" target="_blank">
               <i class="fab fa-twitter mr-4"></i>
             </a>
-            <a class="icon" [href]="content.social_networks[1]">
+            <a class="icon" [href]="content.social_networks[1]" target="_blank">
               <i class="fab fa-linkedin-in mr-4"></i>
             </a>
-            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[3]">
+            <a *ngIf="content.social_networks.length > 1" class="icon" [href]="content.social_networks[3]" target="_blank">
               <i class="fab fa-instagram"></i>
             </a>
           </div>
@@ -49,7 +49,7 @@
   </div>
   <div class="footer-copyright text-center py-3">© {{year}} Copyright:
    <!--  <a routerLink="/home"> {{ content.name }}</a> -->
-   <a>Made with ❤️ by 
+   <a>Made with ❤️ by
      <a href="https://github.com/JohnDBR" target="_blank">John, </a><a href="https://github.com/nicolasbuitrago" target="_blank"> Nicolas, </a> & <a href="https://github.com/kristellu" target="_blank"> Kristell </a>
   </a>
   </div>

@@ -37,7 +37,8 @@ export class ContactInfoComponent implements OnInit, DataItem {
   contactEmail() {
     console.log('Click');
     if (this.form.invalid) {
-      console.log('Invalid');
+      // console.log('Invalid');
+      this.notificationService.add('Invalid information, please try again.');
       return;
     }
     console.log('Send');
@@ -48,6 +49,12 @@ export class ContactInfoComponent implements OnInit, DataItem {
       this.form.value.message
     ).subscribe(
       (resp: any) => {
+        this.form.patchValue({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        });
         this.notificationService.add('Message sent.');
         // console.log('Enviado');
       },

@@ -1,4 +1,5 @@
 <div class="container py-4">
+  <h2 class="text-center pt-3" *ngIf="resources.length < itemsPerPage">Featured studios</h2>
   <app-search [resourceType]="resourceType" (data)="searchResult($event)"></app-search>
   <button *ngIf="viewResult" class="btn btn-outline-danger mt-3 mt-md-0 mb-4" (click)="clear()">Clear results</button>
   <div class="card-columns mb-md-4" *ngIf="selectedStudios && selectedStudios.length else empty">
@@ -25,6 +26,6 @@
     <p>There are no projects available for display.</p>
   </ng-template>
   <pagination [totalItems]="studios.length" (pageChanged)="pageChanged($event)"
-    [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedStudios && selectedStudios.length">
+    [itemsPerPage]="itemsPerPage" [maxSize]="5" *ngIf="selectedStudios && selectedStudios.length && selectedStudios.length > itemsPerPage">
   </pagination>
 </div>
