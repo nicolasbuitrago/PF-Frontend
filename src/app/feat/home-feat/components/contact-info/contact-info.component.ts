@@ -14,6 +14,7 @@ export class ContactInfoComponent implements OnInit, DataItem {
 
   @Input() data: ContactInformation;
   private form: FormGroup;
+  isSubmitted: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,7 +36,8 @@ export class ContactInfoComponent implements OnInit, DataItem {
   }
 
   contactEmail() {
-    console.log('Click');
+    this.isSubmitted = true;
+    // console.log('Click');
     if (this.form.invalid) {
       // console.log('Invalid');
       this.notificationService.add('Invalid information, please try again.');
@@ -56,6 +58,7 @@ export class ContactInfoComponent implements OnInit, DataItem {
           message: ''
         });
         this.notificationService.add('Message sent.');
+        this.isSubmitted = false;
         // console.log('Enviado');
       },
       (err) => {

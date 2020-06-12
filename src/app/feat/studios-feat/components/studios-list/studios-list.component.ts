@@ -14,7 +14,7 @@ export class StudiosListComponent implements OnInit {
   @Input() resources: Studio[];
   studios: Studio[];
   selectedStudios: Studio[];
-  itemsPerPage = 9;
+  itemsPerPage = 6;
   resourceType: string;
   viewResult: boolean;
 

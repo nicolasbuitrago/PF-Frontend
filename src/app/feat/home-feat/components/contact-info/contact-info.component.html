@@ -4,22 +4,35 @@
       <div class="col-lg-7">
         <h5 class="cont-form"> </h5>
         <div class="contact-form">
-          <form [formGroup]="getForm" (ngSubmit)="contactEmail()" class="register">
+          <form [formGroup]="getForm" (ngSubmit)="contactEmail()" class="register"
+            [class.was-validated]="isSubmitted">
             <div class="form-group">
               <label>Name</label>
-              <input class="form-control" type="text" placeholder="John Doe" formControlName="name">
+              <input class="form-control" type="text" placeholder="John Doe" formControlName="name" required>
+              <div class="invalid-feedback" *ngIf="getForm.controls.name.hasError('required')">
+                Field required
+              </div>
             </div>
             <div class="form-group">
               <label>Phone number</label>
-              <input class="form-control" type="text" placeholder="30030330" formControlName="phone">
+              <input class="form-control" type="text" placeholder="30030330" formControlName="phone" required>
+              <div class="invalid-feedback" *ngIf="getForm.controls.phone.hasError('required')">
+                Field required
+              </div>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input class="form-control" type="email" placeholder="example@email.com" formControlName="email">
+              <input class="form-control" type="email" placeholder="example@email.com" formControlName="email" required>
+              <div class="invalid-feedback" *ngIf="getForm.controls.email.hasError('required') || getForm.controls.email.hasError('email')">
+                Email required
+              </div>
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea placeholder="How we can help you." class="form-control" formControlName="message"></textarea>
+              <textarea placeholder="How we can help you." class="form-control" formControlName="message" required></textarea>
+              <div class="invalid-feedback" *ngIf="getForm.controls.message.hasError('required')">
+                Field required
+              </div>
             </div>
             <div class="form-group mb-0">
               <button class="btn btn-primary btn-block bg-theme text-white w-100 font-weight-bold text-uppercase">Send</button>
