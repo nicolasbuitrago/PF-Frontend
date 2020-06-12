@@ -24,7 +24,7 @@
             [class.order-1]="!data.image_left">
             <h2 class="font-weight-bold">{{ data.title }}</h2>
             <p>{{ data.description }}</p>
-            <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link" target="_blank">GO</a>
+            <a [href]="data.link" class="btn btn-primary btn-lg mt-2" *ngIf="data.link" target="_blank">View more</a>
           </div>
         </div>
       </div>
@@ -47,7 +47,8 @@
     <div class="col">
       <h1 class="font-weight-bold pt-3">{{ data.title }}</h1>
       <h4 class="pt-3">{{ data.description }}</h4>
-      <a [href]="data.link" class="btn btn-primary btn-lg mt-3 mb-5" *ngIf="data.link" target="_blank">JOIN NOW</a>
+      <a [href]="data.link" class="btn btn-primary btn-lg mt-3 mb-5" *ngIf="data.link && isRegister" target="_blank">JOIN NOW</a>
+      <a [href]="data.link" class="btn btn-primary btn-lg mt-3 mb-5" *ngIf="data.link && !isRegister" target="_blank">View more</a>
     </div>
   </div>
 </div>
